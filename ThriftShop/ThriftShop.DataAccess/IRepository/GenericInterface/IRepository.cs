@@ -9,10 +9,10 @@ namespace ThriftShop.DataAccess.Repository.IRepository.GenericInterface
 {
     public interface IRepository<T> where T : class
     {
-        T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null);
-        IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null, string? includeProperties = null);
-        void Add(T entity);
-        void Remove(T entity);
-        void RemoveRange(IEnumerable<T> entities);
+        Task<T> GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null);
+        Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter = null, string? includeProperties = null);
+        Task<T> Add(T entity);
+        Task<T> Remove(T entity);
+        Task<IEnumerable<T>> RemoveRange(IEnumerable<T> entities);
     }
 }
