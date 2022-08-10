@@ -16,7 +16,7 @@ namespace ThriftShop.Models
         public int OrderId { get; set; }
         [ForeignKey("OrderId")]
         [ValidateNever]
-        public OrderHeader OrderHeader { get; set; }
+        public Order OrderHeader { get; set; }
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         [ValidateNever]

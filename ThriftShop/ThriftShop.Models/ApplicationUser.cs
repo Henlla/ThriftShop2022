@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿//using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ThriftShop.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

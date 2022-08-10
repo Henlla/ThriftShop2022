@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ThriftShop.Models
 {
-    public class OrderHeader
+    public class Order
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

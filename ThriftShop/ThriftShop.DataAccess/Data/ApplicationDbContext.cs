@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ThriftShop.Models;
 
 namespace ThriftShop.DataAccess.Data
 {
@@ -9,6 +10,14 @@ namespace ThriftShop.DataAccess.Data
 
         }
 
-        //public DbSet<> MyProperty { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        //public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Coupon> Coupons { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+
+
     }
 }

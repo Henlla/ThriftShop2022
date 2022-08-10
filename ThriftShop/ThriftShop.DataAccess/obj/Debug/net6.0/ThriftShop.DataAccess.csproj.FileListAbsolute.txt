@@ -1,0 +1,17 @@
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.DataAccess.deps.json
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.DataAccess.runtimeconfig.json
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.DataAccess.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.DataAccess.pdb
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.Models.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.Models.pdb
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.csproj.AssemblyReference.cache
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.AssemblyInfoInputs.cache
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.AssemblyInfo.cs
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.csproj.CopyComplete
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\refint\ThriftShop.DataAccess.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.pdb
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.genruntimeconfig.cache
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ref\ThriftShop.DataAccess.dll
