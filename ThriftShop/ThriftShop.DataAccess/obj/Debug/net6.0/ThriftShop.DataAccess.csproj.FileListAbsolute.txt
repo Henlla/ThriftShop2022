@@ -31,3 +31,12 @@ C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess
 C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.dll
 C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\refint\ThriftShop.DataAccess.dll
 C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.pdb
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.DataAccess.deps.json
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.DataAccess.runtimeconfig.json
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.DataAccess.dll
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.DataAccess.pdb
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.Models.dll
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\bin\Debug\net6.0\ThriftShop.Models.pdb
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.csproj.CopyComplete
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ThriftShop.DataAccess.genruntimeconfig.cache
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.DataAccess\obj\Debug\net6.0\ref\ThriftShop.DataAccess.dll
