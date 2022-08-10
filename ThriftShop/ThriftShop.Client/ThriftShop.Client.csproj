@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Areas\Admin\222.cs" />
+    <Compile Include="Areas\Admin\ddClass.cs" />
     <Compile Include="Areas\Customer\kkk.cs" />
   </ItemGroup>
 
