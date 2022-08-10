@@ -13,5 +13,10 @@
         public const string StatusApproved = "Approved";
         public const string StatusInProcess = "Processing";
         public const string StatusCancelled = "Cancelled";
+
+
+        public const string CouponType_Percent = "Percent";
+        public const string CouponType_Cash = "Cash";
+
     }
 }
