@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {}
+    "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {
+    "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
         "projectName": "ThriftShop.Client",
-        "projectPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
-        "packagesPath": "C:\\Users\\phamk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\obj\\",
+        "projectPath": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
+        "packagesPath": "C:\\Users\\Hoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\phamk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,35 +44,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Client": {
-              "target": "Package",
-              "version": "[5.2.9, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.7, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[6.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[6.0.7, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.8, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -93,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
