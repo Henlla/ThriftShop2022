@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftShop.API", "ThriftShop.API\ThriftShop.API.csproj", "{FBEE8F7E-5443-4199-86C0-DCC4448256E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftShop.API", "ThriftShop.API\ThriftShop.API.csproj", "{FBEE8F7E-5443-4199-86C0-DCC4448256E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftShop.Client", "ThriftShop.Client\ThriftShop.Client.csproj", "{BD4D0C64-8FEF-425A-A34C-8AE363BCE2F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftShop.DataAccess", "ThriftShop.DataAccess\ThriftShop.DataAccess.csproj", "{4900083B-11E2-418C-A6F5-ACD0FC02F93F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftShop.DataAccess", "ThriftShop.DataAccess\ThriftShop.DataAccess.csproj", "{4900083B-11E2-418C-A6F5-ACD0FC02F93F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftShop.Models", "ThriftShop.Models\ThriftShop.Models.csproj", "{A963CAB4-1FDD-499F-AF9E-F0EF6198F768}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftShop.Models", "ThriftShop.Models\ThriftShop.Models.csproj", "{A963CAB4-1FDD-499F-AF9E-F0EF6198F768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftShop.Utility", "ThriftShop.Utility\ThriftShop.Utility.csproj", "{E67905B5-D943-43BF-A185-CD692AB86E86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftShop.Utility", "ThriftShop.Utility\ThriftShop.Utility.csproj", "{E67905B5-D943-43BF-A185-CD692AB86E86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftShop.Client", "ThriftShop.Client\ThriftShop.Client.csproj", "{D852F217-DB3A-4B92-B51B-9E6DE2901251}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{FBEE8F7E-5443-4199-86C0-DCC4448256E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBEE8F7E-5443-4199-86C0-DCC4448256E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBEE8F7E-5443-4199-86C0-DCC4448256E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BD4D0C64-8FEF-425A-A34C-8AE363BCE2F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD4D0C64-8FEF-425A-A34C-8AE363BCE2F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD4D0C64-8FEF-425A-A34C-8AE363BCE2F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD4D0C64-8FEF-425A-A34C-8AE363BCE2F1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4900083B-11E2-418C-A6F5-ACD0FC02F93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4900083B-11E2-418C-A6F5-ACD0FC02F93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4900083B-11E2-418C-A6F5-ACD0FC02F93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{E67905B5-D943-43BF-A185-CD692AB86E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E67905B5-D943-43BF-A185-CD692AB86E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E67905B5-D943-43BF-A185-CD692AB86E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D852F217-DB3A-4B92-B51B-9E6DE2901251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D852F217-DB3A-4B92-B51B-9E6DE2901251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D852F217-DB3A-4B92-B51B-9E6DE2901251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D852F217-DB3A-4B92-B51B-9E6DE2901251}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

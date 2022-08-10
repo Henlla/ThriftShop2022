@@ -14,10 +14,10 @@ namespace ThriftShop.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        //public string ApplicationUserId { get; set; }
-        //[ForeignKey("ApplicationUserId")]
-        //[ValidateNever]
-        //public ApplicationUser ApplicationUser { get; set; }
+        public string? UserId { get; set; }
+        [ForeignKey("UserId")]
+        [ValidateNever]
+        public UserInfo UserInfo { get; set; }
         [Required]
         public DateTime OrderDate { get; set; }
         public double OrderTotal { get; set; }

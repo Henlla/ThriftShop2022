@@ -160,14 +160,14 @@ namespace ThriftShop.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Gender")
-                        .HasColumnType("bit");
-
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
+
+                    b.Property<string>("ProductType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Size")
                         .HasColumnType("nvarchar(max)");

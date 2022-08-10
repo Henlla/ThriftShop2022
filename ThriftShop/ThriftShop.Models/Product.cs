@@ -31,10 +31,9 @@ namespace ThriftShop.Models
         [ForeignKey("CouponId")]
         [ValidateNever]
         public Coupon Coupon { get; set; }
-        public bool Gender { get; set; }
-
         public string? Color { get; set; }
         public string? Size { get; set; }
+        public string? ProductType { get; set; } // nam nu, unisex
 
     }
 }
