@@ -1,3 +1,5 @@
+using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBook.DataAccess.Repository.Services;
 using Microsoft.EntityFrameworkCore;
 using ThriftShop.DataAccess.Data;
 
@@ -10,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

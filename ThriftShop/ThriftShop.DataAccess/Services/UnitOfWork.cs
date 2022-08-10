@@ -5,18 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ThriftShop.DataAccess.Data;
+using ThriftShop.DataAccess.IRepository.GenericInterface;
+using ThriftShop.DataAccess.Services.Generic_Imp;
 
 namespace BulkyBook.DataAccess.Repository.Services
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly ApplicationDbContext _db;
+        private  ApplicationDbContext _db;
         
-
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
+            Product = new ProductService(db);
         }
+        public IProduct Product { get; private set; }
+
 
         public async void Save()
         {
