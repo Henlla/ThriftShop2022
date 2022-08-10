@@ -12,8 +12,8 @@ using ThriftShop.DataAccess.Data;
 namespace ThriftShop.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220810083847_ThriftShop")]
-    partial class ThriftShop
+    [Migration("20220810124146_ModelsToDb")]
+    partial class ModelsToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

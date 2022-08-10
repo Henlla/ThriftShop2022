@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ThriftShop.DataAccess.Migrations
 {
-    public partial class ThriftShop : Migration
+    public partial class ModelsToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
