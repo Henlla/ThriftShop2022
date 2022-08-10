@@ -18,9 +18,9 @@ namespace BulkyBook.DataAccess.Repository.Services
             _db = db;
         }
 
-        public void Save()
+        public async void Save()
         {
-            _db.SaveChanges();
+           await _db.SaveChangesAsync();
         }
 
     }

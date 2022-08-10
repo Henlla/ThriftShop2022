@@ -12,7 +12,7 @@ namespace ThriftShop.DataAccess.Repository.IRepository.GenericInterface
         Task<T> GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null);
         Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter = null, string? includeProperties = null);
         Task<T> Add(T entity);
-        Task<T> Remove(T entity);
-        Task<IEnumerable<T>> RemoveRange(IEnumerable<T> entities);
+        void Remove(T entity);
+        void RemoveRange(IEnumerable<T> entities);
     }
 }
