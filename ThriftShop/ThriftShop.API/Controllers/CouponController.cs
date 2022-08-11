@@ -19,7 +19,7 @@ namespace ThriftShop.API.Controllers
             return await _unitOfWork.Coupon.GetAll();
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<Coupon> GetCoupon(int id)
         {
             return await _unitOfWork.Coupon.GetFirstOrDefault(x=>x.CouponId.Equals(id));

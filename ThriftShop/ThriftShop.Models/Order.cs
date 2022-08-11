@@ -41,6 +41,8 @@ namespace ThriftShop.Models
         public string PostalCode { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
+        [ValidateNever]
+        public List<OrderDetail> orderDetails { get; set; }
 
     }
 }
