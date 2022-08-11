@@ -17,7 +17,6 @@ namespace ThriftShop.Models
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         [ValidateNever]
-
         public Product Product { get; set; }
         [Range(1, 1000, ErrorMessage = "Please enter a value between 1 and 1000")]
         public int Count { get; set; }
@@ -26,6 +25,6 @@ namespace ThriftShop.Models
         [ValidateNever]
         public UserInfo UserInfo { get; set; }
         [NotMapped]
-        public double Amount { get; set; }
+        public double Amount { get { return Product.Price * Count; } }
     }
 }
