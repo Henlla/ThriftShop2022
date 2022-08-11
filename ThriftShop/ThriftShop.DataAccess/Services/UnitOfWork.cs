@@ -24,7 +24,7 @@ namespace BulkyBook.DataAccess.Repository.Services
             UserInfo = new UserInfoService(db);
             UserAccount = new UserService(db);
             Coupon = new CouponService(db);
-            Order = new OrderService(db);
+            Feedback = new FeedbackService(db);
         }
 
         public IProduct Product { get; private set; }
@@ -34,7 +34,7 @@ namespace BulkyBook.DataAccess.Repository.Services
         public IUserAccount UserAccount { get; private set; }
          public IShoppingCart ShoppingCart { get; private set; }
          public ICoupon Coupon { get; private set; }
-        public IOrder Order { get; private set; }
+         public IFeedback Feedback { get; private set; }
 
         public void Save()
         {

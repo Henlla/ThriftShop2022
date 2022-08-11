@@ -15,20 +15,21 @@ namespace ThriftShop.API.Controllers
             this._unitOfWork = _unitOfWork;
         }
         [HttpGet]
-        public async Task<IEnumerable<Coupon>> GetCoupons() {
+        public async Task<IEnumerable<Coupon>> GetCoupons()
+        {
             return await _unitOfWork.Coupon.GetAll();
         }
 
         [HttpGet("{id}")]
         public async Task<Coupon> GetCoupon(int id)
         {
-            return await _unitOfWork.Coupon.GetFirstOrDefault(x=>x.CouponId.Equals(id));
+            return await _unitOfWork.Coupon.GetFirstOrDefault(x => x.CouponId.Equals(id));
         }
 
         [HttpPost]
         public async Task<Coupon> PostCoupon(Coupon obj)
         {
-           await _unitOfWork.Coupon.Add(obj);
+            await _unitOfWork.Coupon.Add(obj);
             _unitOfWork.Save();
             return obj;
         }
@@ -37,7 +38,8 @@ namespace ThriftShop.API.Controllers
         public async Task<Coupon> PutCoupon(Coupon obj)
         {
             var model = await _unitOfWork.Coupon.GetFirstOrDefault(x => x.CouponId.Equals(obj.CouponId));
-            if (model != null) {
+            if (model != null)
+            {
                 model.Code = obj.Code;
                 model.CouponType = obj.CouponType;
                 model.DiscountValue = obj.DiscountValue;

@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "Contact Us";
+    Layout = "~/Areas/Customer/Views/Shared/_Layout.cshtml";
+}
+
+        <!-- Begin Kenne's Breadcrumb Area -->
+     
+        <!-- Kenne's Breadcrumb Area End Here -->
+        <!-- Begin Contact Main Page Area -->
+        <div class="contact-main-page">
+            <div class="container">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
+                        <div class="contact-page-side-content">
+                            <h3 class="contact-page-title">Contact Us</h3>
+                            <p class="contact-page-message">Claritas est etiam processus dynamicus, qui sequitur
+                                mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum
+                                claram anteposuerit litterarum formas human.</p>
+                            <div class="single-contact-block">
+                                <h4><i class="fa fa-fax"></i> Address</h4>
+                                <p>123 Main Street, Anytown, CA 12345 – USA</p>
+                            </div>
+                            <div class="single-contact-block">
+                                <h4><i class="fa fa-phone"></i> Phone</h4>
+                                <p>Mobile: (08) 123 456 789</p>
+                                <p>Hotline: 1009 678 456</p>
+                            </div>
+                            <div class="single-contact-block last-child">
+                                <h4><i class="fa fa-envelope-o"></i> Email</h4>
+                                <p>yourmail@domain.com</p>
+                                <p>support@hastech.company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 order-2 order-lg-1">
+                        <div class="contact-form-content">
+                            <h3 class="contact-page-title">Tell Us Your Message</h3>
+                            <div class="contact-form">
+                                <form id="contact-form" action="https://whizthemes.com/mail-php/mamunur/kenne/kenne.php">
+                                    <div class="form-group">
+                                        <label>Your Name <span class="required">*</span></label>
+                                        <input type="text" name="con_name" id="con_name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Your Email <span class="required">*</span></label>
+                                        <input type="email" name="con_email" id="con_email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Subject</label>
+                                        <input type="text" name="con_subject" id="con_subject">
+                                    </div>
+                                    <div class="form-group form-group-2">
+                                        <label>Your Message</label>
+                                        <textarea name="con_message" id="con_message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" value="submit" id="submit" class="kenne-contact-form_btn" name="submit"
+                                        data-toggle="modal" data-target="#myModal" onclick="sendcontact">send</button>
+                                         <div class="container">
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Send successfully.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+                                    </div>
+                                </form>
+                            </div>
+                            <p class="form-message"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Main Page Area End Here -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
