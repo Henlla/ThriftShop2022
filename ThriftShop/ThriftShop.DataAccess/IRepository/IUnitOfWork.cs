@@ -14,6 +14,8 @@ namespace BulkyBook.DataAccess.Repository.IRepository
         IAdmin Admin { get; }
         IUserInfo UserInfo { get; }
         IUserAccount UserAccount { get; }
+        IShoppingCart ShoppingCart { get; }
+        ICoupon Coupon { get; }
 
         void Save();
     }
