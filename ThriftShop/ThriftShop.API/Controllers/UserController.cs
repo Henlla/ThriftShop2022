@@ -15,6 +15,7 @@ namespace ThriftShop.API.Controllers
         {
             this.unitOfWork = service;
         }
+        
         [HttpGet]
         public async Task<IEnumerable<UserInfo>> GetUserInfo()
         {

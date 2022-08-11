@@ -11,6 +11,10 @@ namespace BulkyBook.DataAccess.Repository.IRepository
     {
         IProduct Product { get; }
         ICategory Category { get; }
+        IAdmin Admin { get; }
+        IUserInfo UserInfo { get; }
+        IUserAccount UserAccount { get; }
+
         void Save();
     }
 }
