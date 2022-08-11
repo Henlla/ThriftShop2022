@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using ThriftShop.DataAccess.Repository.IRepository.GenericInterface;
 using ThriftShop.Models;
 
-namespace ThriftShop.DataAccess.IRepository.GenericInterface
+namespace ThriftShop.DataAccess.IRepository
 {
-    public interface IProduct : IRepository<Product>
+    public interface ICategory :IRepository<Category>
     {
-        Task<Product> Update(Product product);
+        Task<Category> Update(Category obj);
     }
 }
