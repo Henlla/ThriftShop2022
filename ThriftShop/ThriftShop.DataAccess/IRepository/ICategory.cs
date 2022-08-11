@@ -11,5 +11,6 @@ namespace ThriftShop.DataAccess.IRepository
     public interface ICategory :IRepository<Category>
     {
         Task<Category> Update(Category obj);
+
     }
 }
