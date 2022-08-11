@@ -28,7 +28,6 @@ namespace BulkyBook.DataAccess.Repository.Services
         public IAdmin Admin { get; private set; }
         public IUserInfo UserInfo { get; private set; }
         public IUserAccount UserAccount { get; private set; }
-
         public void Save()
         {
             _db.SaveChanges();

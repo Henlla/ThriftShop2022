@@ -794,3 +794,6 @@ C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.API\obj\
 C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.API\obj\Debug\net6.0\ThriftShop.API.genruntimeconfig.cache
 C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.API\obj\Debug\net6.0\ref\ThriftShop.API.dll
 C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.API\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.API\bin\Debug\net6.0\MailKit.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.API\bin\Debug\net6.0\MimeKit.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
