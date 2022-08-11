@@ -34,3 +34,15 @@ C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Utility\
 C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\refint\ThriftShop.Utility.dll
 C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ThriftShop.Utility.pdb
 C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ref\ThriftShop.Utility.dll
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\bin\Debug\net6.0\ThriftShop.Utility.deps.json
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\bin\Debug\net6.0\ThriftShop.Utility.dll
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\bin\Debug\net6.0\ThriftShop.Utility.pdb
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ThriftShop.Utility.csproj.AssemblyReference.cache
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ThriftShop.Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ThriftShop.Utility.AssemblyInfoInputs.cache
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ThriftShop.Utility.AssemblyInfo.cs
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ThriftShop.Utility.csproj.CoreCompileInputs.cache
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ThriftShop.Utility.dll
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\refint\ThriftShop.Utility.dll
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ThriftShop.Utility.pdb
+D:\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\net6.0\ref\ThriftShop.Utility.dll
