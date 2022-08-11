@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RU1uOIBGDFfboxYZOiLbDwtSOojS/xJ0yAvGWphmu0xXIiHH7MWgnEcfhxhI4Ka4RSlqNm76EZ3v9qSa6zMWeQ==",
+  "dgSpecHash": "MjOvXfdtLyrZn5iDIhF97+tiLDVZlLr47sN2pxvEGX/0XUWuOsHHeN2Anys4U6dHmQMpqUaysj0N6v5avkKQ9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Trung Le\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Trung Le\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Trung Le\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Trung Le\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

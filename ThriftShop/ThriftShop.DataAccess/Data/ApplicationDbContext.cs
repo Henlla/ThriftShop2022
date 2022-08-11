@@ -5,11 +5,10 @@ namespace ThriftShop.DataAccess.Data
 {
     public class ApplicationDbContext:DbContext
     {
-        public ApplicationDbContext(DbContextOptions options):base(options)
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
         }
-
         public DbSet<Category> Categories { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Stock> Stocks { get; set; }
