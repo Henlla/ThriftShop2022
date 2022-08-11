@@ -19,9 +19,11 @@ namespace BulkyBook.DataAccess.Repository.Services
             _db = db;
             Product = new ProductService(db);
             Category = new CategoryService(db);
+            ShoppingCart = new ShoppingCartService(db);
         }
         public IProduct Product { get; private set; }
         public ICategory Category { get; private set; }
+        public IShoppingCart ShoppingCart { get; private set; }
 
         public void Save()
         {
