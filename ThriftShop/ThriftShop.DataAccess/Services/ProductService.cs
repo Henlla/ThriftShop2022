@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -19,9 +20,23 @@ namespace ThriftShop.DataAccess.Services
             db = _db;
         }
 
-        public Task<Product> Update(Product product)
+        public async Task<Product> Update(Product product)
         {
-            throw new NotImplementedException();
-        }
+            var _product = await db.Products.FirstOrDefaultAsync(x => x.ProductId == product.ProductId);
+            if (_product != null)
+            {
+                _product.Title = product.Title;
+                _product.Description = product.Description;
+                _product.CategoryId = product.CategoryId;
+                _product.Color = product.Color;
+                _product.Size = product.Size;
+                _product.ProductType = product.ProductType;
+                return product;
+            }
+            else
+            {
+                return null;
+            }
+    }
     }
 }
