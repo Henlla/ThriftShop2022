@@ -1,24 +1,42 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {}
+<<<<<<< HEAD
+    "D:\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {
+    "D:\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
+        "projectUniqueName": "D:\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
         "projectName": "ThriftShop.Client",
-        "projectPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
-        "packagesPath": "C:\\Users\\phamk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\obj\\",
+        "projectPath": "D:\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\obj\\",
+=======
+    "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
+        "projectName": "ThriftShop.Client",
+        "projectPath": "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
+        "packagesPath": "C:\\Users\\Lance\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\obj\\",
+>>>>>>> origin/Develop
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\phamk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Lance\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> origin/Develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +62,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+<<<<<<< HEAD
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+=======
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.8, )"
@@ -61,10 +84,15 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.8, )"
+>>>>>>> origin/Develop
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.8, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             }
           },
           "imports": [
@@ -85,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
