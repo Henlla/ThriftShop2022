@@ -18,17 +18,15 @@ namespace BulkyBook.DataAccess.Repository.Services
         {
             _db = db;
             Product = new ProductService(db);
-            UserInfo = new UserInfoService(db);
-            Admin = new AdminService(db);
+            Category = new CategoryService(db);
         }
         public IProduct Product { get; private set; }
-        public IUserInfo UserInfo { get; private set; }
-        public IAdmin Admin { get; private set; }
-
+        public ICategory Category { get; private set; }
 
         public void Save()
         {
             _db.SaveChanges();
         }
+
     }
 }

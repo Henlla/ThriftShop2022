@@ -10,8 +10,7 @@ namespace BulkyBook.DataAccess.Repository.IRepository
     public interface IUnitOfWork
     {
         IProduct Product { get; }
-        IUserInfo UserInfo { get; }
-        IAdmin Admin { get; }
+        ICategory Category { get; }
         void Save();
     }
 }

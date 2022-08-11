@@ -6,41 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using ThriftShop.DataAccess.Data;
 using ThriftShop.DataAccess.IRepository;
+using ThriftShop.DataAccess.Repository.Services.Generic_Imp;
 using ThriftShop.Models;
 
 namespace ThriftShop.DataAccess.Services
 {
-    public class ProductService : IProduct
+    public class ProductService : Repository<Product>, IProduct
     {
-        private ApplicationDbContext _db;
-        public ProductService(ApplicationDbContext _db)
+        private ApplicationDbContext db;
+        public ProductService(ApplicationDbContext _db) :base(_db)
         {
-            this._db = _db;
-        }
-
-        public Task<Product> Add(Product entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Product>> GetAll(Expression<Func<Product, bool>>? filter = null, string? includeProperties = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Product> GetFirstOrDefault(Expression<Func<Product, bool>> filter, string? includeProperties = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(Product entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveRange(IEnumerable<Product> entities)
-        {
-            throw new NotImplementedException();
+            db = _db;
         }
 
         public Task<Product> Update(Product product)
