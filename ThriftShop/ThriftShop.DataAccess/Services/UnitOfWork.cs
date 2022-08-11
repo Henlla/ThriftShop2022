@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ThriftShop.DataAccess.Data;
-using ThriftShop.DataAccess.IRepository.GenericInterface;
-using ThriftShop.DataAccess.Services.Generic_Imp;
+using ThriftShop.DataAccess.IRepository;
+using ThriftShop.DataAccess.Services;
 
 namespace BulkyBook.DataAccess.Repository.Services
 {
@@ -18,14 +18,17 @@ namespace BulkyBook.DataAccess.Repository.Services
         {
             _db = db;
             Product = new ProductService(db);
+            UserInfo = new UserInfoService(db);
+            Admin = new AdminService(db);
         }
         public IProduct Product { get; private set; }
+        public IUserInfo UserInfo { get; private set; }
+        public IAdmin Admin { get; private set; }
 
 
-        public async void Save()
+        public void Save()
         {
-           await _db.SaveChangesAsync();
+            _db.SaveChanges();
         }
-
     }
 }
