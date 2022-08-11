@@ -10,7 +10,7 @@
                 <div class="breadcrumb-content">
                     <h2>List View</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a></li>
                         <li class="active">Left Sidebar</li>
                     </ul>
                 </div>
@@ -39,6 +39,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--category-->
                             <div class="kenne-sidebar_categories category-module">
                                 <div class="kenne-categories_title">
                                     <h5>Product Categories</h5>
@@ -161,18 +162,20 @@
                                 "slidesToShow": 1
                                 }}
                             ]'>
-
+                                    <!--product 1-->
                                     <div class="product-item">
                                         <div class="single-product">
+                                           
                                             <div class="product-img">
-                                                <a href="single-product.html">
-                                                    <img class="primary-img" src="~/assets/images/product/1-1.jpg" alt="Kenne's Product Image">
-                                                </a>
+                                                <a asp-area="Customer" asp-controller="Product" asp-action="Details">
+                                                    <img class="primary-img" src="~/assets/images/product/9-3.jpg" alt="Kenne's Product Image">
+                                                 </a>
                                             </div>
+                                        
                                             <div class="product-content">
                                                 <div class="product-desc_info">
                                                     <span class="manufacture-product">hoodie, jacket</span>
-                                                    <h3 class="product-name"><a href="single-product.html">Quibusdam
+                                                    <h3 class="product-name"> <a asp-area="Customer" asp-controller="Product" asp-action="Details">Quibusdam
                                                             ratione</a>
                                                     </h3>
                                                     <div class="price-box">
@@ -183,17 +186,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!--product 2-->
                                     <div class="product-item">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                                <a asp-area="Customer" asp-controller="Product" asp-action="Details">
                                                     <img class="primary-img" src="~/assets/images/product/2-1.jpg" alt="Kenne's Product Image">
                                                 </a>
                                             </div>
                                             <div class="product-content">
                                                 <div class="product-desc_info">
                                                     <span class="manufacture-product">sleeveless, frocks</span>
-                                                    <h3 class="product-name"><a href="single-product.html">Quibusdam
+                                                    <h3 class="product-name">  <a asp-area="Customer" asp-controller="Product" asp-action="Details">Quibusdam
                                                             ratione</a>
                                                     </h3>
                                                     <div class="price-box">
@@ -207,14 +211,14 @@
                                     <div class="product-item">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                                 <a asp-area="Customer" asp-controller="Product" asp-action="Details">
                                                     <img class="primary-img" src="~/assets/images/product/3-1.jpg" alt="Kenne's Product Image">
                                                 </a>
                                             </div>
                                             <div class="product-content">
                                                 <div class="product-desc_info">
                                                     <span class="manufacture-product">crochet, scarf</span>
-                                                    <h3 class="product-name"><a href="single-product.html">Quibusdam
+                                                    <h3 class="product-name"><a asp-area="Customer" asp-controller="Product" asp-action="Details">Quibusdam
                                                             ratione</a>
                                                     </h3>
                                                     <div class="price-box">
@@ -228,14 +232,14 @@
                                     <div class="product-item">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                                <a asp-area="Customer" asp-controller="Product" asp-action="Details">
                                                     <img class="primary-img" src="~/assets/images/product/4-1.jpg" alt="Kenne's Product Image">
                                                 </a>
                                             </div>
                                             <div class="product-content">
                                                 <div class="product-desc_info">
                                                     <span class="manufacture-product">shirts, t-shirt</span>
-                                                    <h3 class="product-name"><a href="single-product.html">Quibusdam
+                                                    <h3 class="product-name"><a asp-area="Customer" asp-controller="Product" asp-action="Details">Quibusdam
                                                             ratione</a>
                                                     </h3>
                                                     <div class="price-box">
@@ -249,14 +253,14 @@
                                     <div class="product-item">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                                <a asp-area="Customer" asp-controller="Product" asp-action="Details">
                                                     <img class="primary-img" src="~/assets/images/product/2-1.jpg" alt="Kenne's Product Image">
                                                 </a>
                                             </div>
                                             <div class="product-content">
                                                 <div class="product-desc_info">
                                                     <span class="manufacture-product">sleeveless, frocks</span>
-                                                    <h3 class="product-name"><a href="single-product.html">Quibusdam
+                                                    <h3 class="product-name"><a asp-area="Customer" asp-controller="Product" asp-action="Details">Quibusdam
                                                             ratione</a>
                                                     </h3>
                                                     <div class="price-box">
@@ -270,14 +274,14 @@
                                     <div class="product-item">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                                <a asp-area="Customer" asp-controller="Product" asp-action="Details">
                                                     <img class="primary-img" src="~/assets/images/product/3-1.jpg" alt="Kenne's Product Image">
                                                 </a>
                                             </div>
                                             <div class="product-content">
                                                 <div class="product-desc_info">
                                                     <span class="manufacture-product">crochet, scarf</span>
-                                                    <h3 class="product-name"><a href="single-product.html">Quibusdam
+                                                    <h3 class="product-name"><a asp-area="Customer" asp-controller="Product" asp-action="Details">Quibusdam
                                                             ratione</a>
                                                     </h3>
                                                     <div class="price-box">
@@ -291,14 +295,14 @@
                                     <div class="product-item">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                                <a asp-area="Customer" asp-controller="Product" asp-action="Details">
                                                     <img class="primary-img" src="~/assets/images/product/1-1.jpg" alt="Kenne's Product Image">
                                                 </a>
                                             </div>
                                             <div class="product-content">
                                                 <div class="product-desc_info">
                                                     <span class="manufacture-product">hoodie, jacket</span>
-                                                    <h3 class="product-name"><a href="single-product.html">Quibusdam
+                                                    <h3 class="product-name"><a asp-area="Customer" asp-controller="Product" asp-action="Details">Quibusdam
                                                             ratione</a>
                                                     </h3>
                                                     <div class="price-box">
@@ -312,14 +316,14 @@
                                     <div class="product-item">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="single-product.html">
+                                               <a asp-area="Customer" asp-controller="Product" asp-action="Details">
                                                     <img class="primary-img" src="~/assets/images/product/2-1.jpg" alt="Kenne's Product Image">
                                                 </a>
                                             </div>
                                             <div class="product-content">
                                                 <div class="product-desc_info">
                                                     <span class="manufacture-product">sleeveless, frocks</span>
-                                                    <h3 class="product-name"><a href="single-product.html">Quibusdam
+                                                    <h3 class="product-name"> <a asp-area="Customer" asp-controller="Product" asp-action="Details">Quibusdam
                                                             ratione</a>
                                                     </h3>
                                                     <div class="price-box">
@@ -333,6 +337,8 @@
 
                                 </div>
                             </div>
+
+                            <!--this is category bar-->
                             <div class="kenne-sidebar_categories">
                                 <div class="kenne-categories_title kenne-tags_title">
                                     <h5>Product Tags</h5>

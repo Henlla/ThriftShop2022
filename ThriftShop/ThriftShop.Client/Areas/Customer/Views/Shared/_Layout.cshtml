@@ -89,16 +89,18 @@
                                 <div class="header-top_right">
                                     <ul>
                                         <li>
-                                            <a href="my-account.html">My Account</a>
+                                            <a asp-area="Customer" asp-controller="Account" asp-action="Setting">Setting</></a>
                                         </li>
                                         <li>
-                                            <a href="wishlist.html">Wishlist</a>
+                                              <a asp-area="Customer" asp-controller="Product" asp-action="WishList">WishList</></a>
+                                           
                                         </li>
                                         <li>
-                                            <a href="login-register.html">Register or Sign in</a>
+                                            <a asp-area="Customer" asp-controller="Account" asp-action="Login">Login</></a>
+                                           
                                         </li>
                                         <li>
-                                            <a href="checkout.html">Checkout</a>
+                                           <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut">Chekout</></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -113,8 +115,9 @@
                         <div class="col-lg-12">
                             <div class="header-middle_nav">
                                 <div class="header-logo_area">
-                                    <a href="index.html">
-                                        <img src="~/assets/images/menu/logo/1.png" alt="Header Logo">
+                                    <a asp-area="Customer" asp-controller="Home"  asp-action="Index">
+                                       <!-- <img src="~/assets/images/menu/logo/1.png" alt="Header Logo">-->
+                                        <img src="~/assets/images/footer/logo/3.png" alt="Logo" width="130">
                                     </a>
                                 </div>
                                 <div class="header-contact d-none d-md-flex">
@@ -164,7 +167,8 @@
                                         <li class="minicart-wrap">
                                             <a href="#miniCart" class="minicart-btn toolbar-btn">
                                                 <div class="minicart-count_area">
-                                                    <span class="item-count">03</span>
+                                                    <!--bag số lượng-->
+                                                    <span class="item-count">10</span>
                                                     <i class="ion-bag"></i>
                                                 </div>
                                             </a>
@@ -193,32 +197,16 @@
                             <div class="main-menu_area position-relative">
                                 <nav class="main-nav d-flex justify-content-center">
                                     <ul>
-                                        <li class="dropdown-holder"><a href="javascript:void(0)">Home <i
-                                                class="ion-chevron-down"></i></a>
-                                            <ul class="kenne-dropdown">
-                                                <li><a href="index.html">Home One</a></li>
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                            </ul>
+                                        <li class="dropdown-holder">
+                                             <a asp-area="Customer" asp-controller="Home"  asp-action="Index">Home</a>
                                         </li>
-                                        <li class="megamenu-holder position-static"><a asp-controller="Product" asp-action="Index">Shop</></a>
+                                        <li class="megamenu-holder position-static"><a asp-area="Customer"asp-controller="Product" asp-action="Index">Shop</></a>
                                         </li>
-                                        <li><a href="javascript:void(0)">Pages <i class="ion-chevron-down"></i></a>
-                                            <ul class="kenne-dropdown">
-                                                <li><a href="coming-soon_page.html">Coming Soon</a></li>
-                                                <li><a href="404.html">Error 404</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:void(0)">Blog <i class="ion-chevron-down"></i></a>
-                                            <ul class="kenne-dropdown">
-                                                <li><a href="blog-grid_view.html">Grid View</a></li>
-                                                <li><a href="blog-list_view.html">List View</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
-                                        <li><a href="about-us.html">About Us</a></li>
+                                        
+                                        
+                                        
+                                           <li> <a asp-area="Customer" asp-controller="Home" asp-action="ContactUs">Contact Us</></a> </li>
+                                           <li> <a asp-area="Customer" asp-controller="Home" asp-action="AboutUs">About Us</></a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -841,77 +829,7 @@
         
 		
         <!-- Begin Brand Area -->
-        <div class="brand-area ">
-            <div class="container">
-                <div class="brand-nav border-top ">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="kenne-element-carousel brand-slider slider-nav" data-slick-options='{
-                                "slidesToShow": 6,
-                                "slidesToScroll": 1,
-                                "infinite": false,
-                                "arrows": false,
-                                "dots": false,
-                                "spaceBetween": 30
-                                }' data-slick-responsive='[
-                                {"breakpoint":992, "settings": {
-                                "slidesToShow": 4
-                                }},
-                                {"breakpoint":768, "settings": {
-                                "slidesToShow": 3
-                                }},
-                                {"breakpoint":576, "settings": {
-                                "slidesToShow": 2
-                                }}
-                            ]'>
-
-                                <div class="brand-item">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/brand/1.png" alt="Brand Images">
-                                    </a>
-                                </div>
-                                <div class="brand-item">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/brand/2.png" alt="Brand Images">
-                                    </a>
-                                </div>
-                                <div class="brand-item">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/brand/3.png" alt="Brand Images">
-                                    </a>
-                                </div>
-                                <div class="brand-item">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/brand/4.png" alt="Brand Images">
-                                    </a>
-                                </div>
-                                <div class="brand-item">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/brand/5.png" alt="Brand Images">
-                                    </a>
-                                </div>
-                                <div class="brand-item">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/brand/6.png" alt="Brand Images">
-                                    </a>
-                                </div>
-                                <div class="brand-item">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/brand/1.png" alt="Brand Images">
-                                    </a>
-                                </div>
-                                <div class="brand-item">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/brand/2.png" alt="Brand Images">
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
         <!-- Brand Area End Here -->
 
         <!-- Begin Kenne's Footer Area -->
@@ -922,9 +840,7 @@
                         <div class="col-lg-5">
                             <div class="newsletter-area">
                                 <div class="newsletter-logo">
-                                    <a href="javascript:void(0)">
-                                        <img src="~/assets/images/footer/logo/1.png" alt="Logo">
-                                    </a>
+                                   
                                 </div>
                                 <p class="short-desc">Subscribe to our newsleter, Enter your emil address</p>
                                 <div class="newsletter-form_wrap">
@@ -994,11 +910,7 @@
                                 <span>Copyright &copy; 2019 <a href="javascript:void(0)">Kenne.</a> All rights reserved.</span>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="payment">
-                                <img src="~/assets/images/footer/payment/1.png" alt="Kenne's Payment Method">
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
@@ -1012,183 +924,7 @@
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <div class="modal-inner-area sp-area row">
-                            <div class="col-lg-5">
-                                <div class="sp-img_area">
-                                    <div class="kenne-element-carousel sp-img_slider slick-img-slider" data-slick-options='{
-                                    "slidesToShow": 1,
-                                    "arrows": false,
-                                    "fade": true,
-                                    "draggable": false,
-                                    "swipe": false,
-                                    "asNavFor": ".sp-img_slider-nav"
-                                    }'>
-                                        <div class="single-slide red">
-                                            <img src="~/assets/images/product/1-1.jpg" alt="Kenne's Product Image">
-                                        </div>
-                                        <div class="single-slide orange">
-                                            <img src="~/assets/images/product/1-2.jpg" alt="Kenne's Product Image">
-                                        </div>
-                                        <div class="single-slide brown">
-                                            <img src="~/assets/images/product/2-1.jpg" alt="Kenne's Product Image">
-                                        </div>
-                                        <div class="single-slide umber">
-                                            <img src="~/assets/images/product/2-2.jpg" alt="Kenne's Product Image">
-                                        </div>
-                                        <div class="single-slide black">
-                                            <img src="~/assets/images/product/3-1.jpg" alt="Kenne's Product Image">
-                                        </div>
-                                        <div class="single-slide golden">
-                                            <img src="~/assets/images/product/3-2.jpg" alt="Kenne's Product Image">
-                                        </div>
-                                    </div>
-                                    <div class="kenne-element-carousel sp-img_slider-nav arrow-style-2 arrow-style-3" data-slick-options='{
-                                   "slidesToShow": 4,
-                                    "asNavFor": ".sp-img_slider",
-                                   "focusOnSelect": true,
-                                   "arrows" : true,
-                                   "spaceBetween": 30
-                                  }' data-slick-responsive='[
-                                    {"breakpoint":1501, "settings": {"slidesToShow": 3}},
-                                    {"breakpoint":1200, "settings": {"slidesToShow": 2}},
-                                    {"breakpoint":992, "settings": {"slidesToShow": 4}},
-                                    {"breakpoint":768, "settings": {"slidesToShow": 3}},
-                                    {"breakpoint":575, "settings": {"slidesToShow": 2}}
-                                ]'>
-                                        <div class="single-slide red">
-                                            <img src="~/assets/images/product/1-1.jpg" alt="Kenne's Product Thumnail">
-                                        </div>
-                                        <div class="single-slide orange">
-                                            <img src="~/assets/images/product/1-2.jpg" alt="Kenne's Product Thumnail">
-                                        </div>
-                                        <div class="single-slide brown">
-                                            <img src="~/assets/images/product/2-1.jpg" alt="Kenne's Product Thumnail">
-                                        </div>
-                                        <div class="single-slide umber">
-                                            <img src="~/assets/images/product/2-2.jpg" alt="Kenne's Product Thumnail">
-                                        </div>
-                                        <div class="single-slide black">
-                                            <img src="~/assets/images/product/3-1.jpg" alt="Kenne's Product Thumnail">
-                                        </div>
-                                        <div class="single-slide golden">
-                                            <img src="~/assets/images/product/3-2.jpg" alt="Kenne's Product Thumnail">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-7 col-lg-6">
-                                <div class="sp-content">
-                                    <div class="sp-heading">
-                                        <h5><a href="#">Dolorem odio provident ut nihil</a></h5>
-                                    </div>
-                                    <div class="rating-box">
-                                        <ul>
-                                            <li><i class="ion-android-star"></i></li>
-                                            <li><i class="ion-android-star"></i></li>
-                                            <li><i class="ion-android-star"></i></li>
-                                            <li class="silver-color"><i class="ion-android-star"></i></li>
-                                            <li class="silver-color"><i class="ion-android-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="new-price new-price-2">$194.00</span>
-                                        <span class="old-price">$241.00</span>
-                                    </div>
-                                    <div class="sp-essential_stuff">
-                                        <ul>
-                                            <li>Brands <a href="javascript:void(0)">Buxton</a></li>
-                                            <li>Product Code: <a href="javascript:void(0)">Product 16</a></li>
-                                            <li>Reward Points: <a href="javascript:void(0)">100</a></li>
-                                            <li>Availability: <a href="javascript:void(0)">In Stock</a></li>
-                                            <li>EX Tax: <a href="javascript:void(0)"><span>$453.35</span></a></li>
-                                            <li>Price in reward points: <a href="javascript:void(0)">400</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="color-list_area">
-                                        <div class="color-list_heading">
-                                            <h4>Available Options</h4>
-                                        </div>
-                                        <span class="sub-title">Color</span>
-                                        <div class="color-list">
-                                            <a href="javascript:void(0)" class="single-color active" data-swatch-color="red">
-                                                <span class="bg-red_color"></span>
-                                                <span class="color-text">Red (+$150)</span>
-                                            </a>
-                                            <a href="javascript:void(0)" class="single-color" data-swatch-color="orange">
-                                                <span class="burnt-orange_color"></span>
-                                                <span class="color-text">Orange (+$170)</span>
-                                            </a>
-                                            <a href="javascript:void(0)" class="single-color" data-swatch-color="brown">
-                                                <span class="brown_color"></span>
-                                                <span class="color-text">Brown (+$120)</span>
-                                            </a>
-                                            <a href="javascript:void(0)" class="single-color" data-swatch-color="umber">
-                                                <span class="raw-umber_color"></span>
-                                                <span class="color-text">Umber (+$125)</span>
-                                            </a>
-                                            <a href="javascript:void(0)" class="single-color" data-swatch-color="black">
-                                                <span class="black_color"></span>
-                                                <span class="color-text">Black (+$125)</span>
-                                            </a>
-                                            <a href="javascript:void(0)" class="single-color" data-swatch-color="golden">
-                                                <span class="golden_color"></span>
-                                                <span class="color-text">Golden (+$125)</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="quantity">
-                                        <label>Quantity</label>
-                                        <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" value="1" type="text">
-                                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                        </div>
-                                    </div>
-                                    <div class="kenne-group_btn">
-                                        <ul>
-                                            <li><a href="cart.html" class="add-to_cart">Cart To Cart</a></li>
-                                            <li><a href="cart.html"><i class="ion-android-favorite-outline"></i></a></li>
-                                            <li><a href="cart.html"><i class="ion-ios-shuffle-strong"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="kenne-tag-line">
-                                        <h6>Tags:</h6>
-                                        <a href="javascript:void(0)">Scraf</a>,
-                                        <a href="javascript:void(0)">hoodie</a>,
-                                        <a href="javascript:void(0)">jacket</a>
-                                    </div>
-                                    <div class="kenne-social_link">
-                                        <ul>
-                                            <li class="facebook">
-                                                <a href="https://www.facebook.com" data-bs-toggle="tooltip" target="_blank" title="Facebook">
-                                                    <i class="fab fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="twitter">
-                                                <a href="https://twitter.com" data-bs-toggle="tooltip" target="_blank" title="Twitter">
-                                                    <i class="fab fa-twitter-square"></i>
-                                                </a>
-                                            </li>
-                                            <li class="youtube">
-                                                <a href="https://www.youtube.com" data-bs-toggle="tooltip" target="_blank" title="Youtube">
-                                                    <i class="fab fa-youtube"></i>
-                                                </a>
-                                            </li>
-                                            <li class="google-plus">
-                                                <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
-                                                    <i class="fab fa-google-plus"></i>
-                                                </a>
-                                            </li>
-                                            <li class="instagram">
-                                                <a href="https://rss.com" data-bs-toggle="tooltip" target="_blank" title="Instagram">
-                                                    <i class="fab fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                     
                     </div>
                 </div>
             </div>

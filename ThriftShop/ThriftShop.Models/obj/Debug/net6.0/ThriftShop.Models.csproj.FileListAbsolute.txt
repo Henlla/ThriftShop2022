@@ -40,3 +40,17 @@ C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\o
 C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.pdb
 C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.genruntimeconfig.cache
 C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ref\ThriftShop.Models.dll
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.deps.json
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.runtimeconfig.json
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.dll
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.pdb
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.csproj.AssemblyReference.cache
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.AssemblyInfoInputs.cache
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.AssemblyInfo.cs
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.csproj.CoreCompileInputs.cache
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.dll
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\refint\ThriftShop.Models.dll
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.pdb
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.genruntimeconfig.cache
+D:\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ref\ThriftShop.Models.dll
