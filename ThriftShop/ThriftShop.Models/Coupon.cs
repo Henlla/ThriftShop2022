@@ -14,6 +14,8 @@ namespace ThriftShop.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CouponId { get; set; }
         public string? Code { get; set; }
+        public string? CouponType { get; set; }
+        public double? DiscountValue { get; set; }
         public DateTime CreatedDate { get; } = DateTime.Now;
         public DateTime ExpiredDate { get; set; }
         public int Quantity { get; set; }

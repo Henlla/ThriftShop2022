@@ -1,5 +1,4 @@
-﻿//using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ThriftShop.Models
 {
-    public class ApplicationUser
+    public class UserInfo
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -23,8 +22,14 @@ namespace ThriftShop.Models
         public string? Email { get; set; }
         public string? Address { get; set; }
         public string? City { get; set; }
+        [Required]
         public string? State { get; set; }
+        [Required]
         public string? PostalCode { get; set; }
-
+        [Required]
+        public int AccountID { get; set; }
+        [ForeignKey("AccountID")]
+        [ValidateNever]
+        public UserAccount? UserAccount { get; set; }
     }
 }
