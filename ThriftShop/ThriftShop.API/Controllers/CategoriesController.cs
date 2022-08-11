@@ -21,6 +21,8 @@ namespace ThriftShop.API.Controllers
             return await unitOfWork.Category.GetAll();
         }
 
+      
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetFirstOrDefault(int id)
         {
@@ -48,13 +50,11 @@ namespace ThriftShop.API.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateCategory(Category category)
         {
-            var _cate = await unitOfWork.Category.GetFirstOrDefault(x => x.CategoryId == category.CategoryId);
-            if (_cate != null)
-            {
-               await unitOfWork.Category.Update(category);
+          
+                await unitOfWork.Category.Update(category);
                 unitOfWork.Save();
                 return Ok(category);
-            }
+            
             return BadRequest();
             
         }

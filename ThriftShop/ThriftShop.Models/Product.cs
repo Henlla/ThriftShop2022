@@ -18,16 +18,25 @@ namespace ThriftShop.Models
         [Required]
         [Range(1, 999999)]
         public double Price { get; set; }
- 
         [Required]
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         [ValidateNever]
         public Category? Category { get; set; }
-        public string? Color { get; set; }
-        public string? Size { get; set; }
-        public string? ProductType { get; set; } // nam nu, unisex
+        public int? ColorId { get; set; }
+        [ForeignKey("ColorId")]
+        [ValidateNever]
+        public Color Color { get; set; }
+        public int? SizeId { get; set; }
+        [ForeignKey("SizeId")]
+        [ValidateNever]
+        public Size Size { get; set; }
+        public int? ProductTypeId { get; set; } // nam nu, unisex
+        [ForeignKey("ProductTypeId")]
+        [ValidateNever]
+        public ProductType ProductType { get; set; } 
+        public DateTime CreatedDate { get; set; } // ngay tao san pham
 
     }
 }

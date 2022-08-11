@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yEF+KQgstPT7XwIvH978374COw2CTjicwwv+ZtD0INDstBq1jzuTc8/X5vjAwY5zU8BkHUBxQ1T4+Y3SKSrkdQ==",
+  "dgSpecHash": "HmxxYX2Iuk0uiRsxJd1+lG/rGHe3KIb9gKixb127OnfZlTJpMr8z6AbEQROF2lx6iz1KHEuitjH9etJORxPf8A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Hoa\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Hoa\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hoa\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Hoa\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
@@ -198,5 +199,12 @@
     "C:\\Users\\Hoa\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Hoa\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
