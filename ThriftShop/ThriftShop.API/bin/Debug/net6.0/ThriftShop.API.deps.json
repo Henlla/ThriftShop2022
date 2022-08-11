@@ -16,7 +16,8 @@
           "Microsoft.VisualStudio.Web.CodeGeneration": "6.0.7",
           "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.2.3",
-          "ThriftShop.DataAccess": "1.0.0"
+          "ThriftShop.DataAccess": "1.0.0",
+          "ThriftShop.Utility": "1.0.0"
         },
         "runtime": {
           "ThriftShop.API.dll": {}
@@ -2471,6 +2472,11 @@
         "runtime": {
           "ThriftShop.Models.dll": {}
         }
+      },
+      "ThriftShop.Utility/1.0.0": {
+        "runtime": {
+          "ThriftShop.Utility.dll": {}
+        }
       }
     }
   },
@@ -3907,6 +3913,11 @@
       "sha512": ""
     },
     "ThriftShop.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ThriftShop.Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

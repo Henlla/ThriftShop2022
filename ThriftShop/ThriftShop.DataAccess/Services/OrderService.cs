@@ -7,6 +7,7 @@ using ThriftShop.DataAccess.Data;
 using ThriftShop.DataAccess.IRepository;
 using ThriftShop.DataAccess.Repository.Services.Generic_Imp;
 using ThriftShop.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ThriftShop.DataAccess.Services
 {
@@ -18,9 +19,19 @@ namespace ThriftShop.DataAccess.Services
             this._db = _db;
         }
 
-        public Task<Order> Update(Order obj)
+        public async Task<Order> Update(Order obj)
         {
-            throw new NotImplementedException();
+            var model = await _db.Orders.FindAsync(obj.Id);
+            if (model != null)
+            {
+                model.OrderStatus = obj.OrderStatus;
+                _db.Orders.Update(model);
+              
+
+            }
+           
+                return model;
+            
         }
     }
 }

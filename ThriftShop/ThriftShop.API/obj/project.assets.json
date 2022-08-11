@@ -3523,6 +3523,16 @@
         "runtime": {
           "bin/placeholder/ThriftShop.Models.dll": {}
         }
+      },
+      "ThriftShop.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ThriftShop.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThriftShop.Utility.dll": {}
+        }
       }
     }
   },
@@ -10059,6 +10069,11 @@
       "type": "project",
       "path": "../ThriftShop.Models/ThriftShop.Models.csproj",
       "msbuildProject": "../ThriftShop.Models/ThriftShop.Models.csproj"
+    },
+    "ThriftShop.Utility/1.0.0": {
+      "type": "project",
+      "path": "../ThriftShop.Utility/ThriftShop.Utility.csproj",
+      "msbuildProject": "../ThriftShop.Utility/ThriftShop.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10071,27 +10086,28 @@
       "Microsoft.VisualStudio.Web.CodeGeneration >= 6.0.7",
       "Newtonsoft.Json >= 13.0.1",
       "Swashbuckle.AspNetCore >= 6.2.3",
-      "ThriftShop.DataAccess >= 1.0.0"
+      "ThriftShop.DataAccess >= 1.0.0",
+      "ThriftShop.Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hoa\\.nuget\\packages\\": {},
+    "C:\\Users\\Lance\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.API\\ThriftShop.API.csproj",
+      "projectUniqueName": "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.API\\ThriftShop.API.csproj",
       "projectName": "ThriftShop.API",
-      "projectPath": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.API\\ThriftShop.API.csproj",
-      "packagesPath": "C:\\Users\\Hoa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.API\\obj\\",
+      "projectPath": "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.API\\ThriftShop.API.csproj",
+      "packagesPath": "C:\\Users\\Lance\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lance\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10106,8 +10122,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj"
+            "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj"
+            },
+            "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Utility\\ThriftShop.Utility.csproj": {
+              "projectPath": "C:\\Users\\Lance\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Utility\\ThriftShop.Utility.csproj"
             }
           }
         }

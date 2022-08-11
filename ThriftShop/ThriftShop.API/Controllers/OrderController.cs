@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ThriftShop.Models;
+using ThriftShop.Utility;
 
 namespace ThriftShop.API.Controllers
 {
@@ -25,68 +26,91 @@ namespace ThriftShop.API.Controllers
         [HttpGet("{id}")]
         public Task<IEnumerable<Order>> GetOrderById(int id)
         {
-            return _unitOfWord.Order.GetAll(filter:o=>o.UserId.Equals(id));
+            return _unitOfWord.Order.GetAll(filter: o => o.UserId.Equals(id));
         }
 
         [HttpPost]
         public async Task<Order> PostOrder(Order obj)
         {
+            if (obj.CouponId == null) { obj.Coupon = null; }
+            else
+            {
+                obj.Coupon = await _unitOfWord.Coupon.GetFirstOrDefault(filter: c => c.CouponId.Equals(obj.CouponId));
+            }
+            //var shopingCart= await  _unitOfWord.ShoppingCart.GetAll(filter:sc=>sc.UserId.Equals(obj.UserId));
 
-          
-              await _unitOfWord.Order.Add(obj);
+            obj.UserInfo = await _unitOfWord.UserInfo.GetFirstOrDefault(filter: uinfo => uinfo.UserId.Equals(obj.UserId));
+
+            //
+            obj.orderDetails = null;
+            obj.OrderStatus = SD.StatusPending;
+            await _unitOfWord.Order.Add(obj);
 
 
-                _unitOfWord.Save();
-                return obj;
-            
+            _unitOfWord.Save();
+            return obj;
+
 
         }
 
+        [HttpDelete()]
+        public async Task<Order> DeleteOrder(int id)
+        { 
+        var model= await _unitOfWord.Order.GetFirstOrDefault(o=>o.Id.Equals(id));
+            if (model != null)
+            { _unitOfWord.Order.Remove(model);}
+            _unitOfWord.Save();
+            return model;
+        }
+
+        [HttpPut("{id}/{status}")]
+        public async Task<Order> UpdateStatus(int id, string status)
+        {
+            Order obj = await _unitOfWord.Order.GetFirstOrDefault(o => o.Id.Equals(id));
+            if (status == SD.StatusCancelled)
+            {
+                if (obj.OrderStatus == SD.StatusPending || obj.OrderStatus == SD.StatusApproved)
+                {
+                    obj.OrderStatus = SD.StatusCancelled;
+                }
+                else {
+                    return null;
+                }
+            }
+            else if (status == SD.StatusInProcess)
+            {
+                if (obj.OrderStatus == SD.StatusApproved)
+                {
+                    obj.OrderStatus = SD.StatusInProcess;
+
+                }
+                else {
+                    return null;
+                }
+
+            }
+            else if(status==SD.StatusApproved)
+            {
+                if (obj.OrderStatus == SD.StatusPending)
+                {
+
+                    obj.OrderStatus = SD.StatusApproved;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else {
+                return null;
+            }
+            await _unitOfWord.Order.Update(obj);
+            _unitOfWord.Save();
+            return obj;
+        }
 
 
-        //[HttpGet("{id}")]
-        //public async Task<ShoppingCart> GetCart(int id)
-        //{
-        //    return await _unitOfWord.ShoppingCart.ge.GetFirstOrDefault(x => x.Id.Equals(id), includeProperties: "UserInfo,Product");
-        //}
-
-        //[HttpPost]
-        //public async Task<ShoppingCart> PostCart(ShoppingCart obj)
-        //{
-        //    var model = await _unitOfWord.ShoppingCart.GetFirstOrDefault(x => x.Id.Equals(obj), includeProperties: "UserInfo,Product");
-        //    if (model != null)
-        //    {
-        //        model.Count += 1;
-        //        await _unitOfWord.ShoppingCart.Update(model);
-        //        _unitOfWord.Save();
-        //        return model;
-        //    }
-        //    else
-        //    {
-        //        await _unitOfWord.ShoppingCart.Add(obj);
-        //        _unitOfWord.Save();
-        //        return obj;
-        //    }
-
-        //}
-
-        //[HttpPut]
-        //public async Task<ShoppingCart> PutCart(ShoppingCart obj)
-        //{
-        //    await _unitOfWord.ShoppingCart.Update(obj);
-        //    _unitOfWord.Save();
-        //    return obj;
-        //}
-
-        //[HttpDelete]
-        //public async Task<ShoppingCart> DeleteCart(int id)
-        //{
-        //    var model = await _unitOfWord.ShoppingCart.GetFirstOrDefault(x => x.Id.Equals(id), includeProperties: "UserInfo,Product");
-        //    _unitOfWord.ShoppingCart.Remove(model);
-        //    _unitOfWord.Save();
-        //    return model;
-        //}
-
+     
 
 
     }
