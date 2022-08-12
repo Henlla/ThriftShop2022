@@ -18,5 +18,7 @@
         public const string CouponType_Percent = "Percent";
         public const string CouponType_Cash = "Cash";
 
+        public const int MaximumImageCanUpload = 6;
+
     }
 }
