@@ -82,6 +82,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Setting()
         {
             var claim = (ClaimsIdentity)User.Identity;
