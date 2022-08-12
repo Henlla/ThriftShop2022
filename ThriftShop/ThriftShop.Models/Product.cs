@@ -39,14 +39,16 @@ namespace ThriftShop.Models
         [ValidateNever]
         public Category? Category { get; set; }
 
+        //public int SizeId { get; set; }
+        //[ForeignKey("SizeId")]
         [ValidateNever]
-        public IEnumerable<Size> Size { get; set; }
+        public List<Size_Product> Size_Product { get; set; }
 
         [ValidateNever]
-        public IEnumerable<Color> Color { get; set; }
+        public List<Color_Product> Color_Product { get; set; }
 
         [ValidateNever]
-        public IEnumerable<ProductImage> ProductImage { get; set; }
+        public List<ProductImage> ProductImage { get; set; }
 
         [ValidateNever]
         [NotMapped]
