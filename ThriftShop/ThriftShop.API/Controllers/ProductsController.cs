@@ -106,7 +106,7 @@ namespace ThriftShop.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Product>> AddProduct(Product product, string? JsonImageList = null)
+        public async Task<ActionResult<Product>> AddProduct(Product product)
         {
             var _product = await unitOfWork.Product.GetFirstOrDefault(x => x.ProductId == product.ProductId);
             if (_product == null)
@@ -120,9 +120,9 @@ namespace ThriftShop.API.Controllers
                 return BadRequest();
             }
 
-            if (!string.IsNullOrEmpty(JsonImageList))
+            if (!string.IsNullOrEmpty(product.JsonImageList))
             {
-                //var list = JsonImageList.ToList();
+                //var list = product.JsonImageList.ToList();
                 List<string> list = new List<string>()
                 {
                     "image1.png",
@@ -157,11 +157,6 @@ namespace ThriftShop.API.Controllers
                     _productImage.IsMainImage = true;
                     unitOfWork.Save();
                 }
-
-
-
-
-                
             }
             return Ok(product);
 
@@ -196,9 +191,6 @@ namespace ThriftShop.API.Controllers
             }
             return BadRequest();
         }
-
-
-        
     }
 }
 
