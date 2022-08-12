@@ -16,6 +16,9 @@ namespace ThriftShop.DataAccess.Repository.IRepository
         IUserAccount UserAccount { get; }
         IShoppingCart ShoppingCart { get; }
         ICoupon Coupon { get; }
+        IFeedback Feedback { get; }
+        IOrder Order { get; }
+        IProductImage ProductImage { get; }
 
         void Save();
     }

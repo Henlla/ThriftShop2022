@@ -15,4 +15,8 @@
     <ProjectReference Include="..\ThriftShop.Models\ThriftShop.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ThriftShop.Models\ThriftShop.Models.csproj" />
+  </ItemGroup>
+
 </Project>

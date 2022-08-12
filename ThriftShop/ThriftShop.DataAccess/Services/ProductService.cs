@@ -20,6 +20,11 @@ namespace ThriftShop.DataAccess.Services
             db = _db;
         }
 
+        public void HandlerJsonImageList(string JsonImageList)
+        {
+           
+        }
+
         public async Task<Product> Update(Product product)
         {
             var _product = await db.Products.FirstOrDefaultAsync(x => x.ProductId == product.ProductId);

@@ -24,6 +24,9 @@ namespace ThriftShop.DataAccess.Repository.Services
             UserInfo = new UserInfoService(db);
             UserAccount = new UserService(db);
             Coupon = new CouponService(db);
+            Feedback = new FeedbackService(db);
+            Order = new OrderService(db);
+            ProductImage = new ProductImageService(db);
         }
 
         public IProduct Product { get; private set; }
@@ -33,7 +36,9 @@ namespace ThriftShop.DataAccess.Repository.Services
         public IUserAccount UserAccount { get; private set; }
          public IShoppingCart ShoppingCart { get; private set; }
          public ICoupon Coupon { get; private set; }
-
+         public IFeedback Feedback { get; private set; }
+        public IOrder Order { get; private set; }
+        public IProductImage ProductImage { get; private set; }
         public void Save()
         {
             _db.SaveChanges();
