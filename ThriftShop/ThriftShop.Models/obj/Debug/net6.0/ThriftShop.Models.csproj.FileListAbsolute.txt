@@ -68,3 +68,17 @@ C:\Users\Lance\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net
 C:\Users\Lance\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.pdb
 C:\Users\Lance\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.genruntimeconfig.cache
 C:\Users\Lance\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ref\ThriftShop.Models.dll
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.deps.json
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.runtimeconfig.json
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.dll
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.pdb
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.csproj.AssemblyReference.cache
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.AssemblyInfoInputs.cache
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.AssemblyInfo.cs
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.csproj.CoreCompileInputs.cache
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.dll
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\refint\ThriftShop.Models.dll
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.pdb
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.genruntimeconfig.cache
+C:\Users\TINH\Desktop\ThriftShop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ref\ThriftShop.Models.dll

@@ -10,4 +10,8 @@
     <Folder Include="Areas\Admin\Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ThriftShop.Models\ThriftShop.Models.csproj" />
+  </ItemGroup>
+
 </Project>
