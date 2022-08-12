@@ -35,6 +35,21 @@ namespace ThriftShop.API.Controllers
                 return BadRequest();
             }
         }
-        
+        [HttpPost]
+        public async Task<ActionResult<Admin>> Register(Admin admin)
+        {
+            if (admin != null)
+            {
+                admin.Password = BCrypt.Net.BCrypt.HashPassword(admin.Password);
+                await unitOfWork.Admin.Add(admin);
+                unitOfWork.Save();
+                return Ok(admin);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }
