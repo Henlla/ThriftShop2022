@@ -11,5 +11,7 @@ namespace ThriftShop.DataAccess.IRepository
     public interface IProduct : IRepository<Product>
     {
         Task<Product> Update(Product product);
+
+        void HandlerJsonImageList(string JsonImageList);
     }
 }

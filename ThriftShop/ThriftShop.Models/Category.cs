@@ -9,6 +9,8 @@ namespace ThriftShop.Models
         public int CategoryId { get; set; }
         [Required(ErrorMessage = "Category Name is required")]
         public string? CategoryName { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime? CreatedDateTime { get; set; } = DateTime.Now;
     }
 }

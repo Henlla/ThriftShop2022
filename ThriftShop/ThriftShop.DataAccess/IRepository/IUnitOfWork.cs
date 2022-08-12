@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ThriftShop.DataAccess.IRepository;
 
-namespace BulkyBook.DataAccess.Repository.IRepository
+namespace ThriftShop.DataAccess.Repository.IRepository
 {
     public interface IUnitOfWork
     {
@@ -18,6 +18,7 @@ namespace BulkyBook.DataAccess.Repository.IRepository
         ICoupon Coupon { get; }
         IFeedback Feedback { get; }
         IOrder Order { get; }
+        IProductImage ProductImage { get; }
 
         void Save();
     }
