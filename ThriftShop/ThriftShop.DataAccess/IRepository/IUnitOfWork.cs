@@ -23,7 +23,7 @@ namespace ThriftShop.DataAccess.Repository.IRepository
         IColor Color { get; }
         IProductType ProductType { get; }
         IStock Stock { get; }
-        public IOrderDetails orderDetails { get; }
+        IOrderDetails orderDetails { get; }
 
         void Save();
     }
