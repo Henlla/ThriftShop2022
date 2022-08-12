@@ -996,3 +996,5 @@ C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client\obj
 C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client\obj\Debug\net6.0\ThriftShop.Client.pdb
 C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client\obj\Debug\net6.0\ThriftShop.Client.genruntimeconfig.cache
 C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client\obj\Debug\net6.0\ref\ThriftShop.Client.dll
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll
+C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
