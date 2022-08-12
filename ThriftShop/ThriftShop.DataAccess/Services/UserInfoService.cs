@@ -30,7 +30,6 @@ namespace ThriftShop.DataAccess.Services
             model.Address = user.Address;
             model.Email = user.Email;
             model.City = user.Email;
-            model.Avatar = user.Avatar;
             return model;
         }
     }

@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("ThriftShopClientContextConnection") ?? throw new InvalidOperationException("Connection string 'ThriftShopClientContextConnection' not found.");
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();

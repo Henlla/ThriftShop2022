@@ -17,10 +17,13 @@ namespace ThriftShop.Models
         [Required]
         public string? Name { get; set; }
         public bool Gender { get; set; }
+        [Required]
         public string? Phone { get; set; }
-        public string? Avatar { get; set; }
+        [Required]
         public string? Email { get; set; }
+        [Required]
         public string? Address { get; set; }
+        [Required]
         public string? City { get; set; }
         [Required]
         public string? State { get; set; }

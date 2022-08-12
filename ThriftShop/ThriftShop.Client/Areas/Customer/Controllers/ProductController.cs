@@ -7,17 +7,13 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
     [Area("Customer")]
     public class ProductController : Controller
     {
-        private string categoryUrl = "https://localhost:7061/api/Categories/";
+        private string productUrl = "https://localhost:7061/api/Products/";
         HttpClient httpClient = new HttpClient();
         
-        public ProductController()
-        {
-
-        }
         public IActionResult Index()
         {
-            var categories = this.GetCategories();
-            return View(categories);
+            var product = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl).Result);
+            return View(product);
         }
         
         public IActionResult Details(int productId)
@@ -34,12 +30,6 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         public IActionResult WishList()
         {
             return View();
-        }
-
-        public IEnumerable<Category> GetCategories()
-        {
-            var categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl+ "GetAll").Result);
-            return categories;
         }
     }
 }

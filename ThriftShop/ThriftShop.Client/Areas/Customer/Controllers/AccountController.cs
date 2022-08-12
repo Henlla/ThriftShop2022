@@ -95,13 +95,38 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         {
             var claim = (ClaimsIdentity)User.Identity;
             var id = int.Parse(claim.FindFirst(ClaimTypes.NameIdentifier).Value);
-            var model = JsonConvert.DeserializeObject<UserInfo>(client.GetStringAsync(urlUserInfo + id).Result);
+            var info = JsonConvert.DeserializeObject<UserInfo>(client.GetStringAsync(urlUserInfo + id).Result);
+            var account = JsonConvert.DeserializeObject<UserAccount>(client.GetStringAsync(urlUserAccount+ info.AccountID).Result);
+            AccountCollection model = new AccountCollection
+            {
+                UserInfo = info,
+                UserAccount = account
+            };
             return View(model);
         }
         [HttpPost]
         public IActionResult Setting(AccountCollection accountCollection)
         {
-            return View();
+            UserAccount account = new UserAccount
+            {
+                Password = accountCollection.UserAccount.Password,
+                AccountID = accountCollection.UserAccount.AccountID
+            };
+            UserInfo info = new UserInfo
+            {
+                Name = accountCollection.UserInfo.Name,
+                Gender = accountCollection.UserInfo.Gender,
+                Phone = accountCollection.UserInfo.Phone,
+                Email = accountCollection.UserInfo.Email,
+                Address = accountCollection.UserInfo.Address,
+                City = accountCollection.UserInfo.City,
+                PostalCode = accountCollection.UserInfo.PostalCode,
+                State = accountCollection.UserInfo.State,
+                UserId = accountCollection.UserInfo.UserId
+            };
+            var result = client.PutAsJsonAsync(urlUserAccount,account).Result;
+            var result2 = client.PutAsJsonAsync(urlUserInfo, info).Result;
+            return RedirectToAction("Setting");
         }
     }
 }
