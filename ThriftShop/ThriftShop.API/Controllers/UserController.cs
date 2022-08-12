@@ -15,7 +15,11 @@ namespace ThriftShop.API.Controllers
         {
             this.unitOfWork = service;
         }
-        
+        [HttpGet("id")]
+        public async Task<UserInfo> GetUserInfo(int id)
+        {
+            return await unitOfWork.UserInfo.GetFirstOrDefault(uf=>uf.AccountID == id);
+        }
         [HttpGet]
         public async Task<IEnumerable<UserInfo>> GetUserInfo()
         {
