@@ -1,7 +1,8 @@
-using BulkyBook.DataAccess.Repository.IRepository;
-using BulkyBook.DataAccess.Repository.Services;
+using ThriftShop.DataAccess.Repository.IRepository;
+using ThriftShop.DataAccess.Repository.Services;
 using Microsoft.EntityFrameworkCore;
 using ThriftShop.DataAccess.Data;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 
 var app = builder.Build();
 
