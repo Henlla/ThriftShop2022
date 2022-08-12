@@ -18,7 +18,7 @@ namespace ThriftShop.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<UserInfo>> GetUserInfo(int id)
         {
-            var model = await unitOfWork.UserInfo.GetFirstOrDefault(uf=>uf.AccountID.Equals(id));
+            var model = await unitOfWork.UserInfo.GetFirstOrDefault(uf => uf.AccountID.Equals(id));
             if (model != null)
             {
                 return Ok(model);
@@ -32,7 +32,7 @@ namespace ThriftShop.API.Controllers
         public async Task<ActionResult<IEnumerable<UserInfo>>> GetUserInfo()
         {
             var model = await unitOfWork.UserInfo.GetAll();
-            if(model != null)
+            if (model != null)
             {
                 return Ok(model);
             }
@@ -58,14 +58,6 @@ namespace ThriftShop.API.Controllers
             var model = await unitOfWork.UserInfo.GetFirstOrDefault(x => x.UserId.Equals(user.UserId));
             if (model != null)
             {
-                model.Name = user.Name;
-                model.Phone = user.Phone;
-                model.PostalCode = user.PostalCode;
-                model.State = user.State;
-                model.Email = user.Email;
-                model.Address = user.Address;
-                model.City = user.City;
-                model.Gender = user.Gender;
                 await unitOfWork.UserInfo.Update(model);
                 unitOfWork.Save();
                 return Ok(model);
