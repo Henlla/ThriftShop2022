@@ -5,6 +5,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
     [Area("Customer")]
     public class AccountController : Controller
     {
+        [Route("Login")]
         public IActionResult Index()
         {
             return View();
