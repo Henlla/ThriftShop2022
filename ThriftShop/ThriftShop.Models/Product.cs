@@ -15,35 +15,41 @@ namespace ThriftShop.Models
         [Required]
         public string? Title { get; set; }
         public string? Brand { get; set; }
+        public string? SexType { get; set; }
         public string? Description { get; set; }
         [Required]
         [Range(1, 999999)]
         public double Price { get; set; }
+
+        [Required]
+        [Range(1, 100)]
+        public int SalePercent { get; set; }
+
+        [NotMapped]
+        public double FinalPrice { get { return (Price*SalePercent)/100; } }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime CreatedDate { get; set; } // ngay tao san pham
+
         [Required]
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         [ValidateNever]
         public Category? Category { get; set; }
-        public int? ColorId { get; set; }
-        [ForeignKey("ColorId")]
+
         [ValidateNever]
-        public Color Color { get; set; }
-        public int? SizeId { get; set; }
-        [ForeignKey("SizeId")]
+        public IEnumerable<Size> Size { get; set; }
+
         [ValidateNever]
-        public Size Size { get; set; }
-        public int? ProductTypeId { get; set; } // nam nu, unisex
-        [ForeignKey("ProductTypeId")]
-        [ValidateNever]
-        public ProductType ProductType { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime CreatedDate { get; set; } // ngay tao san pham
+        public IEnumerable<Color> Color { get; set; }
+
         [ValidateNever]
         public IEnumerable<ProductImage> ProductImage { get; set; }
-        [NotMapped]
+
         [ValidateNever]
+        [NotMapped]
         public string JsonImageList { get; set; }
     }
 }

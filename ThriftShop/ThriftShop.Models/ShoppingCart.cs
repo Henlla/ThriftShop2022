@@ -17,13 +17,13 @@ namespace ThriftShop.Models
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         [ValidateNever]
-        public Product Product { get; }
+        public Product Product { get; set; }
         [Range(1, 1000, ErrorMessage = "Please enter a value between 1 and 1000")]
         public int Count { get; set; }
         public int? UserId { get; set; }
         [ForeignKey("UserId")]
         [ValidateNever]
-        public UserInfo UserInfo { get; }
+        public UserInfo UserInfo { get; set; }
         [NotMapped]
         public double Amount { get { return Product.Price * Count; } }
     }
