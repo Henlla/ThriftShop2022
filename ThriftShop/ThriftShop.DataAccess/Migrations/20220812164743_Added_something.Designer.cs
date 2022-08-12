@@ -12,8 +12,8 @@ using ThriftShop.DataAccess.Data;
 namespace ThriftShop.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220812141445_RefreshDB1")]
-    partial class RefreshDB1
+    [Migration("20220812164743_Added_something")]
+    partial class Added_something
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -232,6 +232,8 @@ namespace ThriftShop.DataAccess.Migrations
 
                     b.HasIndex("OrderId");
 
+                    b.HasIndex("ProductId");
+
                     b.ToTable("OrderDetails");
                 });
 
@@ -318,6 +320,10 @@ namespace ThriftShop.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
                     b.ToTable("ShoppingCarts");
                 });
 
@@ -391,15 +397,15 @@ namespace ThriftShop.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Avatar")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Gender")
@@ -410,6 +416,7 @@ namespace ThriftShop.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PostalCode")
@@ -475,6 +482,14 @@ namespace ThriftShop.DataAccess.Migrations
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("ThriftShop.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.Product", b =>
@@ -493,6 +508,23 @@ namespace ThriftShop.DataAccess.Migrations
                     b.HasOne("ThriftShop.Models.Product", null)
                         .WithMany("ProductImage")
                         .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("ThriftShop.Models.ShoppingCart", b =>
+                {
+                    b.HasOne("ThriftShop.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ThriftShop.Models.UserInfo", "UserInfo")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Product");
+
+                    b.Navigation("UserInfo");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.Size", b =>
