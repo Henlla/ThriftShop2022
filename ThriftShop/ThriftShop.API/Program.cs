@@ -1,5 +1,5 @@
-using BulkyBook.DataAccess.Repository.IRepository;
-using BulkyBook.DataAccess.Repository.Services;
+using ThriftShop.DataAccess.Repository.IRepository;
+using ThriftShop.DataAccess.Repository.Services;
 using Microsoft.EntityFrameworkCore;
 using ThriftShop.API;
 using ThriftShop.DataAccess.Data;
