@@ -53,12 +53,11 @@ namespace ThriftShop.API.Controllers
         [HttpPut]
         public async Task<ActionResult<UserAccount>> Update(UserAccount user)
         {
-            var model = await unitOfWork.UserAccount.GetFirstOrDefault(x => x.AccountID.Equals(user.AccountID));
-            if (model != null)
+            if (user != null)
             {
-                await unitOfWork.UserAccount.Update(model);
+                await unitOfWork.UserAccount.Update(user);
                 unitOfWork.Save();
-                return Ok(model);
+                return Ok(user);
             }
             else
             {
