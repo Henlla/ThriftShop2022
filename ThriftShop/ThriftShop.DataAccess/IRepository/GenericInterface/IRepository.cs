@@ -14,5 +14,6 @@ namespace ThriftShop.DataAccess.Repository.IRepository.GenericInterface
         Task<T> Add(T entity);
         void Remove(T entity);
         void RemoveRange(IEnumerable<T> entities);
+        public Task<List<T>> AddRange(List<T> entities);
     }
 }
