@@ -7,12 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+    <None Include="wwwroot\assets\scss\utilities\_color.scss" />
+    <None Include="wwwroot\assets\scss\utilities\_helper.scss" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ThriftShop.Models\ThriftShop.Models.csproj" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+    <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="20.2.0.43" />
   </ItemGroup>
 
   <ItemGroup>

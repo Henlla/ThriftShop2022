@@ -33,6 +33,6 @@ namespace ThriftShop.Models
         public int AccountID { get; set; }
         [ForeignKey("AccountID")]
         [ValidateNever]
-        public UserAccount? UserAccount { get; set; }
+        public UserAccount? UserAccount { get; }
     }
 }
