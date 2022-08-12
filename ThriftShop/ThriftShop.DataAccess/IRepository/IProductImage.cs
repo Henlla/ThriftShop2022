@@ -8,10 +8,9 @@ using ThriftShop.Models;
 
 namespace ThriftShop.DataAccess.IRepository
 {
-    public interface IProduct : IRepository<Product>
+    public interface IProductImage :IRepository<ProductImage>
     {
-        Task<Product> Update(Product product);
+        Task<ProductImage> Update(ProductImage obj);
 
-        void HandlerJsonImageList(string JsonImageList);
     }
 }
