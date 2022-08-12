@@ -23,6 +23,7 @@ namespace ThriftShop.DataAccess.Data
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
 
 
     }
