@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,11 @@ namespace ThriftShop.DataAccess.Services
         {
             this.db = db;
         }
-        public Task<UserAccount> Update(UserAccount entity)
+        public async Task<UserAccount> Update(UserAccount entity)
         {
-            throw new NotImplementedException();
+            var model = await db.UserAccounts.SingleOrDefaultAsync(x=>x.AccountID.Equals(entity.AccountID));
+            model.Password = entity.Password;
+            return model;
         }
     }
 }

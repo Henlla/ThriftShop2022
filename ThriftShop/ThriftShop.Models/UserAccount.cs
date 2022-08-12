@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,5 +18,9 @@ namespace ThriftShop.Models
         public string? Username { get; set; }
         [Required]
         public string? Password { get; set; }
+        [NotMapped]
+        [ValidateNever]
+        [Compare("Password",ErrorMessage ="Password not same")]
+        public string? ConfirmPass { get; set; }
     }
 }
