@@ -27,7 +27,11 @@ namespace ThriftShop.DataAccess.Repository.Services
             Feedback = new FeedbackService(db);
             Order = new OrderService(db);
             Stock = new StockService(db);
+            Size = new SizeService(db);
+            Color = new ColorService(db);
+            ProductType = new ProductTypeService(db);
             ProductImage = new ProductImageService(db);
+
         }
 
         public IProduct Product { get; private set; }
@@ -40,6 +44,9 @@ namespace ThriftShop.DataAccess.Repository.Services
          public IFeedback Feedback { get; private set; }
         public IOrder Order { get; private set; }
         public IStock Stock { get; private set; }
+        public IColor Color { get; private set; }
+        public ISize Size { get; private set; }
+        public IProductType ProductType { get; private set; }
         public IProductImage ProductImage { get; private set; }
         public void Save()
         {
