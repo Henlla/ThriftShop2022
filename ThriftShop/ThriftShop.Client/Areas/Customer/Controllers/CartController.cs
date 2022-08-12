@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ThriftShop.Client.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class CartController : Controller
     {
         public IActionResult Index()
