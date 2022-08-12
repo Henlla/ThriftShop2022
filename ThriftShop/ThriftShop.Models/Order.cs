@@ -17,7 +17,7 @@ namespace ThriftShop.Models
         public int? UserId { get; set; }
         [ForeignKey("UserId")]
         [ValidateNever]
-        public UserInfo UserInfo { get; } 
+        public UserInfo UserInfo { get; set; } 
         [Required]
         public DateTime OrderDate { get; set; }
         public double OrderTotal { get; set; }
@@ -26,7 +26,7 @@ namespace ThriftShop.Models
         public int CouponId { get; set; }
         [ForeignKey("CouponId")]
         [ValidateNever]
-        public Coupon? Coupon { get;  } 
+        public Coupon? Coupon { get; set; } 
 
         //User
         [Required]
