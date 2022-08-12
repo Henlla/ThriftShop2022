@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Security.Claims;
 using ThriftShop.Client.Areas.Customer.Models.AccountModel;
 using ThriftShop.Models;
 
@@ -11,18 +15,29 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         private HttpClient client = new HttpClient();
         string urlUserAccount = "https://localhost:7061/api/UserAcccount/";
         string urlUserInfo = "https://localhost:7061/api/UserInfo/";
-        [HttpGet]
+
+        public async Task<IActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+        [HttpGet()]
         public IActionResult LoginUser()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult LoginUser(UserAccount userAccount)
+        public async Task<IActionResult> LoginUserAsync(UserAccount userAccount)
         {
             try
             {
                 var model = JsonConvert.DeserializeObject<UserAccount>(client.GetStringAsync(urlUserAccount + userAccount.Username + "/" + userAccount.Password).Result);
-                HttpContext.Session.SetString("userId", userAccount.AccountID.ToString());
+                var claim = new List<Claim>();
+                claim.Add(new Claim(ClaimTypes.Name, userAccount.Username));
+                claim.Add(new Claim(ClaimTypes.NameIdentifier, userAccount.Username));
+                var claimIdentify = new ClaimsIdentity(claim, CookieAuthenticationDefaults.AuthenticationScheme);
+                var claimPrincipal = new ClaimsPrincipal(claimIdentify);
+                await HttpContext.SignInAsync(claimPrincipal);
                 return RedirectToAction("Index", "Home");
             }
             catch (Exception e)
@@ -32,6 +47,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             }
         }
         [HttpGet]
+        [Authorize]
         public IActionResult RegisterUser()
         {
             return View();

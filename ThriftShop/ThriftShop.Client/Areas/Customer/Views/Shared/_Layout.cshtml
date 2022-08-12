@@ -78,13 +78,13 @@
                                         <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut">Chekout</></a>
                                     </li>
                                     <li>
-                                        @if (Context.Session.GetString("userId") == null)
+                                        @if (User.Identity.IsAuthenticated)
                                         {
-                                            <a asp-area="Customer" asp-controller="Account" asp-action="LoginUser">Login</a>
+                                          <a asp-area="Customer" asp-controller="Account" asp-action="LogOut">@User.Identity.Name | Logout</a>
                                         }
                                         else
                                         {
-                                            <a asp-area="Customer" asp-controller="Account" asp-action="LoginUser">Logout</a>
+                                            <a asp-area="Customer" asp-controller="Account" asp-action="LoginUser">Login</a>
                                         }
                                     </li>
                                 </ul>
