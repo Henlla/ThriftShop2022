@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using ThriftShop.Client.Areas.Customer.ViewModels;
 using ThriftShop.Models;
 
 namespace ThriftShop.Client.Areas.Customer.Controllers
@@ -8,6 +9,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
     public class ProductController : Controller
     {
         private string categoryUrl = "https://localhost:7061/api/Categories/";
+        private string productUrl = "https://localhost:7061/api/Products/";
         HttpClient httpClient = new HttpClient();
         
         public ProductController()
@@ -16,8 +18,12 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         }
         public IActionResult Index()
         {
-            var categories = this.GetCategories();
-            return View(categories);
+            ProductsVM productsVM = new ProductsVM
+            {
+                Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl).Result),
+                Categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl).Result)
+            };
+            return View(productsVM);
         }
         
         public IActionResult Details(int productId)
@@ -34,12 +40,6 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         public IActionResult WishList()
         {
             return View();
-        }
-
-        public IEnumerable<Category> GetCategories()
-        {
-            var categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl+ "GetAll").Result);
-            return categories;
         }
     }
 }
