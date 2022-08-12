@@ -17,7 +17,7 @@ namespace ThriftShop.Models
         [ForeignKey("UserId")]
         public int UserId { get; set; }
         [ValidateNever]
-        public UserInfo UserInfo { get; set; }
+        public UserInfo UserInfo { get;  }
         [ForeignKey("ProductId")]
         public int ProductId { get; set; }
         public string? Comment { get; set; }

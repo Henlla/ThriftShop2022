@@ -15,6 +15,38 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Trung Le\OneDrive\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Client
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/Table.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxUYWJsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/upLoad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVx1cExvYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/CreateAcc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cQ3JlYXRlQWNjLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/Forgot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cRm9yZ290LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Shared/404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXDQwNC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

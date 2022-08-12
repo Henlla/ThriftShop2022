@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
+    <None Include="wwwroot\assets\scss\utilities\_color.scss" />
+    <None Include="wwwroot\assets\scss\utilities\_helper.scss" />
   </ItemGroup>
 
   <ItemGroup>
