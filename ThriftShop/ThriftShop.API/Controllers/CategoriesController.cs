@@ -34,8 +34,8 @@ namespace ThriftShop.API.Controllers
             return BadRequest();
         }
 
-        [HttpPost("{Size}")]
-        public async Task<ActionResult<Category>> AddCategory(Category category,string Size)
+        [HttpPost]
+        public async Task<ActionResult<Category>> AddCategory(Category category)
         {
             var _cate = await unitOfWork.Category.GetFirstOrDefault(x => x.CategoryId == category.CategoryId);
             if(_cate == null)
