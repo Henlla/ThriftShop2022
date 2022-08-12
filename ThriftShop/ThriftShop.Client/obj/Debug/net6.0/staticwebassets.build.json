@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "koYRciSji65f+Epmn3i2v963SMGyw924IlFxh6cDvW4=",
+  "Hash": "BNvuKq+7RGO8lRJU6G3WxMvCt5xGXS6sdOHeNvnpSpU=",
   "Source": "ThriftShop.Client",
   "BasePath": "_content/ThriftShop.Client",
   "Mode": "Default",
@@ -35528,6 +35528,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\Uploads\\Images\\Home\\1.JPG",
+      "SourceId": "ThriftShop.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\",
+      "BasePath": "_content/ThriftShop.Client",
+      "RelativePath": "Uploads/Images/Home/1.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Images\\Home\\1.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\Uploads\\Images\\Home\\2.jpg",
+      "SourceId": "ThriftShop.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\",
+      "BasePath": "_content/ThriftShop.Client",
+      "RelativePath": "Uploads/Images/Home/2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Images\\Home\\2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\Uploads\\Images\\Home\\3.jpg",
+      "SourceId": "ThriftShop.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hoa\\OneDrive\\Máy tính\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\",
+      "BasePath": "_content/ThriftShop.Client",
+      "RelativePath": "Uploads/Images/Home/3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Images\\Home\\3.jpg"
     }
   ]
 }
