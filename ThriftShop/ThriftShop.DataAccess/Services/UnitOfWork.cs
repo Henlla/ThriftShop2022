@@ -31,7 +31,7 @@ namespace ThriftShop.DataAccess.Repository.Services
             Color = new ColorService(db);
             ProductType = new ProductTypeService(db);
             ProductImage = new ProductImageService(db);
-
+            orderDetails = new OrderDetailsServices(db);
         }
 
         public IProduct Product { get; private set; }
@@ -48,6 +48,9 @@ namespace ThriftShop.DataAccess.Repository.Services
         public ISize Size { get; private set; }
         public IProductType ProductType { get; private set; }
         public IProductImage ProductImage { get; private set; }
+
+        public IOrderDetails orderDetails { get; private set; }
+
         public void Save()
         {
             _db.SaveChanges();

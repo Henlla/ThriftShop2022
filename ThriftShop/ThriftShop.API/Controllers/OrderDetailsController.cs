@@ -19,15 +19,17 @@ namespace ThriftShop.API.Controllers
 
 
         [HttpGet("{orderId}")]
-        public Task<IEnumerable<OrderDetail>> GetOrderDetails(int orderId)
+        public async Task<IEnumerable<OrderDetail>> GetOrderDetails(int orderId)
         {
-            return _unitOfWord.orderDetails.GetAll(od=>od.OrderId.Equals(orderId),includeProperties: "Product");
+        
+            var model= await  _unitOfWord.orderDetails.GetAll(od=>od.OrderId.Equals(orderId), includeProperties: "Product");
+            return model;       
         }
         [HttpPost]
         public async Task<IEnumerable<OrderDetail>> PostOrderDetail(Order obj)
         {
           
-          IEnumerable<ShoppingCart> shoppingCartList = await _unitOfWord.ShoppingCart.GetAll(sp => sp.UserId.Equals(obj.UserId),includeProperties: "Product");
+          IEnumerable<ShoppingCart> shoppingCartList = await _unitOfWord.ShoppingCart.GetAll(sp => sp.UserId.Equals(obj.UserId), includeProperties: "Product");
             if (shoppingCartList != null)
             {
                 List<OrderDetail> orderDetaiList = new List<OrderDetail>();
