@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="20.2.0.43" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ThriftShop.Models\ThriftShop.Models.csproj" />
   </ItemGroup>
 

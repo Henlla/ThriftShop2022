@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ThriftShop.Client/1.0.0": {
         "dependencies": {
+          "Syncfusion.EJ2.AspNet.Core": "20.2.0.43",
           "ThriftShop.Models": "1.0.0"
         },
         "runtime": {
@@ -1428,6 +1429,26 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "Syncfusion.EJ2.AspNet.Core/20.2.0.43": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Syncfusion.Licensing": "20.2.0.43"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Syncfusion.EJ2.dll": {
+            "assemblyVersion": "20.2.0.43",
+            "fileVersion": "20.2.0.43"
+          }
+        }
+      },
+      "Syncfusion.Licensing/20.2.0.43": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "20.2.0.43",
+            "fileVersion": "20.2.0.43"
+          }
+        }
+      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -2906,6 +2927,20 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
+    },
+    "Syncfusion.EJ2.AspNet.Core/20.2.0.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EZwhPnHbdotrJG3WVl9lW2Vmx4X0s/Ad3CUotn5WZO8/+xLnmWpBSmUmk+/tT7nT05GzuHkKhPZxfost1xS4ug==",
+      "path": "syncfusion.ej2.aspnet.core/20.2.0.43",
+      "hashPath": "syncfusion.ej2.aspnet.core.20.2.0.43.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/20.2.0.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6gcTsltYyA9EK7/FhIESvYAA1O9PrJQrXK1vyx3b0dbGa5oii22IBc4rmFIZvomrK7EFQDpkGpEtCQfUw+PMkA==",
+      "path": "syncfusion.licensing/20.2.0.43",
+      "hashPath": "syncfusion.licensing.20.2.0.43.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

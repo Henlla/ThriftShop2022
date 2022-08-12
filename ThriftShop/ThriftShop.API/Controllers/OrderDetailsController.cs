@@ -39,12 +39,15 @@ namespace ThriftShop.API.Controllers
                     orderDetail.Count = item.Count;
                     orderDetail.Price = item.Product.Price;
                     orderDetaiList.Add(orderDetail);
+
                 }
                 await _unitOfWord.orderDetails.AddRange(orderDetaiList);
+                _unitOfWord.ShoppingCart.RemoveRange(shoppingCartList);
                 _unitOfWord.Save();
                 return orderDetaiList;
             }
             else {
+
                 return null;
             
             }
