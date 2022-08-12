@@ -11,21 +11,22 @@ using ThriftShop.Models;
 
 namespace ThriftShop.DataAccess.Services
 {
-    public class ProductTypeService : Repository<ProductType>, IProductType
+    public class Size_ProductService : Repository<Size_Product>, ISize_Product
     {
-        private readonly ApplicationDbContext _db;
-        public ProductTypeService(ApplicationDbContext db):base(db)
+       
+    private readonly ApplicationDbContext _db;
+        public Size_ProductService(ApplicationDbContext db):base(db)
         {
             _db = db;
         }
 
-       
-        public async Task<ProductType> Update(ProductType obj)
+        public async Task<Size_Product> Update(Size_Product obj)
         {
-            var objFromDb = await _db.ProductTypes.FirstOrDefaultAsync(u => u.ProductTypeId == obj.ProductTypeId);
+            var objFromDb = await _db.Size_Products.FirstOrDefaultAsync(u => u.SizeId == obj.SizeId && u.ProductId == obj.ProductId);
             if(objFromDb != null)
             {
-                objFromDb.Type = obj.Type;
+                objFromDb.ProductId = obj.ProductId;
+                objFromDb.SizeId = obj.SizeId;
             }
             return obj;
         }

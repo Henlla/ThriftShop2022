@@ -8,9 +8,9 @@ using ThriftShop.Models;
 
 namespace ThriftShop.DataAccess.IRepository
 {
-    public interface IProductType : IRepository<ProductType>
+    public interface IColor_Product : IRepository<Color_Product>
     {
-        Task<ProductType> Update(ProductType obj);
+        Task<Color_Product> Update(Color_Product obj);
 
     }
 }

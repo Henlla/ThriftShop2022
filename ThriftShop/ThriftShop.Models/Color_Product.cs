@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,12 +8,16 @@ using System.Threading.Tasks;
 
 namespace ThriftShop.Models
 {
-    public class Color
+    public class Color_Product
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ColorId { get; set; }
-        [Required]
-        public string? ColorType { get; set; }
+        [Key]
+        public int? ProductId { get; set; }
+
+        [ForeignKey("ColorId")]
+        public Color Color { get; set; }
+        [ForeignKey("ProductId")]
+        public Product Product { get; set; }
     }
 }

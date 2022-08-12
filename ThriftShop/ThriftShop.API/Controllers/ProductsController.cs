@@ -16,7 +16,7 @@ namespace ThriftShop.API.Controllers
         }
 
         //Find All
-        [HttpGet("{keyword?}")]
+        [HttpGet("GetAll/{keyword?}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetAll(string? keyword = null)
         {
             if (keyword != null)
@@ -105,19 +105,55 @@ namespace ThriftShop.API.Controllers
             return Ok(await unitOfWork.Product.GetAll(x => x.Price >= fromPrice && x.Price <= toPrice, includeProperties: "Category,Size,Color,ProductType,ProductImage"));
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Product>> AddProduct(Product product)
+        
+
+        [HttpPost("{sizeIdList}/{colorIdList}")]
+        public async Task<ActionResult<Product>> AddProduct(Product product, string sizeIdList,string colorIdList)
         {
             var _product = await unitOfWork.Product.GetFirstOrDefault(x => x.ProductId == product.ProductId);
             if (_product == null)
             {
-                //product.ProductImage = null;
                 await unitOfWork.Product.Add(product);
-                unitOfWork.Save();
+                unitOfWork.Save(); 
             }
             else
             {
                 return BadRequest();
+            }
+            
+            if (!string.IsNullOrEmpty(sizeIdList) && !string.IsNullOrEmpty(colorIdList))
+            {
+                var product_list = await unitOfWork.Product.GetAll();
+                var lastedProductInDB = product_list.OrderByDescending(x=>x.ProductId).First();
+                if(lastedProductInDB != null)
+                {
+                    var _sizeIdList = sizeIdList.ToList();
+                    var _colorIdList = colorIdList.ToList();
+
+                    foreach (var item in _sizeIdList)
+                    {
+                        Size_Product size_Product = new Size_Product()
+                        {
+                            SizeId = item,
+                            ProductId = lastedProductInDB.ProductId,
+                        };
+
+                        await unitOfWork.Size_Product.Add(size_Product);
+                    }
+                    
+
+                    foreach (var item in _colorIdList)
+                    {
+                        Color_Product color_Product = new Color_Product()
+                        {
+                            ColorId = item,
+                            ProductId = lastedProductInDB.ProductId,
+                        };
+                        await unitOfWork.Color_Product.Add(color_Product);
+                    }
+
+                    unitOfWork.Save();
+                }
             }
 
             if (!string.IsNullOrEmpty(product.JsonImageList))
