@@ -27,6 +27,8 @@ namespace ThriftShop.DataAccess.Repository.Services
             Feedback = new FeedbackService(db);
             Order = new OrderService(db);
             ProductImage = new ProductImageService(db);
+            orderDetails = new OrderDetailsServices(db);
+
         }
 
         public IProduct Product { get; private set; }
@@ -39,7 +41,11 @@ namespace ThriftShop.DataAccess.Repository.Services
          public IFeedback Feedback { get; private set; }
         public IOrder Order { get; private set; }
         public IProductImage ProductImage { get; private set; }
-        public void Save()
+
+
+        public IOrderDetails orderDetails { get; private set; }
+
+    public void Save()
         {
             _db.SaveChanges();
         }

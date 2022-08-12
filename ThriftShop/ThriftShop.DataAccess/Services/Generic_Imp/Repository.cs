@@ -24,6 +24,13 @@ namespace ThriftShop.DataAccess.Repository.Services.Generic_Imp
             await dbSet.AddAsync(entity);
             return entity;
         }
+        //add range
+        public async Task<List<T>> AddRange(List<T> entities)
+        {
+            await dbSet.AddRangeAsync(entities);
+            return entities;
+        }
+
         //includeProp - "Category,CoverType"
         public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter=null,string? includeProperties = null)
         {
