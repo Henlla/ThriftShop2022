@@ -16,7 +16,7 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
             return View();
         }
 
-        public IActionResult upLoad()
+        public IActionResult CreateProduct()
         {
             return View();
         }
