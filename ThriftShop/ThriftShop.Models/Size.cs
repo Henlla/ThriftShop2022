@@ -16,7 +16,5 @@ namespace ThriftShop.Models
         public int SizeId { get; set; }
         [Required]
         public string? SizeType { get; set; }
-
-
     }
 }
