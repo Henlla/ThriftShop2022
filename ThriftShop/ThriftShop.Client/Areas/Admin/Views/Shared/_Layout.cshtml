@@ -100,6 +100,8 @@
                 Addons
             </div>
 
+
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -107,10 +109,13 @@
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
                 </a>
+                @*Component*@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" asp-area="Admin" asp-action="CreateProduct" asp-controller="Home">Create</a>
+                        <a class="collapse-item" asp-area="Admin" asp-action="ViewProduct" asp-controller="Home">Products</a>
+                        <a class="collapse-item" asp-area="Admin" asp-action="ViewCategory" asp-controller="Home">Categories</a>
+                        <a class="collapse-item" asp-area="Admin" asp-action="ViewSize" asp-controller="Home">Sizes</a>
 
                     </div>
                 </div>
@@ -424,6 +429,8 @@
     <!-- Page level custom scripts -->
     <script src="~/assets/js/demo/chart-area-demo.js"></script>
     <script src="~/assets/js/demo/chart-pie-demo.js"></script>
+    <script src="https://cdn.tiny.cloud/1/627hpr1xn6khfuitlb49va64a3fdoeq99m9lumt0lcpzyrv6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <ejs-scripts></ejs-scripts>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
