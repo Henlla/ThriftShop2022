@@ -4,6 +4,7 @@ var connectionString = builder.Configuration.GetConnectionString("ThriftShopClie
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession();
 //builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 var app = builder.Build();
 
@@ -20,7 +21,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();;
-
+app.UseSession();
 app.UseAuthorization();
 
 app.MapControllerRoute(

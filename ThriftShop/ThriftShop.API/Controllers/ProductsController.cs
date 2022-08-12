@@ -1,4 +1,4 @@
-﻿using BulkyBook.DataAccess.Repository.IRepository;
+﻿using ThriftShop.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ThriftShop.Models;

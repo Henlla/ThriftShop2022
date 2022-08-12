@@ -10,13 +10,6 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             return View();
         }
 
-
-
-
-
-
-
-
         public IActionResult AboutUs()
         {
             return View();

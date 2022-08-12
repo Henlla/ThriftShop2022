@@ -1,4 +1,4 @@
-﻿using BulkyBook.DataAccess.Repository.IRepository;
+﻿using ThriftShop.DataAccess.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using ThriftShop.DataAccess.Data;
 using ThriftShop.DataAccess.IRepository;
 using ThriftShop.DataAccess.Services;
 
-namespace BulkyBook.DataAccess.Repository.Services
+namespace ThriftShop.DataAccess.Repository.Services
 {
     public class UnitOfWork : IUnitOfWork
     {

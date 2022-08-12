@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ThriftShop.DataAccess.IRepository;
 
-namespace BulkyBook.DataAccess.Repository.IRepository
+namespace ThriftShop.DataAccess.Repository.IRepository
 {
     public interface IUnitOfWork
     {
