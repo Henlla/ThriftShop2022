@@ -249,8 +249,9 @@
                                                         <i class="ion-android-menu"></i>
                                                     </a>
                                                 </li>
+                                                <!--cart-->
                                                 <li class="minicart-wrap">
-                                                    <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                                    <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut" class="minicart-btn toolbar-btn">
                                                         <div class="minicart-count_area">
                                                             <span class="item-count">03</span>
                                                             <i class="ion-bag"></i>
@@ -325,11 +326,15 @@
                         <span>Subtotal</span>
                         <span class="ammount">$462.4‬0</span>
                     </div>
+
+                   @*khang check out*@
                     <div class="minicart-btn_area">
-                        <a href="cart.html" class="kenne-btn kenne-btn_fullwidth">Minicart</a>
+                        <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="kenne-btn kenne-btn_fullwidth">Minicart</a>
                     </div>
                     <div class="minicart-btn_area">
-                        <a href="checkout.html" class="kenne-btn kenne-btn_fullwidth">Checkout</a>
+                        <a asp-area="Customer" asp-controller="Cart" asp-action="Test" class="kenne-btn kenne-btn_fullwidth">Checkout</a>
+                    
+                    <p>Khang</p>
                     </div>
                 </div>
             </div>
@@ -542,12 +547,12 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="cart.html">
+                                            <a asp-area="Customer"  asp-controller="Cart" asp-action="CheckOut">
                                                 <span class="mm-text">Cart</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="checkout.html">
+                                            <a asp-area="Customer"  asp-controller="Cart" asp-action="CheckOut">
                                                 <span class="mm-text">Checkout</span>
                                             </a>
                                         </li>
