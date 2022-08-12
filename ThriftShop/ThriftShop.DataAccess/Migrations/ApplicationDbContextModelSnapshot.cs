@@ -364,7 +364,7 @@ namespace ThriftShop.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockId"), 1L, 1);
 
-                    b.Property<int?>("Count")
+                    b.Property<int>("Count")
                         .HasColumnType("int");
 
                     b.Property<int?>("ProductId")

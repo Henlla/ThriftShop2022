@@ -26,6 +26,7 @@ namespace ThriftShop.DataAccess.Repository.Services
             Coupon = new CouponService(db);
             Feedback = new FeedbackService(db);
             Order = new OrderService(db);
+            Stock = new StockService(db);
             ProductImage = new ProductImageService(db);
         }
 
@@ -38,6 +39,7 @@ namespace ThriftShop.DataAccess.Repository.Services
          public ICoupon Coupon { get; private set; }
          public IFeedback Feedback { get; private set; }
         public IOrder Order { get; private set; }
+        public IStock Stock { get; private set; }
         public IProductImage ProductImage { get; private set; }
         public void Save()
         {
