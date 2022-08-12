@@ -50,13 +50,9 @@ namespace ThriftShop.API.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateCategory(Category category)
         {
-          
                 await unitOfWork.Category.Update(category);
                 unitOfWork.Save();
                 return Ok(category);
-            
-            return BadRequest();
-            
         }
 
         [HttpDelete]

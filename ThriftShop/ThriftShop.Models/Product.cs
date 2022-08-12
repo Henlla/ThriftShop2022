@@ -40,7 +40,10 @@ namespace ThriftShop.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreatedDate { get; set; } // ngay tao san pham
+        [ValidateNever]
         public IEnumerable<ProductImage> ProductImage { get; set; }
-
+        [NotMapped]
+        [ValidateNever]
+        public string JsonImageList { get; set; }
     }
 }

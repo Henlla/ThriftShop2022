@@ -18,6 +18,7 @@ namespace ThriftShop.Models
         public bool? IsMainImage { get; set; }
         [ForeignKey("ProductId")]
         public int? ProductId { get; set; }
+
       
       
 
