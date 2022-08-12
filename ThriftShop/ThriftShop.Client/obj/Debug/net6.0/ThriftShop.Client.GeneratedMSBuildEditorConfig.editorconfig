@@ -15,16 +15,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/Table.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxUYWJsZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/upLoad.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVx1cExvYWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/CreateAcc.cshtml]
