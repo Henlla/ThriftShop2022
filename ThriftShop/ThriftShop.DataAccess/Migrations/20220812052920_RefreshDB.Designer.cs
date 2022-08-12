@@ -12,8 +12,8 @@ using ThriftShop.DataAccess.Data;
 namespace ThriftShop.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220811104915_ModelToDb")]
-    partial class ModelToDb
+    [Migration("20220812052920_RefreshDB")]
+    partial class RefreshDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -230,6 +230,9 @@ namespace ThriftShop.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
+                    b.Property<string>("Brand")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -281,6 +284,9 @@ namespace ThriftShop.DataAccess.Migrations
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsMainImage")
+                        .HasColumnType("bit");
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
@@ -473,8 +479,8 @@ namespace ThriftShop.DataAccess.Migrations
 
             modelBuilder.Entity("ThriftShop.Models.OrderDetail", b =>
                 {
-                    b.HasOne("ThriftShop.Models.Order", "OrderHeader")
-                        .WithMany()
+                    b.HasOne("ThriftShop.Models.Order", null)
+                        .WithMany("orderDetails")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -484,8 +490,6 @@ namespace ThriftShop.DataAccess.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("OrderHeader");
 
                     b.Navigation("Product");
                 });
@@ -527,11 +531,9 @@ namespace ThriftShop.DataAccess.Migrations
 
             modelBuilder.Entity("ThriftShop.Models.ProductImage", b =>
                 {
-                    b.HasOne("ThriftShop.Models.Product", "Product")
-                        .WithMany()
+                    b.HasOne("ThriftShop.Models.Product", null)
+                        .WithMany("ProductImage")
                         .HasForeignKey("ProductId");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.ShoppingCart", b =>
@@ -571,6 +573,16 @@ namespace ThriftShop.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("UserAccount");
+                });
+
+            modelBuilder.Entity("ThriftShop.Models.Order", b =>
+                {
+                    b.Navigation("orderDetails");
+                });
+
+            modelBuilder.Entity("ThriftShop.Models.Product", b =>
+                {
+                    b.Navigation("ProductImage");
                 });
 #pragma warning restore 612, 618
         }
