@@ -33,9 +33,9 @@ namespace ThriftShop.DataAccess.Services
                 _product.Title = product.Title;
                 _product.Description = product.Description;
                 _product.CategoryId = product.CategoryId;
-                _product.Color = product.Color;
-                _product.Size = product.Size;
-                _product.ProductType = product.ProductType;
+                _product.Price = product.Price;
+                _product.SalePercent = product.SalePercent;
+                _product.SexType = product.SexType;
                 return product;
             }
             else

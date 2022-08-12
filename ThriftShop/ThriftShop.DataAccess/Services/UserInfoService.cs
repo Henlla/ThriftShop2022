@@ -29,7 +29,8 @@ namespace ThriftShop.DataAccess.Services
             model.State = user.State;
             model.Address = user.Address;
             model.Email = user.Email;
-            model.City = user.Email;
+            model.City = user.City;
+            model.Gender = user.Gender;
             return model;
         }
     }

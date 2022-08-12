@@ -6,6 +6,7 @@ using ThriftShop.Models;
 
 namespace ThriftShop.Client.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class CartController : Controller
     {
         private string ShopingCartUrl = "https://localhost:44320/api/ShoppingCart/";

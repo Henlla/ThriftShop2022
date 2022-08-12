@@ -12,8 +12,8 @@ using ThriftShop.DataAccess.Data;
 namespace ThriftShop.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220812091952_ModelToDb")]
-    partial class ModelToDb
+    [Migration("20220812164743_Added_something")]
+    partial class Added_something
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -77,9 +77,29 @@ namespace ThriftShop.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
                     b.HasKey("ColorId");
 
+                    b.HasIndex("ProductId");
+
                     b.ToTable("Colors");
+                });
+
+            modelBuilder.Entity("ThriftShop.Models.Color_Product", b =>
+                {
+                    b.Property<int>("ColorId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ColorId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Color_Products");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.Coupon", b =>
@@ -127,12 +147,7 @@ namespace ThriftShop.DataAccess.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserInfoUserId")
-                        .HasColumnType("int");
-
                     b.HasKey("FeedbackId");
-
-                    b.HasIndex("UserInfoUserId");
 
                     b.ToTable("Feedbacks");
                 });
@@ -236,10 +251,6 @@ namespace ThriftShop.DataAccess.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ColorId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -249,13 +260,11 @@ namespace ThriftShop.DataAccess.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("ProductTypeId")
-                        .IsRequired()
+                    b.Property<int>("SalePercent")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SizeId")
-                        .IsRequired()
-                        .HasColumnType("int");
+                    b.Property<string>("SexType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -264,12 +273,6 @@ namespace ThriftShop.DataAccess.Migrations
                     b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("ColorId");
-
-                    b.HasIndex("ProductTypeId");
-
-                    b.HasIndex("SizeId");
 
                     b.ToTable("Products");
                 });
@@ -296,23 +299,6 @@ namespace ThriftShop.DataAccess.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
-                });
-
-            modelBuilder.Entity("ThriftShop.Models.ProductType", b =>
-                {
-                    b.Property<int>("ProductTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductTypeId"), 1L, 1);
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ProductTypeId");
-
-                    b.ToTable("ProductTypes");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.ShoppingCart", b =>
@@ -349,35 +335,33 @@ namespace ThriftShop.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SizeId"), 1L, 1);
 
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SizeType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SizeId");
 
+                    b.HasIndex("ProductId");
+
                     b.ToTable("Sizes");
                 });
 
-            modelBuilder.Entity("ThriftShop.Models.Stock", b =>
+            modelBuilder.Entity("ThriftShop.Models.Size_Product", b =>
                 {
-                    b.Property<int>("StockId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockId"), 1L, 1);
-
-                    b.Property<int>("Count")
+                    b.Property<int>("SizeId")
                         .HasColumnType("int");
 
                     b.Property<int?>("ProductId")
-                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.HasKey("StockId");
+                    b.HasKey("SizeId", "ProductId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Stocks");
+                    b.ToTable("Size_Products");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.UserAccount", b =>
@@ -413,15 +397,15 @@ namespace ThriftShop.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Avatar")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Gender")
@@ -432,6 +416,7 @@ namespace ThriftShop.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PostalCode")
@@ -444,20 +429,33 @@ namespace ThriftShop.DataAccess.Migrations
 
                     b.HasKey("UserId");
 
-                    b.HasIndex("AccountID");
-
                     b.ToTable("UserInfos");
                 });
 
-            modelBuilder.Entity("ThriftShop.Models.Feedback", b =>
+            modelBuilder.Entity("ThriftShop.Models.Color", b =>
                 {
-                    b.HasOne("ThriftShop.Models.UserInfo", "UserInfo")
+                    b.HasOne("ThriftShop.Models.Product", null)
+                        .WithMany("Color")
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("ThriftShop.Models.Color_Product", b =>
+                {
+                    b.HasOne("ThriftShop.Models.Color", "Color")
                         .WithMany()
-                        .HasForeignKey("UserInfoUserId")
+                        .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("UserInfo");
+                    b.HasOne("ThriftShop.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Color");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.Order", b =>
@@ -502,31 +500,7 @@ namespace ThriftShop.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ThriftShop.Models.Color", "Color")
-                        .WithMany()
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ThriftShop.Models.ProductType", "ProductType")
-                        .WithMany()
-                        .HasForeignKey("ProductTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ThriftShop.Models.Size", "Size")
-                        .WithMany()
-                        .HasForeignKey("SizeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Category");
-
-                    b.Navigation("Color");
-
-                    b.Navigation("ProductType");
-
-                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.ProductImage", b =>
@@ -553,7 +527,14 @@ namespace ThriftShop.DataAccess.Migrations
                     b.Navigation("UserInfo");
                 });
 
-            modelBuilder.Entity("ThriftShop.Models.Stock", b =>
+            modelBuilder.Entity("ThriftShop.Models.Size", b =>
+                {
+                    b.HasOne("ThriftShop.Models.Product", null)
+                        .WithMany("Size")
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("ThriftShop.Models.Size_Product", b =>
                 {
                     b.HasOne("ThriftShop.Models.Product", "Product")
                         .WithMany()
@@ -561,18 +542,15 @@ namespace ThriftShop.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("ThriftShop.Models.UserInfo", b =>
-                {
-                    b.HasOne("ThriftShop.Models.UserAccount", "UserAccount")
+                    b.HasOne("ThriftShop.Models.Size", "Size")
                         .WithMany()
-                        .HasForeignKey("AccountID")
+                        .HasForeignKey("SizeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("UserAccount");
+                    b.Navigation("Product");
+
+                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.Order", b =>
@@ -582,7 +560,11 @@ namespace ThriftShop.DataAccess.Migrations
 
             modelBuilder.Entity("ThriftShop.Models.Product", b =>
                 {
+                    b.Navigation("Color");
+
                     b.Navigation("ProductImage");
+
+                    b.Navigation("Size");
                 });
 #pragma warning restore 612, 618
         }
