@@ -25,6 +25,5 @@ namespace ThriftShop.DataAccess.Data
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
 
-
     }
 }

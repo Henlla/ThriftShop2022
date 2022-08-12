@@ -50,6 +50,34 @@ namespace ThriftShop.API.Controllers
                 return BadRequest();
             }
         }
+        [HttpPut]
+        public async Task<ActionResult<UserAccount>> Update(UserAccount user)
+        {
+            var model = await unitOfWork.UserAccount.GetFirstOrDefault(x => x.AccountID.Equals(user.AccountID));
+            if (model != null)
+            {
+                await unitOfWork.UserAccount.Update(model);
+                unitOfWork.Save();
+                return Ok(model);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<UserAccount>> Get(int id)
+        {
+            var account = await unitOfWork.UserAccount.GetFirstOrDefault(acc => acc.AccountID.Equals(id));
+            if (account != null)
+            {
+                return Ok(account);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
