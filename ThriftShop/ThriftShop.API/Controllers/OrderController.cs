@@ -1,4 +1,4 @@
-﻿using BulkyBook.DataAccess.Repository.IRepository;
+﻿using ThriftShop.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ThriftShop.Models;
@@ -26,26 +26,28 @@ namespace ThriftShop.API.Controllers
         [HttpGet("{id}")]
         public Task<IEnumerable<Order>> GetOrderById(int id)
         {
-            return _unitOfWord.Order.GetAll(filter: o => o.UserId.Equals(id));
+            return _unitOfWord.Order.GetAll(o => o.UserId.Equals(id));
         }
 
         [HttpPost]
         public async Task<Order> PostOrder(Order obj)
         {
-            if (obj.CouponId == null) { obj.Coupon = null; }
+            if (obj.CouponId == 0) { obj.Coupon = null; }
             else
             {
-                obj.Coupon = await _unitOfWord.Coupon.GetFirstOrDefault(filter: c => c.CouponId.Equals(obj.CouponId));
+                obj.Coupon = await _unitOfWord.Coupon.GetFirstOrDefault( c => c.CouponId.Equals(obj.CouponId));
             }
             //var shopingCart= await  _unitOfWord.ShoppingCart.GetAll(filter:sc=>sc.UserId.Equals(obj.UserId));
 
-            obj.UserInfo = await _unitOfWord.UserInfo.GetFirstOrDefault(filter: uinfo => uinfo.UserId.Equals(obj.UserId));
+            obj.UserInfo = await _unitOfWord.UserInfo.GetFirstOrDefault( uinfo => uinfo.UserId.Equals(obj.UserId));
 
             //
             obj.orderDetails = null;
             obj.OrderStatus = SD.StatusPending;
-            await _unitOfWord.Order.Add(obj);
-
+            if (obj == null)
+            {
+                await _unitOfWord.Order.Add(obj);
+            }
 
             _unitOfWord.Save();
             return obj;

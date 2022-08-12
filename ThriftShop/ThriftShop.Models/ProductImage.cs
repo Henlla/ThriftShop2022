@@ -15,10 +15,12 @@ namespace ThriftShop.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ImageID { get; set; }
         public string? ImageUrl { get; set; }
-        public int? ProductId { get; set; }
+        public bool? IsMainImage { get; set; }
         [ForeignKey("ProductId")]
-        [ValidateNever]
-        public Product? Product { get; set; }
+        public int? ProductId { get; set; }
+
+      
+      
 
     }
 }

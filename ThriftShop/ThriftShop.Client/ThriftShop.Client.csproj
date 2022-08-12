@@ -11,4 +11,8 @@
     <None Include="wwwroot\assets\scss\utilities\_helper.scss" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ThriftShop.Models\ThriftShop.Models.csproj" />
+  </ItemGroup>
+
 </Project>

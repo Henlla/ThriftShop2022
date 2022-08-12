@@ -14,6 +14,7 @@ namespace ThriftShop.Models
         public int ProductId { get; set; }
         [Required]
         public string? Title { get; set; }
+        public string? Brand { get; set; }
         public string? Description { get; set; }
         [Required]
         [Range(1, 999999)]
@@ -35,8 +36,14 @@ namespace ThriftShop.Models
         public int? ProductTypeId { get; set; } // nam nu, unisex
         [ForeignKey("ProductTypeId")]
         [ValidateNever]
-        public ProductType ProductType { get; set; } 
+        public ProductType ProductType { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreatedDate { get; set; } // ngay tao san pham
-
+        [ValidateNever]
+        public IEnumerable<ProductImage> ProductImage { get; set; }
+        [NotMapped]
+        [ValidateNever]
+        public string JsonImageList { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -19,6 +20,6 @@ namespace ThriftShop.Models
         [ForeignKey("ProductId")]
         [ValidateNever]
         public Product Product { get; set; }
-        public int? Count { get; set; }
+        public int Count { get; set; }
     }
 }

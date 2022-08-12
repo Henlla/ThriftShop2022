@@ -1,4 +1,4 @@
-﻿using BulkyBook.DataAccess.Repository.IRepository;
+﻿using ThriftShop.DataAccess.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using ThriftShop.DataAccess.Data;
 using ThriftShop.DataAccess.IRepository;
 using ThriftShop.DataAccess.Services;
 
-namespace BulkyBook.DataAccess.Repository.Services
+namespace ThriftShop.DataAccess.Repository.Services
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -26,6 +26,10 @@ namespace BulkyBook.DataAccess.Repository.Services
             Coupon = new CouponService(db);
             Feedback = new FeedbackService(db);
             Order = new OrderService(db);
+            Stock = new StockService(db);
+            ProductImage = new ProductImageService(db);
+            orderDetails = new OrderDetailsServices(db);
+
         }
 
         public IProduct Product { get; private set; }
@@ -37,8 +41,13 @@ namespace BulkyBook.DataAccess.Repository.Services
          public ICoupon Coupon { get; private set; }
          public IFeedback Feedback { get; private set; }
         public IOrder Order { get; private set; }
+        public IStock Stock { get; private set; }
+        public IProductImage ProductImage { get; private set; }
 
-        public void Save()
+
+        public IOrderDetails orderDetails { get; private set; }
+
+    public void Save()
         {
             _db.SaveChanges();
         }

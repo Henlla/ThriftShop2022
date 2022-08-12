@@ -1,4 +1,4 @@
-﻿using BulkyBook.DataAccess.Repository.IRepository;
+﻿using ThriftShop.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ThriftShop.Models;
@@ -50,13 +50,9 @@ namespace ThriftShop.API.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateCategory(Category category)
         {
-          
                 await unitOfWork.Category.Update(category);
                 unitOfWork.Save();
                 return Ok(category);
-            
-            return BadRequest();
-            
         }
 
         [HttpDelete]
