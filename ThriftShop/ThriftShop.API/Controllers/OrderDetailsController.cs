@@ -21,7 +21,7 @@ namespace ThriftShop.API.Controllers
         [HttpGet("{orderId}")]
         public Task<IEnumerable<OrderDetail>> GetOrderDetails(int orderId)
         {
-            return _unitOfWord.orderDetails.GetAll(od=>od.OrderId.Equals(orderId),includeProperties: "Product");
+            return _unitOfWord.orderDetails.GetAll(od=>od.OrderId.Equals(orderId));
         }
         [HttpPost]
         public async Task<IEnumerable<OrderDetail>> PostOrderDetail(Order obj)

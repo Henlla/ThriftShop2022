@@ -48,7 +48,7 @@ namespace ThriftShop.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> UpdateCategory(Category category)
+        public async Task<ActionResult<Category>> UpdateCategory(Category category)
         {
                 await unitOfWork.Category.Update(category);
                 unitOfWork.Save();

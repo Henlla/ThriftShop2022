@@ -26,12 +26,12 @@ namespace ThriftShop.DataAccess.Repository.Services
             Coupon = new CouponService(db);
             Feedback = new FeedbackService(db);
             Order = new OrderService(db);
-            Stock = new StockService(db);
             Size = new SizeService(db);
             Color = new ColorService(db);
-            ProductType = new ProductTypeService(db);
             ProductImage = new ProductImageService(db);
-
+            orderDetails = new OrderDetailsServices(db);
+            Color_Product = new Color_ProductService(db);
+            Size_Product = new Size_ProductService(db);
         }
 
         public IProduct Product { get; private set; }
@@ -43,11 +43,12 @@ namespace ThriftShop.DataAccess.Repository.Services
          public ICoupon Coupon { get; private set; }
          public IFeedback Feedback { get; private set; }
         public IOrder Order { get; private set; }
-        public IStock Stock { get; private set; }
         public IColor Color { get; private set; }
         public ISize Size { get; private set; }
-        public IProductType ProductType { get; private set; }
         public IProductImage ProductImage { get; private set; }
+        public IOrderDetails orderDetails { get; private set; }
+        public IColor_Product Color_Product { get; private set; }
+        public ISize_Product Size_Product { get; private set; }
         public void Save()
         {
             _db.SaveChanges();
