@@ -1,6 +1,7 @@
 ﻿using ThriftShop.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
 using ThriftShop.Models;
+using ThriftShop.Utility;
 
 namespace ThriftShop.API.Controllers
 {
@@ -15,10 +16,10 @@ namespace ThriftShop.API.Controllers
         }
 
         //Find All
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetAll(string? keyword)
+        [HttpGet("{keyword?}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetAll(string? keyword = null)
         {
-            if(keyword != null)
+            if (keyword != null)
             {
                 return Ok(await unitOfWork.Product.GetAll(x =>
                 x.Category.CategoryName.Contains(keyword) ||
@@ -37,7 +38,7 @@ namespace ThriftShop.API.Controllers
         [HttpGet("paginate/{page}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductPagination(int page)
         {
-            if(unitOfWork.Product == null)
+            if (unitOfWork.Product == null)
             {
                 return NotFound();
             }
@@ -76,7 +77,7 @@ namespace ThriftShop.API.Controllers
         [HttpGet("/GetProductByCategory/{categoryId}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(int categoryId)
         {
-            return Ok(await unitOfWork.Product.GetAll(x=>x.CategoryId == categoryId,includeProperties: "Category,Size,Color,ProductType,ProductImage"));
+            return Ok(await unitOfWork.Product.GetAll(x => x.CategoryId == categoryId, includeProperties: "Category,Size,Color,ProductType,ProductImage"));
         }
 
         //Filter by Brand
@@ -103,9 +104,9 @@ namespace ThriftShop.API.Controllers
         {
             return Ok(await unitOfWork.Product.GetAll(x => x.Price >= fromPrice && x.Price <= toPrice, includeProperties: "Category,Size,Color,ProductType,ProductImage"));
         }
-        
+
         [HttpPost]
-        public async Task<ActionResult<Product>> AddProduct(Product product, string? jsonListImage)
+        public async Task<ActionResult<Product>> AddProduct(Product product, string? JsonImageList = null)
         {
             var _product = await unitOfWork.Product.GetFirstOrDefault(x => x.ProductId == product.ProductId);
             if (_product == null)
@@ -119,9 +120,9 @@ namespace ThriftShop.API.Controllers
                 return BadRequest();
             }
 
-            if (!string.IsNullOrEmpty(jsonListImage))
+            if (!string.IsNullOrEmpty(JsonImageList))
             {
-                //var list = jsonListImage.ToList();
+                //var list = JsonImageList.ToList();
                 List<string> list = new List<string>()
                 {
                     "image1.png",
@@ -131,6 +132,11 @@ namespace ThriftShop.API.Controllers
                     "image5.png",
                     "image6.png",
                 };
+                //check if number of image <= 6, maximum is 6
+                var ListImageFromDB_ByProductId = await unitOfWork.ProductImage.GetAll(x => x.ProductId == product.ProductId);
+                var numberImageFromDB = ListImageFromDB_ByProductId.Count();
+                var numberImageInList = list.Count();
+                var NumberOfImageCanUpload = numberImageFromDB - numberImageInList;
 
                 var productIsExistImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == product.ProductId);
                 if (productIsExistImage == null)
@@ -151,9 +157,12 @@ namespace ThriftShop.API.Controllers
                     _productImage.IsMainImage = true;
                     unitOfWork.Save();
                 }
-            }
-            //string JsonImageList = "[{'image1.png','image3.png','image4.png','image5.png'}]";
 
+
+
+
+                
+            }
             return Ok(product);
 
             
@@ -169,8 +178,10 @@ namespace ThriftShop.API.Controllers
                 unitOfWork.Save();
                 return Ok(product);
             }
-            return BadRequest();
-
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpDelete]
