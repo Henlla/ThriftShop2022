@@ -16,8 +16,8 @@ namespace ThriftShop.API.Controllers
         }
 
         [HttpGet]
-        public Task<IEnumerable<ShoppingCart>> GetListCart() {
-            return _unitOfWord.ShoppingCart.GetAll(includeProperties: "UserInfo,Product");
+        public async Task<IEnumerable<ShoppingCart>> GetListCart() {
+            return await _unitOfWord.ShoppingCart.GetAll(includeProperties: "UserInfo,Product");
         }
 
         [HttpGet("{id}")]
