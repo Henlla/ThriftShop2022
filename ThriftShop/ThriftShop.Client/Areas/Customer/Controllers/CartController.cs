@@ -17,12 +17,12 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
 
         }
 
-        [Area("Customer")]
+      
         public IActionResult Index()
         {
             return View();
         }
-        [Area("Customer")]
+        
         
         public IActionResult CheckOut()
         {
