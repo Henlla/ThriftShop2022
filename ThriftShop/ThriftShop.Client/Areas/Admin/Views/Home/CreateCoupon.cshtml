@@ -1,0 +1,66 @@
+﻿@using ThriftShop.Models
+@model Coupon
+@{
+    ViewData["Title"] = "Create Coupon";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var data = new string[] { "Cash", "Percent"};
+    var error = ViewBag.error == null ? "" : ViewBag.error;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex flex-column justify-content-center">
+                <h1 class="text-center">Create new product</h1>
+				<div class = "text-center" style="color:Red">@error</div>
+                <form method="post">
+                    <div class="row">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="code" ejs-for="@Model.Code" placeholder="Code" floatLabelType="Always"></ejs-textbox>
+                            <span asp-validation-for="@Model.Code"></span>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <ejs-dropdownlist id="Type"
+                                              dataSource="@data" placeholder="Discount Type" ejs-for="@Model.CouponType"
+                                              floatLabelType="Always" allowFiltering="true" filterType="Contains">
+                                <e-dropdownlist-fields value="@data" text="@data"></e-dropdownlist-fields>
+                            </ejs-dropdownlist>
+							<span asp-validation-for="@Model.CouponType"></span>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <ejs-numerictextbox placeholder="Discount Value" floatLabelType="Always" ejs-for="@Model.DiscountValue" id="Discount" value="10" min="0" Type="text"></ejs-numerictextbox>
+							<span asp-validation-for="@Model.DiscountValue"></span>
+                        </div>
+                        
+						<div class="mb-3 col-12">
+                            <div id="wrapper" class="datepicker-section">
+                                <div id="datepicker-control">
+                                    <ejs-datepicker id="datepicker" ejs-for="@Model.ExpiredDate" placeholder="Expired Date"></ejs-datepicker>
+									<span asp-validation-for="@Model.ExpiredDate"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <ejs-numerictextbox placeholder="Quantity" floatLabelType="Always" ejs-for="@Model.Quantity" id="quantity" value="10" min="0" Type="text"></ejs-numerictextbox>
+							<span asp-validation-for="@Model.Quantity"></span>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <ejs-button id="submit" type="submit" cssClass="e-primary" content="Submit"></ejs-button>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar_mode: 'floating',
+        });
+    </script>
+}
+

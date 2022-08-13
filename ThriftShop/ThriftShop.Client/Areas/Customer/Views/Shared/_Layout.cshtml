@@ -66,25 +66,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="ht-menu">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)">Currency<i class="ion-chevron-down"></i></a>
-                                            <ul class="ht-dropdown ht-currency">
-                                                <li><a href="javascript:void(0)">€ EUR</a></li>
-                                                <li class="active"><a href="javascript:void(0)">£ Pound Sterling</a></li>
-                                                <li><a href="javascript:void(0)">$ Us Dollar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">Language <i class="ion-chevron-down"></i></a>
-                                            <ul class="ht-dropdown">
-                                                <li class="active"><a href="javascript:void(0)"><img src="~/assets/images/menu/icon/1.jpg" alt="Kenne Language Icon">English</a></li>
-                                                <li>
-                                                    <a href="javascript:void(0)"><img src="~/assets/images/menu/icon/2.jpg" alt="Kenne Language Icon">Français</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -97,7 +79,7 @@
                                             <a asp-area="Customer" asp-controller="Product" asp-action="WishList">WishList</></a>
                                         </li>
                                         <li>
-                                            <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut">Chekout</></a>
+                                            <a asp-area="Customer" asp-controller="Order" asp-action="CheckOut">Chekout</></a>
                                         </li>
                                         <li>
                                             @{

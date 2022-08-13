@@ -10,7 +10,7 @@ namespace ThriftShop.API
         public void SendEmail(EmailModel request)
         {
             var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse("phamkiet2234@gmail.com"));
+            email.From.Add(MailboxAddress.Parse(request.From));
             email.To.Add(MailboxAddress.Parse(request.To));
             email.Subject = request.Subject;
             email.Body = new TextPart(TextFormat.Html) { Text = request.Body };

@@ -14,6 +14,7 @@ namespace ThriftShop.Models
         public int ColorId { get; set; }
         [Required]
         public int? ProductId { get; set; }
+        public string ColorType { get; set; }
 
     }
 }

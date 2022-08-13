@@ -1,10 +1,12 @@
 ﻿using ThriftShop.Models;
 
-namespace ThriftShop.Client.Areas.Customer.ViewModels
+namespace ThriftShop.Client.Areas.Customer.ClientModel
 {
-    public class ProductsVM
+    public class ProductClientModel
     {
+
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<Color> Colors { get; set; }
     }
 }

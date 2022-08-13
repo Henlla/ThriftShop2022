@@ -58,6 +58,8 @@ namespace ThriftShop.Models
 
         [ValidateNever]
         [NotMapped]
-        public string JsonImageList { get; set; }
+        public List<string> ImageList { get; set; }
+
+       
     }
 }
