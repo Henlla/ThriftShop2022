@@ -17,7 +17,7 @@ namespace ThriftShop.API.Controllers
         }
 
         //Find All
-        [HttpGet()]
+        [HttpGet("GetAll/{keyword?}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetAll(string? keyword = null)
         {
             if (keyword != null)
@@ -116,8 +116,8 @@ namespace ThriftShop.API.Controllers
             var _product = await unitOfWork.Product.GetFirstOrDefault(x => x.ProductId == productVM.Product.ProductId);
             if (_product == null)
             {
-               
-                await unitOfWork.Product.Add(productVM.Product);
+                productVM.Product.ProductImage = null;
+                 await unitOfWork.Product.Add(productVM.Product);
                 unitOfWork.Save(); 
             }
             else
@@ -161,45 +161,45 @@ namespace ThriftShop.API.Controllers
                     }
 
                     unitOfWork.Save();
-                }
-            }
 
-            if (!string.IsNullOrEmpty(productVM.Product.JsonImageList))
-            {
-                //var list = product.JsonImageList.ToList();
-                List<string> list = new List<string>()
-                {
-                    "image1.png",
-                    "image2.png",
-                    "image3.png",
-                    "image4.png",
-                    "image5.png",
-                    "image6.png",
-                };
-                //check if number of image <= 6, maximum is 6
-                var ListImageFromDB_ByProductId = await unitOfWork.ProductImage.GetAll(x => x.ProductId == productVM.Product.ProductId);
-                var numberImageFromDB = ListImageFromDB_ByProductId.Count();
-                var numberImageInList = list.Count();
-                var NumberOfImageCanUpload = numberImageFromDB - numberImageInList;
-
-                var productIsExistImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == productVM.Product.ProductId);
-                if (productIsExistImage == null)
-                {
-                    foreach (var item in list)
+                    //productVM.Product.JsonImageList = "123";
+                    if (productVM.Product.ImageList == null)
                     {
-                        ProductImage productImage = new ProductImage()
+                        List<string> list = new List<string>()
                         {
-                            ImageUrl = item.ToString(),
-                            ProductId = productVM.Product.ProductId,
-                            IsMainImage = false,
+                            "image1.png",
+                            "image2.png",
+                            "image3.png",
+                            "image4.png",
+                            "image5.png",
+                            "image6.png",
                         };
-                        await unitOfWork.ProductImage.Add(productImage);
-                    };
-                    unitOfWork.Save();
-                    //Set first picture is main image
-                    var _productImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == productVM.Product.ProductId);
-                    _productImage.IsMainImage = true;
-                    unitOfWork.Save();
+                        //check if number of image <= 6, maximum is 6
+                        //var ListImageFromDB_ByProductId = await unitOfWork.ProductImage.GetAll(x => x.ProductId == productVM.Product.ProductId);
+                        //var numberImageFromDB = ListImageFromDB_ByProductId.Count();
+                        //var numberImageInList = list.Count();
+                        //var NumberOfImageCanUpload = numberImageFromDB - numberImageInList;
+
+                        var productIsExistImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == productVM.Product.ProductId);
+                        if (productIsExistImage == null)
+                        {
+                            foreach (var item in list)
+                            {
+                                ProductImage productImage = new ProductImage()
+                                {
+                                    ImageUrl = item.ToString(),
+                                    ProductId = lastedProductInDB.ProductId,
+                                    IsMainImage = false,
+                                };
+                                await unitOfWork.ProductImage.Add(productImage);
+                            };
+                            unitOfWork.Save();
+                            //Set first picture is main image
+                            var _productImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == lastedProductInDB.ProductId);
+                            _productImage.IsMainImage = true;
+                            unitOfWork.Save();
+                        }
+                    }
                 }
             }
             return Ok(productVM.Product);
