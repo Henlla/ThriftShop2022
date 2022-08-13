@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ThriftShop.Models;
-using ThriftShop.Models.ModelVirtual;
 using System.Web.Http;
 
 namespace ThriftShop.API.Controllers
