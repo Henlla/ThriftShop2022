@@ -1,0 +1,30 @@
+﻿@using ThriftShop.Models
+@model IEnumerable<Size>
+@{
+    ViewData["Title"] = "View Sizes";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var success = ViewBag.success == null ? "" : ViewBag.success;
+}
+
+<h1 class="text-center">List Sizes</h1>
+<div class = "text-center" style="color:Red">@success</div>
+
+<div class="container">
+    <div class="row"><a asp-area="Admin" asp-controller="Home" asp-action="CreateSize">Create new size..</a></div>
+    <div class="row">
+        <div class="col-12">
+            <ejs-grid id="sizes" dataSource="@Model" allowPaging="true" allowSorting="true" allowFiltering="true">
+                <e-grid-pagesettings pageSize="5">
+
+                </e-grid-pagesettings>
+                <e-grid-columns>
+                    <e-grid-column headerText="Id" field="SizeId"></e-grid-column>
+                    <e-grid-column headerText="Name" field="SizeType"></e-grid-column>
+                </e-grid-columns>
+            </ejs-grid>
+        </div>
+    </div>
+</div>
+@section Scripts{
+}
+
