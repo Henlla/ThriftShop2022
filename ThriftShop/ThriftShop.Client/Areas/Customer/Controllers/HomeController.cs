@@ -21,28 +21,17 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
 
 
         HttpClient httpClient = new HttpClient();
-        public IActionResult Index(int? categoryId)
+        public IActionResult Index()
         {
-            if(categoryId != 0 && categoryId != null)
-            {
-                ProductClientModel productsVM = new ProductClientModel
-                {
-                    Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl + "GetAll/").Result),
-                    Categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync("https://localhost:7061/GetProductByCategory/" + categoryId).Result),
-                };
-                return View(productsVM);
-            }
-            else
-            {
+           
 
-             
                 ProductClientModel productsVM = new ProductClientModel
                 {
                     Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl + "GetAll/").Result),
                     Categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl).Result),
                 };
                 return View(productsVM);
-            }
+            
             //var pro = JsonConvert.DeserializeObject<IEnumerable<Product>>(client.GetStringAsync(productUrl + "GetAll/").Result);
 
         }
