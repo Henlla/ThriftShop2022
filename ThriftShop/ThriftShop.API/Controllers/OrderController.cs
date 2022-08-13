@@ -47,6 +47,7 @@ namespace ThriftShop.API.Controllers
 
             if (obj != null)
             {
+                //lay phan tu cuoi
                 await _unitOfWord.Order.Add(obj);
                 var listOrder = await _unitOfWord.Order.GetAll();
                 var latestOrderFromDb = listOrder.OrderByDescending(x => x.Id).First();

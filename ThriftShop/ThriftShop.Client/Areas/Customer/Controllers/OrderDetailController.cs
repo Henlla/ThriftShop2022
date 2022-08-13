@@ -10,7 +10,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
     public class OrderDetailController : Controller
     {
         private string ShopingCartUrl = "https://localhost:7061/api/ShoppingCart/";
-        private string OrderDetailUrl = "https://localhost:7061/api/api/OrderDetails/";
+        private string OrderDetailUrl = "https://localhost:7061/api/OrderDetails/";
         private string OrderUrl = "https://localhost:7061/api/Order/";
         private string CouponUrl = "https://localhost:7061/api/Coupon/";
 
@@ -34,8 +34,8 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                 modelView.Order = json;
                 double total = 0;
                 double discount = 0;
-              
-                Coupon myCoupon = new Coupon() ;
+
+                Coupon myCoupon = new Coupon();
                 if (json.CouponId != null) { myCoupon = JsonConvert.DeserializeObject<Coupon>(httpClient.GetStringAsync(CouponUrl + json.CouponId).Result); }
                 else { myCoupon = null; }
                 if (myCoupon != null)
@@ -54,6 +54,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                     {
                         discount = (double)(total * myCoupon.DiscountValue / 100);
                     }
+
                     total = total - discount;
 
                     ViewBag.amount = total;
@@ -62,12 +63,13 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                     {
                         myCoupon.Quantity -= 1;
                     }
-                    else {
+                    else
+                    {
 
                         return RedirectToAction("CheckOut", "Order");
                     }
                     var UCoupon = httpClient.PutAsJsonAsync<Coupon>(CouponUrl, myCoupon).Result;
-              
+
 
                 }
 
@@ -86,41 +88,51 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         [HttpPost]
 
         //order 
-        public IActionResult NewOrder(SpCart_Order_ODetail obj)
+
+
+
+
+        public IActionResult NewOrder(SpCart_Order_ODetail obj, string[] ProductId, string[] productPrice, string[] productCount, string[] spId)
         {
-            Order myOrder = obj.Order;
-            
-            IEnumerable<ShoppingCart> spCartList = obj.ShoppingCart;
-            //myOrder = obj.Order;
-            List<OrderDetail> list = new List<OrderDetail>();
-            foreach (var item in spCartList)
+            try
             {
-                OrderDetail orderDetail = new OrderDetail();
-               
-                orderDetail.ProductId=item.ProductId;
-                orderDetail.OrderId = myOrder.Id;
-                orderDetail.Price = item.Product.FinalPrice;
-                orderDetail.Count = item.Count;
               
-              var model=  httpClient.PostAsJsonAsync<OrderDetail>(OrderDetailUrl, orderDetail).Result;
-                if (model.IsSuccessStatusCode)
+
+
+               var myOrder = obj.Order;
+              
+                for(int i=0;i< ProductId.Length;i++)
                 {
-                   httpClient.DeleteAsync(ShopingCartUrl+item.Id);
+                    OrderDetail orderDetail = new OrderDetail();
+
+                    orderDetail.ProductId = int.Parse(ProductId[i]);
+                    orderDetail.OrderId = myOrder.Id;
+                    orderDetail.Price = double.Parse(productPrice[i]);
+                    orderDetail.Count = int.Parse(productCount[i]);
+
+                    var model = httpClient.PostAsJsonAsync<OrderDetail>(OrderDetailUrl, orderDetail).Result;
+                    if (model.IsSuccessStatusCode)
+                    {
+                        httpClient.DeleteAsync(ShopingCartUrl + int.Parse(spId[i]));
+                    }
+
                 }
-                
+                //IEnumerable<Order>
+
+                return RedirectToAction("Index", "Home");
             }
-            //IEnumerable<Order>
+            catch (Exception)
+            {
 
+                return RedirectToAction("Index", "Home");
+            }
 
-         
-          
-
-
-
-            return RedirectToAction("Index","Home");
         }    //
 
-            public IEnumerable<ShoppingCart> getShoppingcart()
+
+
+
+        public IEnumerable<ShoppingCart> getShoppingcart()
         {
             try
             {
