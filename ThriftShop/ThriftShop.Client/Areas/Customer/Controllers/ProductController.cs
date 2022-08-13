@@ -20,7 +20,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                 ProductClientModel productsVM = new ProductClientModel
                 {
                     Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl + "GetAll/").Result),
-                Categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl).Result),
+                    Categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl).Result),
                     Colors = JsonConvert.DeserializeObject<IEnumerable<Color>>(httpClient.GetStringAsync(colorUrl).Result),
                 };
                 return View(productsVM);

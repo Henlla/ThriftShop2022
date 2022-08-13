@@ -87,7 +87,6 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
             var categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(client.GetStringAsync(urlCategories).Result);
             return View(categories);
         }
-
         //View Create Category
         [HttpGet]
         public IActionResult CreateCategory()
@@ -102,6 +101,7 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
             ViewBag.success = "Create Category Success";
             return RedirectToAction("ViewCategory");
         }
+
 
         //View list Sizes
         [Route("Admin/Size")]
