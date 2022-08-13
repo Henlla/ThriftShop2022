@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using System.Net.Http;
 using ThriftShop.Models;
@@ -9,12 +10,18 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
+        private readonly IWebHostEnvironment environment;
+        public HomeController(IWebHostEnvironment _environment)
+        {
+            environment = _environment;
+        }
 
         private string urlCategories = "https://localhost:7061/api/Categories/";
         private string urlProducts = "https://localhost:7061/api/Products/";
         private string urlColor = "https://localhost:7061/api/Colors/";
         private string urlSize = "https://localhost:7061/api/Sizes/";
         private string urlCoupon = "https://localhost:7061/api/Coupon/";
+        private string urlProductImage = "https://localhost:7061/api/ProductImages";
         private HttpClient client = new HttpClient();
 
         [Route("Admin/Home")]
@@ -197,5 +204,6 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
                 return View();
             }
         }
+        
     }
 }
