@@ -10,7 +10,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
     {
         private string categoryUrl = "https://localhost:7061/api/Categories/";
         private string productUrl = "https://localhost:7061/api/Products/";
-        private string colorUrl = "https://localhost:7061/api/Color/";
+        private string colorUrl = "https://localhost:7061/api/Colors/";
         HttpClient httpClient = new HttpClient();
 
         public IActionResult Index(string? keyword)
@@ -19,7 +19,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             {
                 ProductClientModel productsVM = new ProductClientModel
                 {
-                    Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl).Result),
+                    Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl + "GetAll/").Result),
                     Categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl).Result),
                     Colors = JsonConvert.DeserializeObject<IEnumerable<Color>>(httpClient.GetStringAsync(colorUrl).Result),
                 };
@@ -29,7 +29,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             {
                 ProductClientModel productsVM = new ProductClientModel
                 {
-                    Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl + "GetAll/").Result),
+                    Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl + "GetAll/" + keyword).Result),
                     Categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl).Result),
                     Colors = JsonConvert.DeserializeObject<IEnumerable<Color>>(httpClient.GetStringAsync(colorUrl).Result)
                 };
