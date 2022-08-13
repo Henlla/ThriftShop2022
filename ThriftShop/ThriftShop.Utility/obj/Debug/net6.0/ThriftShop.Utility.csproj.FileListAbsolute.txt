@@ -106,4 +106,7 @@ C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Utility\obj\Debug\ne
 >>>>>>> Develop
 >>>>>>> origin/Develop
 >>>>>>> Develop
+<<<<<<< HEAD
+>>>>>>> Develop
+=======
 >>>>>>> Develop
