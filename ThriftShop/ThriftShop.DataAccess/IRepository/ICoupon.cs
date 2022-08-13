@@ -10,6 +10,7 @@ namespace ThriftShop.DataAccess.IRepository
 {
     public interface ICoupon : IRepository<Coupon>
     {
+       
         Task<Coupon> Update(Coupon obj);
     }
 }
