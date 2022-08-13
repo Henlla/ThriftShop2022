@@ -22,8 +22,8 @@ namespace ThriftShop.Models
         public DateTime OrderDate { get; set; }
         public double OrderTotal { get; set; }
         public string? OrderStatus { get; set; }
-
-        public int CouponId { get; set; }
+        [ValidateNever]
+        public int? CouponId { get; set; }
         [ForeignKey("CouponId")]
         [ValidateNever]
         public Coupon? Coupon { get; set; } 

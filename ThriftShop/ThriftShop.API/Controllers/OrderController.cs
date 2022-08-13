@@ -21,7 +21,7 @@ namespace ThriftShop.API.Controllers
         [HttpGet]
         public Task<IEnumerable<Order>> GetListOrder()
         {
-            return _unitOfWord.Order.GetAll(includeProperties: "orderDetails");
+            return _unitOfWord.Order.GetAll(includeProperties: "orderDetails,Coupon");
         }
         [HttpGet("{id}")]
         public Task<IEnumerable<Order>> GetOrderById(int id)
@@ -32,8 +32,8 @@ namespace ThriftShop.API.Controllers
         [HttpPost]
         public async Task<Order> PostOrder(Order obj)
         {
-            if (obj.CouponId == 0) { obj.Coupon = null; }
-            else
+            if (obj.CouponId != 0) 
+            
             {
                 obj.Coupon = await _unitOfWord.Coupon.GetFirstOrDefault( c => c.CouponId.Equals(obj.CouponId));
             }
@@ -44,14 +44,18 @@ namespace ThriftShop.API.Controllers
             //
             obj.orderDetails = null;
             obj.OrderStatus = SD.StatusPending;
-          
-            if (obj != null) 
+
+            if (obj != null)
             {
                 await _unitOfWord.Order.Add(obj);
+                var listOrder = await _unitOfWord.Order.GetAll();
+                var latestOrderFromDb = listOrder.OrderByDescending(x => x.Id).First();
+                _unitOfWord.Save();
+                return latestOrderFromDb;
             }
+            else { return null; }
 
-            _unitOfWord.Save();
-            return obj;
+            
 
 
         }
