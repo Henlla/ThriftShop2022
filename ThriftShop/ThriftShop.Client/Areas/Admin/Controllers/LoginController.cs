@@ -13,6 +13,7 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
     {
         string url = "https://localhost:7061/api/Admin/";
         HttpClient client = new HttpClient();
+
         [HttpGet]
         public IActionResult LoginAdmin()
         {
