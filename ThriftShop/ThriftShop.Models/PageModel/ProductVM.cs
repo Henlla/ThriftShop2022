@@ -9,7 +9,7 @@ namespace ThriftShop.Models.PageModel
     public class ProductVM
     {
         public Product Product { get; set; }
-        public List<int> listSize { get; set; }
-        public List<int> listColor { get; set; }
+        public List<Size> listSize { get; set; }
+        public List<Size> listColor { get; set; }
     }
 }
