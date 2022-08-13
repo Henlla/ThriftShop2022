@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {}
+    "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {
+    "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
         "projectName": "ThriftShop.Client",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\obj\\",
+        "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\ThriftShop.Client.csproj",
+        "packagesPath": "C:\\Users\\Trung Le\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Trung Le\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj"
+              "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj"
               },
-              "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
+              "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
+                "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
               }
             }
           }
@@ -82,17 +82,17 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {
+    "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
         "projectName": "ThriftShop.DataAccess",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Trung Le\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Trung Le\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,8 +106,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
+              "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
+                "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
               }
             }
           }
@@ -172,17 +172,17 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
+    "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
         "projectName": "ThriftShop.Models",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\obj\\",
+        "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
+        "packagesPath": "C:\\Users\\Trung Le\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Trung Le\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
