@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Security.Claims;
 using ThriftShop.API;
@@ -13,6 +14,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         string productUrl = "https://localhost:7061/api/Products/";
         string feedbackUrl = "https://localhost:7061/api/FeedBack/";
         string urlUserInfo = "https://localhost:7061/api/User/";
+        string urlSendMail = "https://localhost:7061/api/Email/";
         HttpClient client = new HttpClient();
         public IActionResult Index()
         {
@@ -27,11 +29,12 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         public IActionResult ContactUs()
         {
             ContractMail contractMail;
+            //Kiem tra dang ki chua
             var claim = (ClaimsIdentity)User.Identity;
-            var id = int.Parse(claim.FindFirst(ClaimTypes.NameIdentifier).Value);
-            if (id != null)
+            var claims = claim.FindFirst(ClaimTypes.NameIdentifier);
+            if (claims != null)
             {
-                var model = JsonConvert.DeserializeObject<UserInfo>(client.GetStringAsync(urlUserInfo + id).Result);
+                var model = JsonConvert.DeserializeObject<UserInfo>(client.GetStringAsync(urlUserInfo + int.Parse(claims.Value)).Result);
                 EmailModel mailModel = new EmailModel
                 {
                     From = model.Email,
@@ -51,12 +54,28 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                 contractMail = new ContractMail();
                 return View(contractMail);
             }
+            return View();
         }
         [HttpPost]
         public IActionResult ContractUs(ContractMail contractMail)
         {
-            return View();
+            EmailModel mailSend = new EmailModel
+            {
+                From = contractMail.InfoUser.Email,
+                To = "thriftshop@gmail.com",
+                Subject = contractMail.EmailModel.Subject,
+                Body = contractMail.EmailModel.Body
+            };
+            var result = client.PostAsJsonAsync<EmailModel>(urlSendMail, mailSend).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                ViewBag.mess = "Send success";
+            }
+            else
+            {
+                ViewBag.mess = "Check information again";
+            }
+            return RedirectToAction("ContactUs");
         }
-
     }
 }

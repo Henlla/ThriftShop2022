@@ -1,0 +1,30 @@
+﻿@using ThriftShop.Models
+@model IEnumerable<Coupon>
+@{
+    ViewData["Title"] = "View Coupons";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">List Coupons</h1>
+
+<div class="container">
+	<div class="row"><a asp-area="Admin" asp-controller="Home" asp-action="CreateCoupon">Create new coupon..</a></div>
+    <div class="row">
+        <div class="col-12">
+            <ejs-grid id="coupons" dataSource="@Model" allowPaging="true"
+                      allowSorting="true" allowFiltering="true">
+                <e-grid-pagesettings pageSize="5"></e-grid-pagesettings>
+                <e-grid-columns>
+                    <e-grid-column headerText="Id" field="CouponId"></e-grid-column>
+                    <e-grid-column headerText="Code" field="Code"></e-grid-column>
+                    <e-grid-column headerText="Type" field="CouponType"></e-grid-column>
+                    <e-grid-column headerText="Discount Value" field="DiscountValue"></e-grid-column>
+                    <e-grid-column headerText="Expired Date" field="ExpiredDate" typeof="date" format="MMM-dd-yy"></e-grid-column>
+                    <e-grid-column headerText="Quantity" field="Quantity"></e-grid-column>
+                </e-grid-columns>
+            </ejs-grid>
+        </div>
+    </div>
+</div>
+@section Scripts{
+}

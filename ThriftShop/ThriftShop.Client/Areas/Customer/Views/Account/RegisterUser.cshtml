@@ -91,7 +91,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Confirm Password</label>
-                                    <input type="password" name="cfp" placeholder="Confirm Password">
+                                    <input type="password" asp-for="UserAccount.ConfirmPass" placeholder="Confirm Password">
+                                    <span style="color:red;" asp-validation-for="UserAccount.ConfirmPass"></span>
                                 </div>
                                 <hr />
                                 <div class="text-center">
