@@ -60,9 +60,9 @@
                             @{
                                 foreach (var item in Model.Colors)
                                 {
-                                    <li>
-                                        <a asp-action="" asp-area="" asp-controller="" asp-route-colorId="@item.ColorId">@item.ColorType</a>
-                                    </li>
+                                        <li>
+                                            <a asp-action="" asp-area="" asp-controller="" asp-route-colorId="@item.ColorId">@item.ColorType</a>
+                                        </li>
                                 }
                             }
                         </ul>
@@ -340,6 +340,7 @@
                                                 {
                                                     if (img.IsMainImage == true)
                                                     {
+<<<<<<< HEAD
                                                         <img class="primary-img" src="@img.ImageUrl" alt="">
                                                     }
 
@@ -370,6 +371,51 @@
                                                     <a href="cart.html" data-bs-toggle="tooltip" data-placement="right" title="Add To cart"><i class="ion-bag"></i></a>
                                                 </li>
                                             </ul>
+=======
+                                                        if (img.IsMainImage == true)
+                                                        {
+                                                                <img class="primary-img" src="@img.ImageUrl" alt="">
+                                                        }
+
+                                                    }
+                                                    foreach (var item in products.ProductImage.Where(x => x.IsMainImage == false).Take(1))
+                                                    {
+                                                            <img class="secondary-img" src="@item.ImageUrl" alt="">
+                                                    }
+                                                }
+                                            </a>
+                                            <span class="sticker">-15%</span>
+                                            <div class="add-actions">
+                                                <ul>
+                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <a class="quick-view" onclick="quickView(@products.ProductId)" data-bs-toggle="tooltip" data-placement="right" title="Quick View"><i class="ion-ios-search"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="cart.html" data-bs-toggle="tooltip" data-placement="right" title="Add To cart"><i class="ion-bag"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <div class="product-desc_info">
+                                                <h3 class="product-name"><a href="single-product.html">@products.Title</a></h3>
+                                                <div class="price-box">
+                                                    <span class="new-price"></span>
+                                                    <span class="old-price">$@products.Price</span>
+                                                </div>
+                                                <div class="rating-box">
+                                                    <ul>
+                                                        <li><i class="ion-ios-star"></i></li>
+                                                        <li><i class="ion-ios-star"></i></li>
+                                                        <li><i class="ion-ios-star"></i></li>
+                                                        <li class="silver-color"><i class="ion-ios-star-half"></i></li>
+                                                        <li class="silver-color">
+                                                            <i class="ion-ios-star-outline"></i>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+>>>>>>> Develop
                                         </div>
                                     </div>
                                     <div class="product-content">

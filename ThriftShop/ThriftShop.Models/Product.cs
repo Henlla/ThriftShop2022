@@ -26,7 +26,13 @@ namespace ThriftShop.Models
         public int SalePercent { get; set; }
 
         [NotMapped]
-        public double FinalPrice { get { return (Price*SalePercent)/100; } }
+        public double FinalPrice
+        {
+            get
+            {
+                return Price - (((double)SalePercent / 100) * Price);
+            }
+        }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
