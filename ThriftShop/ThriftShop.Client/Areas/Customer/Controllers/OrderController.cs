@@ -37,7 +37,14 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
           
             var model = getShoppingcart();
             if (model != null)
-            { return View(model); }
+            {
+                double total = 0;
+                foreach (var item in model)
+                {
+                   total += (double)item.Product.FinalPrice * item.Count;
+                }
+                ViewBag.amount = total;
+                return View(model); }
             else
             {
                 return RedirectToAction("LoginUser", "Account");
@@ -122,8 +129,8 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                 //test id=1
                 else
                 {
-                    sessionId = 1;
-                    //return null;
+                    //sessionId = 1;
+                    return null;
                 }
 
                 model = JsonConvert.DeserializeObject<IEnumerable<ShoppingCart>>(httpClient.GetStringAsync(ShopingCartUrl + "GetAll/" + sessionId).Result);
@@ -150,8 +157,8 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                 //test id=1
                 else
                 {
-                    sessionId = 1;
-                    //return null;
+                    //sessionId = 1;
+                    return null;
                 }
                 Order order = new Order()
                 {

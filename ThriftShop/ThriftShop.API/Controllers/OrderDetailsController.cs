@@ -21,39 +21,23 @@ namespace ThriftShop.API.Controllers
         [HttpGet("{orderId}")]
         public async Task<IEnumerable<OrderDetail>> GetOrderDetails(int orderId)
         {
-        
-            var model= await  _unitOfWord.orderDetails.GetAll(od=>od.OrderId.Equals(orderId), includeProperties: "Product");
-            return model;       
+
+            var model = await _unitOfWord.orderDetails.GetAll(od => od.OrderId.Equals(orderId), includeProperties: "Product");
+            return model;
         }
         [HttpPost]
-        public async Task<IEnumerable<OrderDetail>> PostOrderDetail(Order obj)
+        public async Task<OrderDetail> PostOrderDetail(OrderDetail obj)
         {
-          
-          IEnumerable<ShoppingCart> shoppingCartList = await _unitOfWord.ShoppingCart.GetAll(sp => sp.UserId.Equals(obj.UserId), includeProperties: "Product");
-            if (shoppingCartList != null)
+            var model = await _unitOfWord.orderDetails.GetFirstOrDefault(od => od.Id.Equals(obj.Id));
+            if (model == null)
             {
-                List<OrderDetail> orderDetaiList = new List<OrderDetail>();
-                foreach (var item in shoppingCartList)
-                {
-                    OrderDetail orderDetail = new OrderDetail();
-                    orderDetail.OrderId = obj.Id;
-                    orderDetail.ProductId = item.ProductId;
-                    orderDetail.Count = item.Count;
-                    orderDetail.Price = item.Product.Price;
-                    orderDetaiList.Add(orderDetail);
-
-                }
-                await _unitOfWord.orderDetails.AddRange(orderDetaiList);
-                _unitOfWord.ShoppingCart.RemoveRange(shoppingCartList);
+                await _unitOfWord.orderDetails.Add(obj);
                 _unitOfWord.Save();
-                return orderDetaiList;
+                return obj;
             }
-            else {
+            else { return null; }
+            return model;
 
-                return null;
-            
-            }
-        
         }
 
 
