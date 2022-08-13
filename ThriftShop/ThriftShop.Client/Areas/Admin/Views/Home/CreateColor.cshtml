@@ -1,0 +1,36 @@
+﻿@model ThriftShop.Models.Color
+@{
+    ViewData["Title"] = "Create Color";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var error = ViewBag.error == null ? "" : ViewBag.error;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex flex-column justify-content-center">
+                <h1 class="text-center">Create new Color</h1>
+				<div class = "text-center" style="color:Red">@error</div>
+                <form method="post">
+                    <div class="row">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="type" ejs-for="@Model.ColorType" placeholder="Color Type" floatLabelType="Always"></ejs-textbox>
+                            <span asp-validation-for="@Model.ColorType"></span>
+                        </div>
+                        <ejs-button id="submit" type="submit" cssClass="e-primary" content="Submit"></ejs-button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar_mode: 'floating',
+        });
+    </script>
+}
+

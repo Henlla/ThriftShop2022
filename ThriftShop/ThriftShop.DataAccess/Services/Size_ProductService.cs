@@ -20,6 +20,8 @@ namespace ThriftShop.DataAccess.Services
             _db = db;
         }
 
+     
+
         public async Task<Size_Product> Update(Size_Product obj)
         {
             var objFromDb = await _db.Size_Products.FirstOrDefaultAsync(u => u.SizeId == obj.SizeId && u.ProductId == obj.ProductId);

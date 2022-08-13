@@ -26,5 +26,6 @@ namespace ThriftShop.DataAccess.Repository.IRepository
         ISize_Product Size_Product { get; }
 
         void Save();
+        void ClearChangeTracker();
     }
 }

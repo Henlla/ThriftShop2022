@@ -20,6 +20,7 @@ namespace ThriftShop.DataAccess.Services
         public Task<Admin> Update(Admin account)
         {
             throw new NotImplementedException();
+            
         }
     }
 }

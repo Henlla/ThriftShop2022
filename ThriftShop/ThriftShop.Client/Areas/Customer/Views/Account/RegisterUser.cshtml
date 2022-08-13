@@ -86,12 +86,13 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Password</label>
-                                    <input type="password" asp-for="UserAccount.Password" placeholder="Password">
-                                    <span style="color:red;" asp-validation-for="UserAccount.Password"></span>
+                                    <input type="password" asp-for="UserAccount.NewPassword" placeholder="Password">
+                                    <span style="color:red;" asp-validation-for="UserAccount.NewPassword"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Confirm Password</label>
-                                    <input type="password" name="cfp" placeholder="Confirm Password">
+                                    <input type="password" asp-for="UserAccount.ConfirmPass" placeholder="Confirm Password">
+                                    <span style="color:red;" asp-validation-for="UserAccount.ConfirmPass"></span>
                                 </div>
                                 <hr />
                                 <div class="text-center">

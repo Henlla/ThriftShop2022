@@ -15,16 +15,48 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Lance\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Client
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateColor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVDb2xvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateCoupon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVDb3Vwb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateSize.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVTaXplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3Q2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewColor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3Q29sb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewCoupon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3Q291cG9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3UHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewSize.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3U2l6ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lance/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/LoginAdmin.cshtml]
