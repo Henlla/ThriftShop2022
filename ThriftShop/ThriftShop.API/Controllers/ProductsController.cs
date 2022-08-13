@@ -162,8 +162,8 @@ namespace ThriftShop.API.Controllers
 
                     unitOfWork.Save();
 
-                    productVM.Product.JsonImageList = "123";
-                    if (!string.IsNullOrEmpty(productVM.Product.JsonImageList))
+                    //productVM.Product.JsonImageList = "123";
+                    if (productVM.Product.ImageList == null)
                     {
                         List<string> list = new List<string>()
                         {
