@@ -410,9 +410,27 @@
 			values: [0, 2000],
 			slide: function (event, ui) {
 				amountprice.val('$' + ui.values[0] + ' - $' + ui.values[1]);
+				alert(123);
 			}
 		});
 		amountprice.val('$' + sliderrange.slider('values', 0) + ' - $' + sliderrange.slider('values', 1));
+
+		$(".price-slider-amount").on("change", function () {
+			alert(123);
+			//$.ajax({
+			//	url: "https://localhost:7061/api/Products/" + 
+			//});
+		});
+		amountprice.on("change", function () {
+			alert(123);
+		})
+		sliderrange.on("change", function () {
+			alert(123);
+		})
+		$(".price-filter").on("change", function () {
+			alert(123);
+        })
+		
 	});
 	/*----------------------------------------*/
 	/*  Slick Carousel
