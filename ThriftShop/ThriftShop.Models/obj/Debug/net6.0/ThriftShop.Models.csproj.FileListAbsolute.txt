@@ -1,14 +1,14 @@
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.deps.json
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.runtimeconfig.json
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.dll
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.pdb
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.csproj.AssemblyReference.cache
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.AssemblyInfoInputs.cache
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.AssemblyInfo.cs
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.csproj.CoreCompileInputs.cache
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.dll
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\refint\ThriftShop.Models.dll
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.pdb
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.genruntimeconfig.cache
-C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ref\ThriftShop.Models.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.deps.json
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.runtimeconfig.json
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\bin\Debug\net6.0\ThriftShop.Models.pdb
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.csproj.AssemblyReference.cache
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.AssemblyInfoInputs.cache
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.AssemblyInfo.cs
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.csproj.CoreCompileInputs.cache
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\refint\ThriftShop.Models.dll
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.pdb
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ThriftShop.Models.genruntimeconfig.cache
+C:\Users\phamk\Desktop\ThriftShop2022\ThriftShop\ThriftShop.Models\obj\Debug\net6.0\ref\ThriftShop.Models.dll
