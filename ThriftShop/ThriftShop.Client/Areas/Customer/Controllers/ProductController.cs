@@ -16,7 +16,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         {
             ProductsVM productsVM = new ProductsVM
             {
-                Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl+ "GetAll/").Result),
+                Products = JsonConvert.DeserializeObject<IEnumerable<Product>>(httpClient.GetStringAsync(productUrl).Result),
                 Categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(httpClient.GetStringAsync(categoryUrl).Result)
             };
             return View(productsVM);

@@ -23,9 +23,9 @@ namespace ThriftShop.API.Controllers
             if (keyword != null)
             {
                 return Ok(await unitOfWork.Product.GetAll(x =>
-                x.Category.CategoryName.Contains(keyword) ||
-                x.Brand.Contains(keyword),
-               includeProperties: "Category,Size_Product,Color_Product,ProductImage"));
+                    x.Category.CategoryName.Contains(keyword) ||
+                    x.Brand.Contains(keyword),
+                   includeProperties: "Category,Size_Product,Color_Product,ProductImage"));
             }
             var model = await unitOfWork.Product.GetAll(includeProperties: "Category,Size_Product,Color_Product,ProductImage");
        
