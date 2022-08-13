@@ -41,7 +41,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             //var model = JsonConvert.DeserializeObject<IEnumerable<ShoppingCart>>(httpClient.GetStringAsync(ShopingCartUrl).Result);
 
           
-            return View(sessionId);
+            return View();
         }
         [Area("Customer")]
         public IActionResult Test()

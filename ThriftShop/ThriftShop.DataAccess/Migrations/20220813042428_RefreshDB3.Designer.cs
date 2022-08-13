@@ -12,13 +12,8 @@ using ThriftShop.DataAccess.Data;
 namespace ThriftShop.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-<<<<<<<< HEAD:ThriftShop/ThriftShop.DataAccess/Migrations/20220812185537_RefreshDB2.Designer.cs
-    [Migration("20220812185537_RefreshDB2")]
-    partial class RefreshDB2
-========
-    [Migration("20220812164743_Added_something")]
-    partial class Added_something
->>>>>>>> Develop:ThriftShop/ThriftShop.DataAccess/Migrations/20220812164743_Added_something.Designer.cs
+    [Migration("20220813042428_RefreshDB3")]
+    partial class RefreshDB3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -94,6 +89,10 @@ namespace ThriftShop.DataAccess.Migrations
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
+
+                    b.Property<string>("ColorType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ColorId", "ProductId");
 
@@ -493,33 +492,6 @@ namespace ThriftShop.DataAccess.Migrations
                 });
 
             modelBuilder.Entity("ThriftShop.Models.ShoppingCart", b =>
-<<<<<<<< HEAD:ThriftShop/ThriftShop.DataAccess/Migrations/20220812185537_RefreshDB2.Designer.cs
-========
-                {
-                    b.HasOne("ThriftShop.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ThriftShop.Models.UserInfo", "UserInfo")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("UserInfo");
-                });
-
-            modelBuilder.Entity("ThriftShop.Models.Size", b =>
-                {
-                    b.HasOne("ThriftShop.Models.Product", null)
-                        .WithMany("Size")
-                        .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("ThriftShop.Models.Size_Product", b =>
->>>>>>>> Develop:ThriftShop/ThriftShop.DataAccess/Migrations/20220812164743_Added_something.Designer.cs
                 {
                     b.HasOne("ThriftShop.Models.Product", "Product")
                         .WithMany()
