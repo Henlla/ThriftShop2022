@@ -9,12 +9,15 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
+
         private string urlCategories = "https://localhost:7061/api/Categories/";
         private string urlProducts = "https://localhost:7061/api/Products/";
         private string urlColor = "https://localhost:7061/api/Colors/";
         private string urlSize = "https://localhost:7061/api/Sizes/";
         private string urlCoupon = "https://localhost:7061/api/Coupon/";
         private HttpClient client = new HttpClient();
+
+        [Route("Admin/Home")]
         public IActionResult Index()
         {
             return View();
