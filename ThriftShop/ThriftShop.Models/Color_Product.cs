@@ -10,14 +10,10 @@ namespace ThriftShop.Models
 {
     public class Color_Product
     {
-        [Key]
+        [Required]
         public int ColorId { get; set; }
-        [Key]
+        [Required]
         public int? ProductId { get; set; }
 
-        [ForeignKey("ColorId")]
-        public Color Color { get; set; }
-        [ForeignKey("ProductId")]
-        public Product Product { get; set; }
     }
 }

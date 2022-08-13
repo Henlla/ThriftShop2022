@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ThriftShop.DataAccess\ThriftShop.DataAccess.csproj" />
     <ProjectReference Include="..\ThriftShop.Models\ThriftShop.Models.csproj" />
   </ItemGroup>
 

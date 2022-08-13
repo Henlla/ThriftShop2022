@@ -1,27 +1,35 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using System.Net.Http;
+﻿using Microsoft.AspNetCore.Mvc;
 using ThriftShop.Models;
+using Newtonsoft.Json;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ThriftShop.Client.Areas.Customer.Controllers
 {
     [Area("Customer")]
     public class CartController : Controller
     {
-        private string urlShoppingCart = "https://localhost:7061/api/ShoppingCart/";
-        private HttpClient client = new HttpClient();
-        public IActionResult Index()
+     
+        HttpClient httpClient = new HttpClient();
+
+        public CartController()
         {
-            var objCart = JsonConvert.DeserializeObject<IEnumerable<ShoppingCart>>(client.GetStringAsync(urlShoppingCart).Result);
-            return View(objCart);
+
         }
 
+        [Area("Customer")]
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [Area("Customer")]
+        
         public IActionResult CheckOut()
         {
             return View();
         }
 
-
+        
     }
 }
+
