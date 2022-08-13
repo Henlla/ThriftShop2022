@@ -59,9 +59,9 @@
                             @{
                                 foreach (var item in Model.Colors)
                                 {
-                                    <li>
-                                        <a asp-action="" asp-area="" asp-controller="" asp-route-colorId="@item.ColorId">@item.ColorType</a>
-                                    </li>
+                                        <li>
+                                            <a asp-action="" asp-area="" asp-controller="" asp-route-colorId="@item.ColorId">@item.ColorType</a>
+                                        </li>
                                 }
                             }
                         </ul>
@@ -339,13 +339,13 @@
                                                     {
                                                         if (img.IsMainImage == true)
                                                         {
-                                                            <img class="primary-img" src="@img.ImageUrl" alt="">
+                                                                <img class="primary-img" src="@img.ImageUrl" alt="">
                                                         }
 
                                                     }
                                                     foreach (var item in products.ProductImage.Where(x => x.IsMainImage == false).Take(1))
                                                     {
-                                                        <img class="secondary-img" src="@item.ImageUrl" alt="">
+                                                            <img class="secondary-img" src="@item.ImageUrl" alt="">
                                                     }
                                                 }
                                             </a>
@@ -353,17 +353,7 @@
                                             <div class="add-actions">
                                                 <ul>
                                                     <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-                                                        <a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="right" title="Quick View"><i class="ion-ios-search"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="right" title="Add To Wishlist">
-                                                            <i class="ion-ios-heart-outline"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="compare.html" data-bs-toggle="tooltip" data-placement="right" title="Add To Compare">
-                                                            <i class="ion-ios-reload"></i>
-                                                        </a>
+                                                        <a class="quick-view" onclick="quickView(@products.ProductId)" data-bs-toggle="tooltip" data-placement="right" title="Quick View"><i class="ion-ios-search"></i></a>
                                                     </li>
                                                     <li>
                                                         <a href="cart.html" data-bs-toggle="tooltip" data-placement="right" title="Add To cart"><i class="ion-bag"></i></a>

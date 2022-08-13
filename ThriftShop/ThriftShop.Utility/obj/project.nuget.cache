@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ET1QLXKxEZwFpgnVdXQSdcSoe/HgZjgT8UIzI1kbtjXTHH64dmpjY1xDE113t+wEh4OLDMPgq3MqOA5pwujvug==",
+  "dgSpecHash": "7SLjxSnLN7z8Qf39ADCUuEXieffh49sK9LtiqreQHbfloef0rto7wkZF8i10h87xwnOi12fmX+GjZSYKh5LVMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Utility\\ThriftShop.Utility.csproj",
+  "projectFilePath": "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Utility\\ThriftShop.Utility.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Utility\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
