@@ -17,7 +17,7 @@ namespace ThriftShop.API.Controllers
         }
 
         //Find All
-        [HttpGet()]
+        [HttpGet("GetAll/{keyword?}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetAll(string? keyword = null)
         {
             if (keyword != null)
@@ -164,7 +164,7 @@ namespace ThriftShop.API.Controllers
                 }
             }
 
-            if (!string.IsNullOrEmpty(productVM.Product.JsonImageList))
+            if (productVM.Product.ImageList != null)
             {
                 //var list = product.JsonImageList.ToList();
                 List<string> list = new List<string>()
