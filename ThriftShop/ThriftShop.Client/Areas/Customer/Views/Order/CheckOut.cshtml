@@ -126,7 +126,7 @@
                                             × @item.Count
                                         </strong>
                                     </td>
-                                    <td class="cart-product-total" >   $<span class="amount itemAmount" >@item.Amount</span></td>
+                                    <td class="cart-product-total" >   $<span class="amount itemAmount" >@(item.Product.FinalPrice * item.Count )</span></td>
                                 </tr>
    
 
@@ -137,11 +137,11 @@
                             <tfoot>
                                 <tr class="cart-subtotal">
                                     <th>Discount</th>
-                                    <td style="color:red">-<span class="amount " id="discountAmount"> </span></td>
+                                    <td style="color:red">-<span class="amount " id="discountAmount"> @ViewBag.discount</span></td>
                                 </tr>
                                 <tr class="order-total">
                                     <th>Order Total</th>
-                                    <td><strong>$<span class="amount" id="totalAmount"></span></strong></td>
+                                    <td><strong>$<span class="amount" id="totalAmount"></span> @ViewBag.amount</strong></td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -156,31 +156,4 @@
          
 <!-- Kenne's Checkout Area End Here -->
 
-@section Scripts {
-  <script type="text/javascript">
-$(document).ready(function() {
-    var cpValue= parseInt(@ViewBag.couponV);
-    var cpType = @ViewBag.couponT;
-    var discountAmount = 0;
-   var itemAmountList=document.getElementsByClassName("itemAmount");
-    var total = 0;
-    for (var i = 0;i<itemAmountList.length;i++)
-  {
-    total += parseInt(itemAmountList[i].innerHTML);
-  }
-    if (cpType == "Cash"){
-        discountAmount = cpValue;
-    }
-    else { 
-    discountAmount = (total * cpValue)/100;
-    }
-    total = total - discountAmount;
-    document.getElementById("totalAmount").innerHTML = String(total);
-    document.getElementById("discountAmount").innerHTML = String(discountAmount);
 
-
-});
-
-  
-  </script>
-}
