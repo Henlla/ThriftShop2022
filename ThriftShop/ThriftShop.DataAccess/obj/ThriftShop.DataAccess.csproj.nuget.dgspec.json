@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {}
   },
   "projects": {
@@ -13,30 +12,9 @@
         "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
-=======
-    "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
-        "projectName": "ThriftShop.DataAccess",
-        "projectPath": "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\TINH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
->>>>>>> Develop
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\TINH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> Develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,13 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
-=======
-              "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
-                "projectPath": "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
->>>>>>> Develop
               }
             }
           }
@@ -117,11 +90,10 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -130,27 +102,9 @@
         "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\obj\\",
-=======
-    "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
-        "projectName": "ThriftShop.Models",
-        "projectPath": "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
-        "packagesPath": "C:\\Users\\TINH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TINH\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\obj\\",
->>>>>>> Develop
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\TINH\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> Develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -210,7 +164,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

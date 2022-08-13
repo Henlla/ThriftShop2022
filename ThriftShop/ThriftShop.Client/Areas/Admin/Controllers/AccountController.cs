@@ -11,6 +11,7 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Login(string username,string password)
         {
+
             return View();
         }
     }
