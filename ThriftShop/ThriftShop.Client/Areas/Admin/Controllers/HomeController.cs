@@ -50,8 +50,8 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
             ProductVM productVm = new ProductVM
             {
                 Product = product,
-                listSize = lSize,
-                listColor = lColor
+                //listSize = lSize,
+                //listColor = lColor
             };
             var model = client.PostAsJsonAsync<ProductVM>(urlProducts, productVm).Result;
             return View();
