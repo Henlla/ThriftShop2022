@@ -11,7 +11,6 @@
         <div class="col-12">
             <div class="d-flex flex-column justify-content-center">
                 <h1 class="text-center">Create new product</h1>
-
                 <form method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -58,29 +57,14 @@
                             <ejs-dropdownlist ejs-for="SexType" id="games" dataSource="@data" placeholder="Sex" floatLabelType="Always"> </ejs-dropdownlist>
                         </div>
                         <div class="mb-3 col-12">
-                            <ejs-textbox id="picture1" type="file" placeholder="Picture"></ejs-textbox>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <ejs-textbox id="picture2" type="file" placeholder="Picture"></ejs-textbox>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <ejs-textbox id="picture3" type="file" placeholder="Picture"></ejs-textbox>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <ejs-textbox id="picture4" type="file" placeholder="Picture"></ejs-textbox>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <ejs-textbox id="picture5" type="file" placeholder="Picture"></ejs-textbox>
-                        </div>
-                        <div class="mb-3 col-12">
-                            <ejs-textbox id="picture6" type="file" placeholder="Picture"></ejs-textbox>
+                            <ejs-textbox id="picture1" name="file" multiple type="file" placeholder="Picture"></ejs-textbox>
                         </div>
                         <div class="mb-3 col-4">
                             <ejs-button id="submit" type="submit" cssClass="e-primary" content="Submit"></ejs-button>
                         </div>
-
                     </div>
                 </form>
+
             </div>
         </div>
     </div>

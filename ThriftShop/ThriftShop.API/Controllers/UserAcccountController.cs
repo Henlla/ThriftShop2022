@@ -40,7 +40,7 @@ namespace ThriftShop.API.Controllers
         {
             if (user != null)
             {
-                user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                user.Password = BCrypt.Net.BCrypt.HashPassword(user.NewPassword);
                 await unitOfWork.UserAccount.Add(user);
                 unitOfWork.Save();
                 return Ok(user);

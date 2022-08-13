@@ -19,8 +19,10 @@ namespace ThriftShop.Models
         [Required]
         public string? Password { get; set; }
         [NotMapped]
+        public string? NewPassword { get; set; }
+        [NotMapped]
         [ValidateNever]
-        [Compare("Password",ErrorMessage ="Password not same")]
+        [Compare("NewPassword", ErrorMessage ="Password not same")]
         public string? ConfirmPass { get; set; }
     }
 }

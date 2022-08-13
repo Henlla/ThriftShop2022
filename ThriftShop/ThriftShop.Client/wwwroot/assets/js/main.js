@@ -702,12 +702,307 @@
         feed.run();
     }
 
+    function renderShowAll() {
+        $.ajax({
+            url: "https://localhost:7061/api/Products/GetAll/",
+            type: "GET",
+            success: function (response) {
+                console.log(response);
+                let html = "";
+                if (response.length != 0) {
+                    for (var i = 0; i < response.length; i++) {
+                        html += '<div class="col-lg-4 col-md-4 col-sm-6">' +
+                            '                            <div class="product-item">' +
+                            '                                <div class="single-product">' +
+                            '                                    <div class="product-img">' +
+                            '                                        <a href="single-product.html">'
+                        for (var i = 0; i < response.length; i++) {
+                            while (response[i].productImage[i].isMainImage == true) {
+                                html += '<img class="primary-img" src=' + response[i].productImage[i].imageUrl + ' alt="">'
+                            }
+                        }
+                        for (var i = 0; i < response[i].productImage[i].length; i++) {
+                            while (response[i].productImage[i].isMainImage == false) {
+                                html += '<img class="secondary-img" src=' + response[i].productImage[i].imageUrl + ' alt="">'
+                            }
+                        }
+                        html += '</a>' +
+                            '<span class="sticker">-15%</span>' +
+                            '<div class="add-actions">' +
+                            '<ul>' +
+                            '<li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">' +
+                            '<a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="right" title="Quick View"><i class="ion-ios-search"></i></a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="wishlist.html" data-bs-toggle="tooltip" data-placement="right" title="Add To Wishlist">' +
+                            '<i class="ion-ios-heart-outline"></i>' +
+                            '</a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="compare.html" data-bs-toggle="tooltip" data-placement="right" title="Add To Compare">' +
+                            '<i class="ion-ios-reload"></i>' +
+                            '</a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="cart.html" data-bs-toggle="tooltip" data-placement="right" title="Add To cart"><i class="ion-bag"></i></a>' +
+                            '</li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="product-content">' +
+                            '<div class="product-desc_info">' +
+                            '<h3 class="product-name"><a href="single-product.html">' + response[i].title + '</a></h3>' +
+                            '<div class="price-box">' +
+                            '<span class="new-price">' + "$" + response[i].finalPrice + '</span>' +
+                            '<span class="old-price">' + "$" + response[i].price + '</span>' +
+                            '</div>' +
+                            '<div class="rating-box">' +
+                            '<ul>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li class="silver-color"><i class="ion-ios-star-half"></i></li>' +
+                            '<li class="silver-color">' +
+                            '<i class="ion-ios-star-outline"></i>' +
+                            '</li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="list-product_item">' +
+                            '<div class="single-product">' +
+                            '<div class="product-img">' +
+                            '<a href="single-product.html">' +
+                            '<img src="~/assets/images/product/1-2.jpg" alt="Kenne\'s Product Image">' +
+                            '</a>' +
+                            '</div>' +
+                            '<div class="product-content">' +
+                            '<div class="product-desc_info">' +
+                            '<div class="price-box">' +
+                            '<span class="new-price">' + response[i].finalPrice + '</span>' +
+                            '<span class="old-price">' + response[i].price + '</span>' +
+                            '</div>' +
+                            '<h6 class="product-name"><a href="single-product.html">' + response[i].title + '</a></h6>' +
+                            '<div class="rating-box">' +
+                            '<ul>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li class="silver-color"><i class="ion-ios-star-half"></i></li>' +
+                            '<li class="silver-color">' +
+                            '<i class="ion-ios-star-outline"></i>' +
+                            '</li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '<div class="product-short_desc">' +
+                            '<p>' +
+                            '' + response[i].description + '' +
+                            '</p>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="add-actions">' +
+                            '<ul>' +
+                            '<li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">' +
+                            '<a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-ios-search"></i></a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist">' +
+                            '<i class="ion-ios-heart-outline"></i>' +
+                            '</a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="compare.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Compare"><i class="ion-ios-reload"></i></a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To cart"><i class="ion-bag"></i></a>' +
+                            '</li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            ''
+                    };
+                    $("#listFromPrice").html(html);
+                }
+                else {
+                    $("#listFromPrice").html("Not found");
+                    $("#listFromPrice").css("text-align", "center");
+                }
+            }
+        });
+    }
+
+    function redenderPrice(fromPrice, toPrice) {
+        $.ajax({
+            url: "https://localhost:7061/GetProductByPrice/" + fromPrice + "/" + toPrice,
+            type: "GET",
+            success: function (response) {
+                console.log(response);
+                let html = "";
+                if (response.length != 0) {
+                    for (var i = 0; i < response.length; i++) {
+                        html += '<div class="col-lg-4 col-md-4 col-sm-6">' +
+                            '                            <div class="product-item">' +
+                            '                                <div class="single-product">' +
+                            '                                    <div class="product-img">' +
+                            '                                        <a href="single-product.html">'
+                        for (var i = 0; i < response.productImage[i].length; i++) {
+                            if (response[i].productImage[i].isMainImage == true) {
+                                html += '<img class="primary-img" src=' + response[i].productImage[i].imageUrl + ' alt="">'
+                            }
+                        }
+                        for (var i = 0; i < response[i].productImage[i].length; i++) {
+                           if (response[i].productImage[i].isMainImage == false) {
+                                html += '<img class="secondary-img" src=' + response[i].productImage[i].imageUrl + ' alt="">'
+                            }
+                        }
+                        html += '</a>' +
+                            '<span class="sticker">-15%</span>' +
+                            '<div class="add-actions">' +
+                            '<ul>' +
+                            '<li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">' +
+                            '<a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="right" title="Quick View"><i class="ion-ios-search"></i></a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="wishlist.html" data-bs-toggle="tooltip" data-placement="right" title="Add To Wishlist">' +
+                            '<i class="ion-ios-heart-outline"></i>' +
+                            '</a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="compare.html" data-bs-toggle="tooltip" data-placement="right" title="Add To Compare">' +
+                            '<i class="ion-ios-reload"></i>' +
+                            '</a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="cart.html" data-bs-toggle="tooltip" data-placement="right" title="Add To cart"><i class="ion-bag"></i></a>' +
+                            '</li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="product-content">' +
+                            '<div class="product-desc_info">' +
+                            '<h3 class="product-name"><a href="single-product.html">' + response[i].title + '</a></h3>' +
+                            '<div class="price-box">' +
+                            '<span class="new-price">' + "$" + response[i].finalPrice + '</span>' +
+                            '<span class="old-price">' + "$" + response[i].price + '</span>' +
+                            '</div>' +
+                            '<div class="rating-box">' +
+                            '<ul>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li class="silver-color"><i class="ion-ios-star-half"></i></li>' +
+                            '<li class="silver-color">' +
+                            '<i class="ion-ios-star-outline"></i>' +
+                            '</li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="list-product_item">' +
+                            '<div class="single-product">' +
+                            '<div class="product-img">' +
+                            '<a href="single-product.html">' +
+                            '<img src="~/assets/images/product/1-2.jpg" alt="Kenne\'s Product Image">' +
+                            '</a>' +
+                            '</div>' +
+                            '<div class="product-content">' +
+                            '<div class="product-desc_info">' +
+                            '<div class="price-box">' +
+                            '<span class="new-price">' + response[i].finalPrice + '</span>' +
+                            '<span class="old-price">' + response[i].price + '</span>' +
+                            '</div>' +
+                            '<h6 class="product-name"><a href="single-product.html">' + response[i].title + '</a></h6>' +
+                            '<div class="rating-box">' +
+                            '<ul>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li><i class="ion-ios-star"></i></li>' +
+                            '<li class="silver-color"><i class="ion-ios-star-half"></i></li>' +
+                            '<li class="silver-color">' +
+                            '<i class="ion-ios-star-outline"></i>' +
+                            '</li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '<div class="product-short_desc">' +
+                            '<p>' +
+                            '' + response[i].description + '' +
+                            '</p>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="add-actions">' +
+                            '<ul>' +
+                            '<li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">' +
+                            '<a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-ios-search"></i></a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist">' +
+                            '<i class="ion-ios-heart-outline"></i>' +
+                            '</a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="compare.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Compare"><i class="ion-ios-reload"></i></a>' +
+                            '</li>' +
+                            '<li>' +
+                            '<a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To cart"><i class="ion-bag"></i></a>' +
+                            '</li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            ''
+                    };
+                    $("#listFromPrice").html(html);
+                }
+                else {
+                    $("#listFromPrice").html("Not found");
+                    $("#listFromPrice").css("text-align", "center");
+                }
+            }
+        });
+    }
     /*--------------------------------
     Price Slider Active
 -------------------------------- */
     var sliderrange = $('#slider-range');
     var amountprice = $('#amount');
     $(function () {
+<<<<<<< HEAD
+        $("#select-list").on("change", function () {
+            let fromPrice = 0;
+            let toPrice = 0;
+            let price = $(this).find(":selected").val();
+            if (price == 1) {
+                fromPrice = 0;
+                toPrice = 500;
+                redenderPrice(fromPrice, toPrice);
+            } else if (price == 2) {
+                fromPrice = 500;
+                toPrice = 1000;
+                redenderPrice(fromPrice, toPrice);
+            } else if (price == 3) {
+                fromPrice = 1000;
+                toPrice = 1500;
+                redenderPrice(fromPrice, toPrice);
+            } else if (price == 4) {
+                fromPrice = 1500;
+                toPrice = 2000;
+                redenderPrice(fromPrice, toPrice);
+            } else if (price == 5) {
+                fromPrice = 2500;
+                toPrice = 10000;
+                redenderPrice(fromPrice, toPrice);
+            } else {
+                renderShowAll();
+=======
         sliderrange.slider({
             range: true,
             min: 1000,
@@ -845,10 +1140,24 @@
                     }
                 });
 
+>>>>>>> Develop
             }
-        });
-        amountprice.val('$' + sliderrange.slider('values', 0) + ' - $' + sliderrange.slider('values', 1));
-    });
+        })
+    })
+
+    //$(function () {
+    //    sliderrange.slider({
+    //        range: true,
+    //        min: 1000,
+    //        max: 100000,
+    //        values: [10, 100000],
+    //        slide: function (event, ui) {
+    //            amountprice.val('$' + ui.values[0] + ' - $' + ui.values[1]);
+    //        }
+    //    });
+    //    amountprice.val('$' + sliderrange.slider('values', 0) + ' - $' + sliderrange.slider('values', 1));
+
+    //});
 
     /*--------------------------------
     Scroll To Top
