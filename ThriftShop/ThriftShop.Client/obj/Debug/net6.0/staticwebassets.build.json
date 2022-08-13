@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JheYwGc3EqT2nX/d6aj4yGF2POvmnzgrzOVADOEybwc=",
+  "Hash": "YMActJfvi+9qknlVuVvCsvi2VPtExUvoXJUhvIZlzjs=",
   "Source": "ThriftShop.Client",
   "BasePath": "_content/ThriftShop.Client",
   "Mode": "Default",
@@ -34559,6 +34559,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\images\\UIMG2022081413p1.png",
+      "SourceId": "ThriftShop.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\",
+      "BasePath": "_content/ThriftShop.Client",
+      "RelativePath": "images/UIMG2022081413p1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\UIMG2022081413p1.png"
+    },
+    {
+      "Identity": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\images\\UIMG2022081427OIP.jpg",
+      "SourceId": "ThriftShop.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\",
+      "BasePath": "_content/ThriftShop.Client",
+      "RelativePath": "images/UIMG2022081427OIP.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\UIMG2022081427OIP.jpg"
     },
     {
       "Identity": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\js\\site.js",
