@@ -67,16 +67,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQWNjb3VudFxTZXR0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Cart/CheckOut.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQ2FydFxDaGVja091dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Cart/Test.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQ2FydFxUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Home/AboutUs.cshtml]
@@ -89,6 +81,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Order/CheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcT3JkZXJcQ2hlY2tPdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Trung Le/OneDrive/Desktop/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/Compare.cshtml]
