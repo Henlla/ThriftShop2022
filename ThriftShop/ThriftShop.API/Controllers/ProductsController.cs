@@ -16,7 +16,7 @@ namespace ThriftShop.API.Controllers
         }
 
         //Find All
-        [HttpGet("GetAll/{keyword?}")]
+        [HttpGet()]
         public async Task<ActionResult<IEnumerable<Product>>> GetAll(string? keyword = null)
         {
             if (keyword != null)
@@ -24,9 +24,11 @@ namespace ThriftShop.API.Controllers
                 return Ok(await unitOfWork.Product.GetAll(x =>
                 x.Category.CategoryName.Contains(keyword) ||
                 x.Brand.Contains(keyword),
-               includeProperties: "Category,Size,Color,ProductType,ProductImage"));
+               includeProperties: "Category,Size_Product,Color_Product,ProductImage"));
             }
-            return Ok(await unitOfWork.Product.GetAll(includeProperties: "Category,Size,Color,ProductType,ProductImage"));
+            var model = await unitOfWork.Product.GetAll(includeProperties: "Category,Size_Product,Color_Product,ProductImage");
+       
+            return Ok(model);
 
         }
 
@@ -42,7 +44,7 @@ namespace ThriftShop.API.Controllers
             {
                 return NotFound();
             }
-            var numberOfProduct = await unitOfWork.Product.GetAll(includeProperties: "Category,Size,Color,ProductType,ProductImage");
+            var numberOfProduct = await unitOfWork.Product.GetAll(includeProperties: "Category,Size,Color,ProductImage");
             var pageResult = 5f; //number of product
             var pageCount = Math.Ceiling(numberOfProduct.Count() / pageResult);
 
@@ -77,14 +79,14 @@ namespace ThriftShop.API.Controllers
         [HttpGet("/GetProductByCategory/{categoryId}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(int categoryId)
         {
-            return Ok(await unitOfWork.Product.GetAll(x => x.CategoryId == categoryId, includeProperties: "Category,Size,Color,ProductType,ProductImage"));
+            return Ok(await unitOfWork.Product.GetAll(x => x.CategoryId == categoryId, includeProperties: "Category,Size,Color,ProductImage"));
         }
 
         //Filter by Brand
         [HttpGet("/GetProductByBrand/{brandName}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductByBrand(string brandName)
         {
-            var model = await unitOfWork.Product.GetAll(x => x.Brand == brandName, includeProperties: "Category,Size,Color,ProductType,ProductImage");
+            var model = await unitOfWork.Product.GetAll(x => x.Brand == brandName, includeProperties: "Category,Size,Color,ProductImage");
             return Ok(model);
         }
 
@@ -93,7 +95,7 @@ namespace ThriftShop.API.Controllers
         public async Task<ActionResult<IEnumerable<Product>>> GetProductByCreatedDate(string createdDateFromClient) // (yyyy-MM-dd format)
         {
             //var dateTime = DateOnly.ParseExact(createdDateFromClient,"yyyy-MM-dd",null);
-            return Ok(await unitOfWork.Product.GetAll(x => x.CreatedDate.ToString() == createdDateFromClient, includeProperties: "Category,Size,Color,ProductType,ProductImage"));
+            return Ok(await unitOfWork.Product.GetAll(x => x.CreatedDate.ToString() == createdDateFromClient, includeProperties: "Category,Size,Color,ProductImage"));
         }
 
         //Filter by Price
@@ -102,7 +104,7 @@ namespace ThriftShop.API.Controllers
         [HttpGet("/GetProductByPrice/{fromPrice}/{toPrice}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductByPrice(double fromPrice, double toPrice)
         {
-            return Ok(await unitOfWork.Product.GetAll(x => x.Price >= fromPrice && x.Price <= toPrice, includeProperties: "Category,Size,Color,ProductType,ProductImage"));
+            return Ok(await unitOfWork.Product.GetAll(x => x.Price >= fromPrice && x.Price <= toPrice, includeProperties: "Category,Size,Color,ProductImage"));
         }
 
         
@@ -124,6 +126,7 @@ namespace ThriftShop.API.Controllers
             if (!string.IsNullOrEmpty(sizeIdList) && !string.IsNullOrEmpty(colorIdList))
             {
                 var product_list = await unitOfWork.Product.GetAll();
+              
                 var lastedProductInDB = product_list.OrderByDescending(x=>x.ProductId).First();
                 if(lastedProductInDB != null)
                 {
@@ -132,6 +135,8 @@ namespace ThriftShop.API.Controllers
 
                     foreach (var item in _sizeIdList)
                     {
+
+
                         Size_Product size_Product = new Size_Product()
                         {
                             SizeId = item,

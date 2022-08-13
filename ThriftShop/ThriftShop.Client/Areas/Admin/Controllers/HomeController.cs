@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Net.Http;
 using ThriftShop.Models;
+using ThriftShop.Models.PageModel;
 
 namespace ThriftShop.Client.Areas.Admin.Controllers
 {
@@ -10,10 +11,8 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
     {
         private string urlCategories = "https://localhost:7061/api/Categories/";
         private string urlProducts = "https://localhost:7061/api/Products/";
-        private string urlBrand = "https://localhost:7061/api/Categories/";
         private string urlColor = "https://localhost:7061/api/Colors/";
         private string urlSize = "https://localhost:7061/api/Sizes/";
-        private string urlProductType = "https://localhost:7061/api/ProductTypes/";
         private HttpClient client = new HttpClient();
         public IActionResult Index()
         {
@@ -29,26 +28,32 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
             var modelCategories = JsonConvert.DeserializeObject<IEnumerable<Category>>(client.GetStringAsync(urlCategories).Result);
             var modelColors = JsonConvert.DeserializeObject<IEnumerable<Color>>(client.GetStringAsync(urlColor).Result);
             var modelSize = JsonConvert.DeserializeObject<IEnumerable<Size>>(client.GetStringAsync(urlSize).Result);
+            //var modelProductType = JsonConvert.DeserializeObject<IEnumerable<ProductType>>(client.GetStringAsync(urlProductType).Result);
             ViewBag.category = modelCategories;
             ViewBag.color = modelColors;
             ViewBag.size = modelSize;
+            //ViewBag.productType = modelProductType;
             return View();
         }
         [HttpPost]
-        public IActionResult CreateProduct(Product product,string[] size)
+        public IActionResult CreateProduct(Product product,int[] size, int[] color)
         {
-
-            List<string> list = new List<string>();
-            foreach (var i in size)
-            {
-                list.Add(i);
+            List<int> lSize = new List<int>();
+            foreach (var i in size) {
+                lSize.Add(i);
             }
-            //string nList = list.ToString();
-            //var json = JsonConvert.ToString(nList);
-
-            Category ca = new Category();
-            //var model = client.PostAsJsonAsync<Category>(urlCategories + nList, ca).Result;
-            
+            List<int> lColor = new List<int>();
+            foreach (var i in color)
+            {
+                lColor.Add(i);
+            }
+            ProductVM productVm = new ProductVM
+            {
+                Product = product,
+                listSize = lSize,
+                listColor = lColor
+            };
+            var model = client.PostAsJsonAsync<ProductVM>(urlProducts, productVm).Result;
             return View();
         }
 

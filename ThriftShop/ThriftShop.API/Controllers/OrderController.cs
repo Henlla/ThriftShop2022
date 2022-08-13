@@ -44,7 +44,8 @@ namespace ThriftShop.API.Controllers
             //
             obj.orderDetails = null;
             obj.OrderStatus = SD.StatusPending;
-            if (obj == null)
+          
+            if (obj != null) 
             {
                 await _unitOfWord.Order.Add(obj);
             }

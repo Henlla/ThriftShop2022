@@ -40,15 +40,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication(); ;
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
-app.MapControllerRoute(
-    name: "Admin",
-    pattern: "{area=Admin}/{controller=Login}/{action=LoginAdmin}/{id?}");
+    pattern: "{area=Customer}/{controller=Order}/{action=CheckOut}/{id?}");
 
 app.Run();
