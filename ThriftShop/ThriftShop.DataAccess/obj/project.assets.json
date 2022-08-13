@@ -9854,24 +9854,37 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
+    "C:\\Users\\Trung Le\\.nuget\\packages\\": {}
+=======
     "C:\\Users\\phamk\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> origin/Develop
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
+      "projectName": "ThriftShop.DataAccess",
+      "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Trung Le\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
+=======
       "projectUniqueName": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
       "projectName": "ThriftShop.DataAccess",
       "projectPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
       "packagesPath": "C:\\Users\\phamk\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
+>>>>>>> origin/Develop
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
+<<<<<<< HEAD
+        "C:\\Users\\Trung Le\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
         "C:\\Users\\phamk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> origin/Develop
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9885,8 +9898,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
+            "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
+              "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
+=======
             "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
               "projectPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
+>>>>>>> origin/Develop
             }
           }
         }
