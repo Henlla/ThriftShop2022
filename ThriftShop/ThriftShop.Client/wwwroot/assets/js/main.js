@@ -219,24 +219,24 @@
     /*----------------------------------------*/
     /*  Cart Plus Minus Button
     /*----------------------------------------*/
-    $('.cart-plus-minus').append(
-        '<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div><div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>'
-    );
-    $('.qtybutton').on('click', function () {
-        var $button = $(this);
-        var oldValue = $button.parent().find('input').val();
-        if ($button.hasClass('inc')) {
-            var newVal = parseFloat(oldValue) + 1;
-        } else {
-            // Don't allow decrementing below zero
-            if (oldValue > 1) {
-                var newVal = parseFloat(oldValue) - 1;
-            } else {
-                newVal = 1;
-            }
-        }
-        $button.parent().find('input').val(newVal);
-    });
+    //$('.cart-plus-minus').append(
+    //    '<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div><div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>'
+    //);
+    //$('.qtybutton').on('click', function () {
+    //    var $button = $(this);
+    //    var oldValue = $button.parent().find('input').val();
+    //    if ($button.hasClass('inc')) {
+    //        var newVal = parseFloat(oldValue) + 1;
+    //    } else {
+    //        // Don't allow decrementing below zero
+    //        if (oldValue > 1) {
+    //            var newVal = parseFloat(oldValue) - 1;
+    //        } else {
+    //            newVal = 1;
+    //        }
+    //    }
+    //    $button.parent().find('input').val(newVal);
+    //});
 
     /*----------------------------------------*/
     /* Toggle Function Active
@@ -721,124 +721,7 @@
                     success: function (response) {
                         let html = "";
                        
-                        for (var i = 0; i < response.length; i++) {
-                           html = `<div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="product-item">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">`+
-                                                for (var i = 0; i < response.ProductImage.length; i++)
-                                                {
-                                                    if (response.IsMainImage == true)
-                                                    {
-                                                        html += `<img class="primary-img" src="${img.ImageUrl}" alt="">`
-                                                    }
-
-                                                }
-                                                for (var item in products.ProductImage.Where(x => x.IsMainImage == false).Take(1))
-                                                {
-                                                    html += `<img class="secondary-img" src="${item.ImageUrl}" alt="">`
-                                                }
-                                       html+= `</a>
-                                        <span class="sticker">-15%</span>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-                                                    <a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="right" title="Quick View"><i class="ion-ios-search"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="right" title="Add To Wishlist">
-                                                        <i class="ion-ios-heart-outline"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" data-bs-toggle="tooltip" data-placement="right" title="Add To Compare">
-                                                        <i class="ion-ios-reload"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" data-placement="right" title="Add To cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-desc_info">
-                                            <h3 class="product-name"><a href="single-product.html">${response.Title}</a></h3>
-                                            <div class="price-box">
-                                                <span class="new-price"></span>
-                                                <span class="old-price">${response.Price}</span>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="ion-ios-star"></i></li>
-                                                    <li><i class="ion-ios-star"></i></li>
-                                                    <li><i class="ion-ios-star"></i></li>
-                                                    <li class="silver-color"><i class="ion-ios-star-half"></i></li>
-                                                    <li class="silver-color">
-                                                        <i class="ion-ios-star-outline"></i>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="list-product_item">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="~/assets/images/product/1-2.jpg" alt="Kenne's Product Image">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-desc_info">
-                                            <div class="price-box">
-                                                <span class="new-price">${response.Price}</span>
-                                                <span class="old-price">${response.Price = response.Price + random.Next(100, 500)}</span>
-                                            </div>
-                                            <h6 class="product-name"><a href="single-product.html">${products.Title}</a></h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="ion-ios-star"></i></li>
-                                                    <li><i class="ion-ios-star"></i></li>
-                                                    <li><i class="ion-ios-star"></i></li>
-                                                    <li class="silver-color"><i class="ion-ios-star-half"></i></li>
-                                                    <li class="silver-color">
-                                                        <i class="ion-ios-star-outline"></i>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-short_desc">
-                                                <p>
-                                                    @products.Description
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-                                                    <a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-ios-search"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist">
-                                                        <i class="ion-ios-heart-outline"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Compare"><i class="ion-ios-reload"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`
-                        }
-                        $("#findByPrice").html(html);
+                        
                     }
                 });
             }

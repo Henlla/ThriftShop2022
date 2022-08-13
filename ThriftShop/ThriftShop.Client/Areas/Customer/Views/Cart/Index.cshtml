@@ -56,28 +56,27 @@
                                         //<input type="checkbox" name="delete" value="@itemCart.Id"/>
                                         //<input type="hidden" class="cartItemId" id="cartId_@itemCart.Id" asp-for="@itemCart.Id" value="" />
                                         //<input type="hidden" name="productId[]" value="@itemCart.ProductId" />
-                                            <tr>
-                                                <td class="kenne-product-thumbnail"><a href="javascript:void(0)"><img src="~/assets///images/product/small-size/1.jpg" alt="Uren's Cart Thumbnail"></a></td>
-                                                <td class="kenne-product-name"><a href="javascript:void(0)">@itemCart.Product.Title</a></td>
-                                                <td class="kenne-product-price"><span class="amount">@(FormatString(itemCart.Product.FinalPrice))</span></td>
-                                                <td class="kenne-product-price"><span class="amount">@itemCart.Size</span></td>
-                                                <td class="kenne-product-price"><span class="amount">@itemCart.Color</span></td>
-                                                <td class="quantity">
-                                                    <label>Quantity</label>
-                                                    <div class="cart-plus-minus">
-                                                        <button onclick="decPrice(@itemCart.Id)"><i class="fa fa-angle-down"></i></button>
-                                                        <input class="cart-plus-minus-box cartCount_@itemCart.Id" value="@itemCart.Count" name="cartCount" type="text">
-                                                        <button onclick="incPrice(@itemCart.Id)"> <i class="fa fa-angle-up"></i></button>
-                                                    </div>
-                                                </td>
-                                                <td class="product-subtotal"><span class="amount subtotal_@itemCart.Id">@(FormatString((itemCart.Product.FinalPrice * itemCart.Count)))</span></td>
-                                                <td class="kenne-product-remove">
-                                                    <a>
-                                                        <i onclick="deleteCart(@itemCart.Id)" class="fa fa-trash"
-                                                   title="Remove"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td class="kenne-product-thumbnail"><a href="javascript:void(0)"><img src="~/assets///images/product/small-size/1.jpg" alt="Uren's Cart Thumbnail"></a></td>
+                                            <td class="kenne-product-name"><a href="javascript:void(0)">@itemCart.Product.Title</a></td>
+                                            <td class="kenne-product-price"><span class="amount">@(FormatString(itemCart.Product.FinalPrice))</span></td>
+                                            <td class="kenne-product-price"><span class="amount">@itemCart.Size</span></td>
+                                            <td class="kenne-product-price"><span class="amount">@itemCart.Color</span></td>
+                                            <td class="quantity">
+                                                <div class="cart-plus-minus">
+                                                    <button onclick="decPrice(@itemCart.Id)"><i class="fa fa-angle-down"></i></button>
+                                                    <input class="cart-plus-minus-box cartCount_@itemCart.Id" value="@itemCart.Count" name="cartCount" type="text">
+                                                    <button onclick="incPrice(@itemCart.Id)"> <i class="fa fa-angle-up"></i></button>
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal"><span class="amount subtotal_@itemCart.Id">@(FormatString((itemCart.Product.FinalPrice * itemCart.Count)))</span></td>
+                                            <td class="kenne-product-remove">
+                                                <a style="cursor:pointer">
+                                                    <i onclick="deleteCart(@itemCart.Id)" class="fa fa-trash"
+                                               title="Remove"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     }
                                 }
                             </tbody>
@@ -177,10 +176,7 @@ else
                 url: "https://localhost:7173/Customer/Cart/Delete/",
                 success: function(success) {
                     if (success) {
-                        $(window).on('load', function() {
-                            var wind = $(window);
-                            $('.loading').delay(10).fadeOut('slow');
-                        });
+                        window.location.reload();
                     }
                 }
             })
