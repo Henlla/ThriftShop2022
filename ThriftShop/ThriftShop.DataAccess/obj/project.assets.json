@@ -9854,19 +9854,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\Trung Le\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
       "projectName": "ThriftShop.DataAccess",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Trung Le\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Trung Le\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9880,8 +9880,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
+            "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
+              "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
             }
           }
         }
@@ -9945,5 +9945,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

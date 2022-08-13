@@ -16,8 +16,8 @@ namespace ThriftShop.API.Controllers
         }
 
         [HttpGet]
-        public Task<IEnumerable<ShoppingCart>> GetListCart() {
-            return _unitOfWord.ShoppingCart.GetAll(includeProperties: "UserInfo,Product");
+        public async Task<IEnumerable<ShoppingCart>> GetListCart() {
+            return await _unitOfWord.ShoppingCart.GetAll(includeProperties: "UserInfo,Product");
         }
 
         [HttpGet("{id}")]
@@ -61,5 +61,12 @@ namespace ThriftShop.API.Controllers
             _unitOfWord.Save();
             return model;
         }
+
+        [HttpGet("GetAll/{userId}")]
+        public async Task<IEnumerable<ShoppingCart>> GetListCartByUserId(int userId)
+        {
+            return await _unitOfWord.ShoppingCart.GetAll(sp=>sp.UserId.Equals(userId), includeProperties: "UserInfo,Product");
+        }
+
     }
 }

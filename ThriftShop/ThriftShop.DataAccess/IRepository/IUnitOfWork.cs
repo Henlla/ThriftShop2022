@@ -21,9 +21,9 @@ namespace ThriftShop.DataAccess.Repository.IRepository
         IProductImage ProductImage { get; }
         ISize Size { get; }
         IColor Color { get; }
-        IProductType ProductType { get; }
-        IStock Stock { get; }
         IOrderDetails orderDetails { get; }
+        IColor_Product Color_Product { get; }
+        ISize_Product Size_Product { get; }
 
         void Save();
     }

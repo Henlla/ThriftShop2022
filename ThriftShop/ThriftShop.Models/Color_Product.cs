@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ThriftShop.Models
 {
-    public class ProductType
+    public class Color_Product
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ProductTypeId { get; set; }
         [Required]
-        public string? Type { get; set; }
+        public int ColorId { get; set; }
+        [Required]
+        public int? ProductId { get; set; }
+
     }
 }

@@ -8,11 +8,9 @@ using ThriftShop.Models;
 
 namespace ThriftShop.DataAccess.IRepository
 {
-    public interface IStock :IRepository<Stock>
+    public interface ISize_Product :IRepository<Size_Product>
     {
-        Task<Stock> Update(Stock obj);
-        int IncrementCount(Stock stock, int count);
-        int DecrementCount(Stock stock, int count);
+        Task<Size_Product> Update(Size_Product obj);
 
     }
 }

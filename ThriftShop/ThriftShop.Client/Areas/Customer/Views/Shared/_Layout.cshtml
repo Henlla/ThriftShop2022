@@ -17,11 +17,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/assets/images/favicon.png">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
 
-    
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-	
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <!-- Fontawesome -->
@@ -53,12 +53,11 @@
         <div class="loading">
             <div class="text-center middle">
                 <span class="loader">
-            <span class="loader-inner"></span>
+                    <span class="loader-inner"></span>
                 </span>
             </div>
         </div>
         <!-- Loading Area End Here -->
-
         <!-- Begin Main Header Area Two -->
         <header class="main-header_area-2">
             <div class="header-top_area d-none d-lg-block">
@@ -68,17 +67,20 @@
                             <div class="col-lg-6">
                                 <div class="ht-menu">
                                     <ul>
-                                        <li><a href="javascript:void(0)">Currency<i class="ion-chevron-down"></i></a>
+                                        <li>
+                                            <a href="javascript:void(0)">Currency<i class="ion-chevron-down"></i></a>
                                             <ul class="ht-dropdown ht-currency">
                                                 <li><a href="javascript:void(0)">€ EUR</a></li>
                                                 <li class="active"><a href="javascript:void(0)">£ Pound Sterling</a></li>
                                                 <li><a href="javascript:void(0)">$ Us Dollar</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="javascript:void(0)">Language <i class="ion-chevron-down"></i></a>
+                                        <li>
+                                            <a href="javascript:void(0)">Language <i class="ion-chevron-down"></i></a>
                                             <ul class="ht-dropdown">
                                                 <li class="active"><a href="javascript:void(0)"><img src="~/assets/images/menu/icon/1.jpg" alt="Kenne Language Icon">English</a></li>
-                                                <li><a href="javascript:void(0)"><img src="~/assets/images/menu/icon/2.jpg" alt="Kenne Language Icon">Français</a>
+                                                <li>
+                                                    <a href="javascript:void(0)"><img src="~/assets/images/menu/icon/2.jpg" alt="Kenne Language Icon">Français</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -92,15 +94,22 @@
                                             <a asp-area="Customer" asp-controller="Account" asp-action="Setting">Setting</></a>
                                         </li>
                                         <li>
-                                              <a asp-area="Customer" asp-controller="Product" asp-action="WishList">WishList</></a>
-                                           
+                                            <a asp-area="Customer" asp-controller="Product" asp-action="WishList">WishList</></a>
                                         </li>
                                         <li>
-                                            <a asp-area="Customer" asp-controller="Account" asp-action="Login">Login</></a>
-                                           
+                                            <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut">Chekout</></a>
                                         </li>
                                         <li>
-                                           <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut">Chekout</></a>
+                                            @{
+                                                if (!User.Identity.IsAuthenticated)
+                                                {
+                                                    <a asp-area="Customer" asp-controller="Account" asp-action="LoginUser">Login</a>
+                                                }
+                                                else
+                                                {
+                                                    <a asp-area="Customer" asp-controller="Account" asp-action="LogOut">@User.Identity.Name | Log out</a>
+                                                }
+                                            }
                                         </li>
                                     </ul>
                                 </div>
@@ -115,8 +124,8 @@
                         <div class="col-lg-12">
                             <div class="header-middle_nav">
                                 <div class="header-logo_area">
-                                    <a asp-area="Customer" asp-controller="Home"  asp-action="Index">
-                                       <!-- <img src="~/assets/images/menu/logo/1.png" alt="Header Logo">-->
+                                    <a asp-area="Customer" asp-controller="Home" asp-action="Index">
+                                        <!-- <img src="~/assets/images/menu/logo/1.png" alt="Header Logo">-->
                                         <img src="~/assets/images/footer/logo/3.png" alt="Logo" width="130">
                                     </a>
                                 </div>
@@ -126,7 +135,7 @@
                                         <p>
                                             Call us
                                             <br>
-                                        Free Support: (012) 800 456 789
+                                            Free Support: (012) 800 456 789
                                         </p>
                                     </div>
                                 </div>
@@ -198,15 +207,16 @@
                                 <nav class="main-nav d-flex justify-content-center">
                                     <ul>
                                         <li class="dropdown-holder">
-                                             <a asp-area="Customer" asp-controller="Home"  asp-action="Index">Home</a>
+                                            <a asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
                                         </li>
-                                        <li class="megamenu-holder position-static"><a asp-area="Customer"asp-controller="Product" asp-action="Index">Shop</></a>
+                                        <li class="megamenu-holder position-static">
+                                            <a asp-area="Customer" asp-controller="Product" asp-action="Index">Shop</></a>
                                         </li>
-                                        
-                                        
-                                        
-                                           <li> <a asp-area="Customer" asp-controller="Home" asp-action="ContactUs">Contact Us</></a> </li>
-                                           <li> <a asp-area="Customer" asp-controller="Home" asp-action="AboutUs">About Us</></a> </li>
+
+
+
+                                        <li> <a asp-area="Customer" asp-controller="Home" asp-action="ContactUs">Contact Us</></a> </li>
+                                        <li> <a asp-area="Customer" asp-controller="Home" asp-action="AboutUs">About Us</></a> </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -223,7 +233,7 @@
                                     <div class="col-lg-2 col-sm-6">
                                         <div class="header-logo_area">
                                             <a href="index.html">
-                                                <img src="~/assets/images/menu/logo/1.png" alt="Header Logo">
+                                                <img src="~/assets/images/footer//logo/3.png" alt="Header Logo">
                                             </a>
                                         </div>
                                     </div>
@@ -231,9 +241,11 @@
                                         <div class="main-menu_area">
                                             <nav class="main-nav d-flex justify-content-center">
                                                 <ul>
-                                                    <li class="dropdown-holder"><a asp-controller="Home" asp-action="Index">Home</a>
+                                                    <li class="dropdown-holder">
+                                                        <a asp-controller="Home" asp-action="Index">Home</a>
                                                     </li>
-                                                    <li class="megamenu-holder position-static"><a asp-controller="Product" asp-action="Index">Shop</a>
+                                                    <li class="megamenu-holder position-static">
+                                                        <a asp-controller="Product" asp-action="Index">Shop</a>
                                                     </li>
                                                     <li><a href="contact-us.html">Contact Us</a></li>
                                                     <li><a href="about-us.html">About Us</a></li>
@@ -249,22 +261,13 @@
                                                         <i class="ion-android-menu"></i>
                                                     </a>
                                                 </li>
+                                                <!--cart-->
                                                 <li class="minicart-wrap">
-                                                    <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                                    <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut" class="minicart-btn toolbar-btn">
                                                         <div class="minicart-count_area">
                                                             <span class="item-count">03</span>
                                                             <i class="ion-bag"></i>
                                                         </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#searchBar" class="search-btn toolbar-btn">
-                                                        <i class="ion-android-search"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="d-none d-lg-inline-block">
-                                                    <a href="#offcanvasMenu" class="menu-btn toolbar-btn color--white">
-                                                        <i class="ion-android-menu"></i>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -285,8 +288,9 @@
                         </div>
                         <ul class="minicart-list">
                             <li class="minicart-product">
-                                <a class="product-item_remove" href="javascript:void(0)"><i
-                                    class="ion-android-close"></i></a>
+                                <a class="product-item_remove" href="javascript:void(0)">
+                                    <i class="ion-android-close"></i>
+                                </a>
                                 <div class="product-item_img">
                                     <img src="~/assets/images/product/1-1.jpg" alt="Kenne's Product Image">
                                 </div>
@@ -296,26 +300,32 @@
                                 </div>
                             </li>
                             <li class="minicart-product">
-                                <a class="product-item_remove" href="javascript:void(0)"><i
-                                    class="ion-android-close"></i></a>
+                                <a class="product-item_remove" href="javascript:void(0)">
+                                    <i class="ion-android-close"></i>
+                                </a>
                                 <div class="product-item_img">
                                     <img src="~/assets/images/product/2-1.jpg" alt="Kenne's Product Image">
                                 </div>
                                 <div class="product-item_content">
-                                    <a class="product-item_title" href="shop-left-sidebar.html">Tenetur illum
-                                        amet</a>
+                                    <a class="product-item_title" href="shop-left-sidebar.html">
+                                        Tenetur illum
+                                        amet
+                                    </a>
                                     <span class="product-item_quantity">1 x $150.80</span>
                                 </div>
                             </li>
                             <li class="minicart-product">
-                                <a class="product-item_remove" href="javascript:void(0)"><i
-                                    class="ion-android-close"></i></a>
+                                <a class="product-item_remove" href="javascript:void(0)">
+                                    <i class="ion-android-close"></i>
+                                </a>
                                 <div class="product-item_img">
                                     <img src="~/assets/images/product/3-1.jpg" alt="Kenne's Product Image">
                                 </div>
                                 <div class="product-item_content">
-                                    <a class="product-item_title" href="shop-left-sidebar.html">Non doloremque
-                                        placeat</a>
+                                    <a class="product-item_title" href="shop-left-sidebar.html">
+                                        Non doloremque
+                                        placeat
+                                    </a>
                                     <span class="product-item_quantity">1 x $165.80</span>
                                 </div>
                             </li>
@@ -323,13 +333,17 @@
                     </div>
                     <div class="minicart-item_total">
                         <span>Subtotal</span>
-                        <span class="ammount">$462.0</span>
+                        <span class="ammount">$462.4‬0</span>
                     </div>
+
+                   @*khang check out*@
                     <div class="minicart-btn_area">
                         <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="kenne-btn kenne-btn_fullwidth">Minicart</a>
                     </div>
                     <div class="minicart-btn_area">
-                        <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut" class="kenne-btn kenne-btn_fullwidth">Checkout</a>
+                        <a asp-area="Customer" asp-controller="Cart" asp-action="Test" class="kenne-btn kenne-btn_fullwidth">Checkout</a>
+                    
+                    <p>Khang</p>
                     </div>
                 </div>
             </div>
@@ -344,8 +358,10 @@
                         </div>
                         <nav class="offcanvas-navigation">
                             <ul class="mobile-menu">
-                                <li class="menu-item-has-children active"><a href="#"><span
-                                        class="mm-text">Home</span></a>
+                                <li class="menu-item-has-children active">
+                                    <a href="#">
+                                        <span class="mm-text">Home</span>
+                                    </a>
                                     <ul class="sub-menu">
                                         <li>
                                             <a href="index.html">
@@ -542,13 +558,12 @@
                                             </a>
                                         </li>
                                         <li>
-                                            
-                                            <a asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                                            <a asp-area="Customer"  asp-controller="Cart" asp-action="CheckOut">
                                                 <span class="mm-text">Cart</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="checkout.html">
+                                            <a asp-area="Customer"  asp-controller="Cart" asp-action="CheckOut">
                                                 <span class="mm-text">Checkout</span>
                                             </a>
                                         </li>
@@ -575,9 +590,10 @@
                             <ul class="mobile-menu">
                                 <li class="menu-item-has-children active">
                                     <a href="#">
-                                        <span class="mm-text">User
-                                        Setting
-                                    </span>
+                                        <span class="mm-text">
+                                            User
+                                            Setting
+                                        </span>
                                     </a>
                                     <ul class="sub-menu">
                                         <li>
@@ -592,7 +608,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="menu-item-has-children"><a href="#"><span class="mm-text">Currency</span></a>
+                                <li class="menu-item-has-children">
+                                    <a href="#"><span class="mm-text">Currency</span></a>
                                     <ul class="sub-menu">
                                         <li>
                                             <a href="javascript:void(0)">
@@ -606,7 +623,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="menu-item-has-children"><a href="#"><span class="mm-text">Language</span></a>
+                                <li class="menu-item-has-children">
+                                    <a href="#"><span class="mm-text">Language</span></a>
                                     <ul class="sub-menu">
                                         <li>
                                             <a href="javascript:void(0)">
@@ -644,7 +662,8 @@
                         </a>
                     </div>
                     <div class="short-desc">
-                        <p>We are a team of designers and developers that create high quality HTML Template &
+                        <p>
+                            We are a team of designers and developers that create high quality HTML Template &
                             Woocommerce,
                             Shopify Themes.
                         </p>
@@ -712,8 +731,9 @@
                         <div class="offcanvas-search">
                             <form action="#" class="hm-searchbox">
                                 <input type="text" placeholder="Search for item...">
-                                <button class="search_btn" type="submit"><i
-                                    class="ion-ios-search-strong"></i></button>
+                                <button class="search_btn" type="submit">
+                                    <i class="ion-ios-search-strong"></i>
+                                </button>
                             </form>
                         </div>
                         <!-- Offcanvas Search Area End Here -->
@@ -723,15 +743,11 @@
             <div class="global-overlay"></div>
         </header>
         <!-- Main Header Area End Here Two -->
-		
+        @RenderBody()
 
-		@RenderBody()
-        
-		
+
         <!-- Begin Brand Area -->
-     
         <!-- Brand Area End Here -->
-
         <!-- Begin Kenne's Footer Area -->
         <div class="kenne-footer_area bg-smoke_color">
             <div class="footer-top_area">
@@ -740,7 +756,6 @@
                         <div class="col-lg-5">
                             <div class="newsletter-area">
                                 <div class="newsletter-logo">
-                                   
                                 </div>
                                 <p class="short-desc">Subscribe to our newsleter, Enter your emil address</p>
                                 <div class="newsletter-form_wrap">
@@ -748,8 +763,9 @@
                                         <div id="mc_embed_signup_scroll">
                                             <div id="mc-form" class="mc-form subscribe-form">
                                                 <input id="mc-email" class="newsletter-input" type="email" autocomplete="off" placeholder="Enter email address" />
-                                                <button class="newsletter-btn" id="mc-submit"><i
-                                                class="ion-android-mail"></i></button>
+                                                <button class="newsletter-btn" id="mc-submit">
+                                                    <i class="ion-android-mail"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </form>
@@ -810,7 +826,7 @@
                                 <span>Copyright &copy; 2019 <a href="javascript:void(0)">Kenne.</a> All rights reserved.</span>
                             </div>
                         </div>
-                      
+
                     </div>
                 </div>
             </div>
@@ -824,7 +840,7 @@
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                     
+
                     </div>
                 </div>
             </div>
@@ -837,16 +853,14 @@
     </div>
 
     <!-- JS
-============================================ -->
-	
-	
+    ============================================ -->
     <!-- jQuery JS -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <!-- Modernizer JS -->
     <script src="~/assets/js/vendor/modernizr-3.11.2.min.js"></script>
     <!-- Bootstrap JS -->
-	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Slick Slider JS -->
     <script src="~/assets/js/plugins/slick.min.js"></script>
@@ -872,10 +886,10 @@
 
     <!-- Main JS -->
     <script src="~/assets/js/main.js"></script>
-	
-	<script src="~/js/site.js" asp-append-version="true"></script>
 
-	@await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>
