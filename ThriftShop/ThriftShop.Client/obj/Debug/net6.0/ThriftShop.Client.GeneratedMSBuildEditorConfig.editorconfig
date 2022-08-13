@@ -8,157 +8,157 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ThriftShop.Client
 build_property.RootNamespace = ThriftShop.Client
-build_property.ProjectDir = C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client\
+build_property.ProjectDir = C:\Users\Trung Le\OneDrive\Desktop\WAD\ThriftShop2022\ThriftShop\ThriftShop.Client\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Hoa\OneDrive\Máy tính\ThriftShop2022\ThriftShop\ThriftShop.Client
+build_property.MSBuildProjectDirectory = C:\Users\Trung Le\OneDrive\Desktop\WAD\ThriftShop2022\ThriftShop\ThriftShop.Client
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateCategory.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateColor.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateColor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVDb2xvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateCoupon.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateCoupon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVDb3Vwb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateProduct.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateSize.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/CreateSize.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxDcmVhdGVTaXplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewCategory.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3Q2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewColor.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewColor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3Q29sb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewCoupon.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewCoupon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3Q291cG9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewProduct.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewSize.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Home/ViewSize.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxWaWV3U2l6ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/LoginAdmin.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/LoginAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cTG9naW5BZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/RegisterUser.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Login/RegisterUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTG9naW5cUmVnaXN0ZXJVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Shared/404.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Shared/404.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXDQwNC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Shared/_Layout.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Account/Index.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Account/LoginUser.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Account/LoginUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQWNjb3VudFxMb2dpblVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Account/RegisterUser.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Account/RegisterUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQWNjb3VudFxSZWdpc3RlclVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Account/Setting.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Account/Setting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQWNjb3VudFxTZXR0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Cart/Index.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Home/AboutUs.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Home/AboutUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Home/ContactUs.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Home/ContactUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxDb250YWN0VXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Home/Index.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Order/CheckOut.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Order/CheckOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcT3JkZXJcQ2hlY2tPdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/Compare.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/Compare.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUHJvZHVjdFxDb21wYXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/Details.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/Index.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/WishList.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Product/WishList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcUHJvZHVjdFxXaXNoTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Shared/404.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Shared/404.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2hhcmVkXDQwNC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Shared/_Layout.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/_ViewImports.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/_ViewStart.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/_ViewImports.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hoa/OneDrive/Máy tính/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/_ViewStart.cshtml]
+[C:/Users/Trung Le/OneDrive/Desktop/WAD/ThriftShop2022/ThriftShop/ThriftShop.Client/Areas/Customer/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
