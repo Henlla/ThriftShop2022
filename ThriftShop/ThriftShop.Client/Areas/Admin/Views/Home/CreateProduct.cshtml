@@ -1,16 +1,74 @@
-﻿
+﻿@using ThriftShop.Models
+@model Product
 @{
     ViewData["Title"] = "CreateProduct";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var data = new string[] { "Male", "Female", "Unisex"};
 }
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="d-flex flex-column justify-content-center">
-                <h1 class="text-center">CreateProduct</h1>
-                <ejs-textbox id="firstname" placeholder="First Name" floatLabelType="Always" width="300px"></ejs-textbox>
+                <h1 class="text-center">Create new product</h1>
+                <form method="post">
+                    <div class="row">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="title" ejs-for="@Model.Title" placeholder="Title" floatLabelType="Always"></ejs-textbox>
+                            <span asp-validation-for="@Model.Title"></span>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <ejs-dropdownlist id="Category" ejs-for="@Model.CategoryId"
+                                              dataSource="@ViewBag.category" placeholder="Category"
+                                              floatLabelType="Always" allowFiltering="true" filterType="Contains">
+                                <e-dropdownlist-fields value="CategoryId" text="CategoryName"></e-dropdownlist-fields>
+                            </ejs-dropdownlist>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <ejs-numerictextbox placeholder="Price" floatLabelType="Always" ejs-for="@Model.Price" id="price" value="10" min="0" Type="text"></ejs-numerictextbox>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <ejs-numerictextbox placeholder="SalePercent" floatLabelType="Always" ejs-for="@Model.SalePercent" id="percent" value="1" min="0" max="100" Type="text"></ejs-numerictextbox>
+                        </div> 
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="brand" placeholder="Brand" floatLabelType="Always"></ejs-textbox>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label asp-for="@Model.Description"></label>
+                            <textarea asp-for="@Model.Description" rows="3" class="form-control"></textarea>
+                            <span asp-validation-for="@Model.Description"></span>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <ejs-multiselect id="Color" name="color"
+                                             dataSource="@ViewBag.color" placeholder="Color"
+                                             floatLabelType="Always" allowFiltering="true" filterType="Contains">
+                                <e-multiselect-fields value="ColorId" text="ColorType"></e-multiselect-fields>
+                            </ejs-multiselect>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <ejs-multiselect id="Size" name="size"
+                                             dataSource="@ViewBag.size" placeholder="Size"
+                                             floatLabelType="Always" allowFiltering="true" filterType="Contains">
+                                <e-multiselect-fields value="SizeId" text="SizeType"></e-multiselect-fields>
+                            </ejs-multiselect>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <ejs-dropdownlist ejs-for="SexType" id="games" dataSource="@data" placeholder="Sex" floatLabelType="Always"> </ejs-dropdownlist>
+                        </div>
+                        <ejs-button id="submit" type="submit" cssClass="e-primary" content="Submit"></ejs-button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
+@section Scripts{
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar_mode: 'floating',
+        });
+    </script>
+}
 

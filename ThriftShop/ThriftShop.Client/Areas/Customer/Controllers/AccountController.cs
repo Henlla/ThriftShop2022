@@ -21,7 +21,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             await HttpContext.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-        [HttpGet()]
+        [HttpGet]
         public IActionResult LoginUser()
         {
             return View();
@@ -56,21 +56,13 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         {
             try
             {
-                if (accountCollection.UserAccount.Password.Equals(cfp))
+                var accResult = client.PostAsJsonAsync(urlUserAccount, accountCollection.UserAccount).Result;
+                if (accResult.IsSuccessStatusCode)
                 {
-
-                    var accResult = client.PostAsJsonAsync(urlUserAccount, accountCollection.UserAccount).Result;
-                    if (accResult.IsSuccessStatusCode)
+                    var infoResult = client.PostAsJsonAsync(urlUserInfo, accountCollection.UserInfo).Result;
+                    if (infoResult.IsSuccessStatusCode)
                     {
-                        var infoResult = client.PostAsJsonAsync(urlUserInfo, accountCollection.UserInfo).Result;
-                        if (infoResult.IsSuccessStatusCode)
-                        {
-                            return RedirectToAction("LoginUser");
-                        }
-                        else
-                        {
-                            return View();
-                        }
+                        return RedirectToAction("LoginUser");
                     }
                     else
                     {
@@ -79,7 +71,6 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                 }
                 else
                 {
-                    ViewBag.msg = "Confirm password wrong";
                     return View();
                 }
             }
@@ -91,6 +82,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Setting()
         {
             var claim = (ClaimsIdentity)User.Identity;
