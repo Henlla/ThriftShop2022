@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ThriftShop.Models;
 using ThriftShop.Utility;
+using ThriftShop.Models.PageModel;
 
 namespace ThriftShop.API.Controllers
 {
@@ -109,13 +110,14 @@ namespace ThriftShop.API.Controllers
 
         
 
-        [HttpPost("{sizeIdList}/{colorIdList}")]
-        public async Task<ActionResult<Product>> AddProduct(Product product, string sizeIdList,string colorIdList)
+        [HttpPost()]
+        public async Task<ActionResult<Product>> AddProduct(ProductVM productVM)
         {
-            var _product = await unitOfWork.Product.GetFirstOrDefault(x => x.ProductId == product.ProductId);
+            var _product = await unitOfWork.Product.GetFirstOrDefault(x => x.ProductId == productVM.Product.ProductId);
             if (_product == null)
             {
-                await unitOfWork.Product.Add(product);
+               
+                await unitOfWork.Product.Add(productVM.Product);
                 unitOfWork.Save(); 
             }
             else
@@ -123,45 +125,46 @@ namespace ThriftShop.API.Controllers
                 return BadRequest();
             }
             
-            if (!string.IsNullOrEmpty(sizeIdList) && !string.IsNullOrEmpty(colorIdList))
+            if (productVM.Size != null && productVM.Color != null)
             {
                 var product_list = await unitOfWork.Product.GetAll();
               
                 var lastedProductInDB = product_list.OrderByDescending(x=>x.ProductId).First();
-                if(lastedProductInDB != null)
+                if (lastedProductInDB != null)
                 {
-                    var _sizeIdList = sizeIdList.ToList();
-                    var _colorIdList = colorIdList.ToList();
-
-                    foreach (var item in _sizeIdList)
+                    foreach (var item in productVM.Size)
                     {
-
-
                         Size_Product size_Product = new Size_Product()
                         {
-                            SizeId = item,
+                            SizeId = item.SizeId,
+                            SizeType = item.SizeType,
                             ProductId = lastedProductInDB.ProductId,
                         };
 
                         await unitOfWork.Size_Product.Add(size_Product);
+                        unitOfWork.ClearChangeTracker();
                     }
                     
+                    unitOfWork.Save();
 
-                    foreach (var item in _colorIdList)
+
+                    foreach (var item in productVM.Color)
                     {
                         Color_Product color_Product = new Color_Product()
                         {
-                            ColorId = item,
+                            ColorId = item.ColorId,
+                            ColorType = item.ColorType,
                             ProductId = lastedProductInDB.ProductId,
                         };
                         await unitOfWork.Color_Product.Add(color_Product);
+                        unitOfWork.ClearChangeTracker();
                     }
 
                     unitOfWork.Save();
                 }
             }
 
-            if (!string.IsNullOrEmpty(product.JsonImageList))
+            if (!string.IsNullOrEmpty(productVM.Product.JsonImageList))
             {
                 //var list = product.JsonImageList.ToList();
                 List<string> list = new List<string>()
@@ -174,12 +177,12 @@ namespace ThriftShop.API.Controllers
                     "image6.png",
                 };
                 //check if number of image <= 6, maximum is 6
-                var ListImageFromDB_ByProductId = await unitOfWork.ProductImage.GetAll(x => x.ProductId == product.ProductId);
+                var ListImageFromDB_ByProductId = await unitOfWork.ProductImage.GetAll(x => x.ProductId == productVM.Product.ProductId);
                 var numberImageFromDB = ListImageFromDB_ByProductId.Count();
                 var numberImageInList = list.Count();
                 var NumberOfImageCanUpload = numberImageFromDB - numberImageInList;
 
-                var productIsExistImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == product.ProductId);
+                var productIsExistImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == productVM.Product.ProductId);
                 if (productIsExistImage == null)
                 {
                     foreach (var item in list)
@@ -187,19 +190,19 @@ namespace ThriftShop.API.Controllers
                         ProductImage productImage = new ProductImage()
                         {
                             ImageUrl = item.ToString(),
-                            ProductId = product.ProductId,
+                            ProductId = productVM.Product.ProductId,
                             IsMainImage = false,
                         };
                         await unitOfWork.ProductImage.Add(productImage);
                     };
                     unitOfWork.Save();
                     //Set first picture is main image
-                    var _productImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == product.ProductId);
+                    var _productImage = await unitOfWork.ProductImage.GetFirstOrDefault(x => x.ProductId == productVM.Product.ProductId);
                     _productImage.IsMainImage = true;
                     unitOfWork.Save();
                 }
             }
-            return Ok(product);
+            return Ok(productVM.Product);
 
             
         }

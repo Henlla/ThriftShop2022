@@ -11,11 +11,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         private string categoryUrl = "https://localhost:7061/api/Categories/";
         private string productUrl = "https://localhost:7061/api/Products/";
         HttpClient httpClient = new HttpClient();
-        
-        public ProductController()
-        {
 
-        }
         public IActionResult Index()
         {
             ProductsVM productsVM = new ProductsVM
