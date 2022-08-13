@@ -2,12 +2,14 @@
 @{
     ViewData["Title"] = "Create Category";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var error = ViewBag.error == null ? "" : ViewBag.error;
 }
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="d-flex flex-column justify-content-center">
                 <h1 class="text-center">Create new category</h1>
+				<div class = "text-center" style="color:Red">@error</div>
                 <form method="post">
                     <div class="row">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -15,7 +17,9 @@
                             <ejs-textbox id="name" ejs-for="@Model.CategoryName" placeholder="Name" floatLabelType="Always"></ejs-textbox>
                             <span asp-validation-for="@Model.CategoryName"></span>
                         </div>
-                        <ejs-button id="submit" type="submit" cssClass="e-primary" content="Submit"></ejs-button>
+                        <div class="mb-3 col-12">
+                            <ejs-button id="submit" type="submit" cssClass="e-primary" content="Submit"></ejs-button>
+                        </div>
                     </div>
                 </form>
             </div>

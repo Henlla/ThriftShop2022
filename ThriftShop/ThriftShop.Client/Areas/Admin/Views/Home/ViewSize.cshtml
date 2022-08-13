@@ -3,9 +3,11 @@
 @{
     ViewData["Title"] = "View Sizes";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var success = ViewBag.success == null ? "" : ViewBag.success;
 }
 
 <h1 class="text-center">List Sizes</h1>
+<div class = "text-center" style="color:Red">@success</div>
 
 <div class="container">
     <div class="row"><a asp-area="Admin" asp-controller="Home" asp-action="CreateSize">Create new size..</a></div>
