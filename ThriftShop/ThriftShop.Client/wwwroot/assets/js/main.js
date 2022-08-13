@@ -720,7 +720,7 @@
                     type: "GET",
                     success: function (response) {
                         let html = "";
-                        if (response.length != 0 ) {
+                        if (response.length != 0) {
                             for (var i = 0; i < response.length; i++) {
                                 html += '<div class="col-lg-4 col-md-4 col-sm-6">' +
                                     '                            <div class="product-item">' +

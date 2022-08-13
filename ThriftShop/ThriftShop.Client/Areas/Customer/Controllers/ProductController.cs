@@ -49,7 +49,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             return View();
         }
 
-        public IActionResult WishList()
+        public IActionResult WishList(int AccountId)
         {
             return View();
         }
