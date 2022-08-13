@@ -2,12 +2,14 @@
 @{
     ViewData["Title"] = "Create Color";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var error = ViewBag.error == null ? "" : ViewBag.error;
 }
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="d-flex flex-column justify-content-center">
                 <h1 class="text-center">Create new Color</h1>
+				<div class = "text-center" style="color:Red">@error</div>
                 <form method="post">
                     <div class="row">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
