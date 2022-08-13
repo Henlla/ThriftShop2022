@@ -47,17 +47,16 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             }
         }
         [HttpGet]
-        [AllowAnonymous]
         public IActionResult RegisterUser()
         {
             return View();
         }
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> RegisterUser(AccountCollection accountCollection)
         {
             try
             {
+                accountCollection.UserAccount.Password = accountCollection.UserAccount.NewPassword;
                 var accResult = await client.PostAsJsonAsync(urlUserAccount, accountCollection.UserAccount);
                 var model = JsonConvert.DeserializeObject<UserAccount>(await accResult.Content.ReadAsStringAsync());
                 if (accResult.IsSuccessStatusCode)
@@ -86,7 +85,6 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IActionResult Setting()
         {
             var claim = (ClaimsIdentity)User.Identity;

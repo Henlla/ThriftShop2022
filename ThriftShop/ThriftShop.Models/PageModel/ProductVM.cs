@@ -11,5 +11,6 @@ namespace ThriftShop.Models.PageModel
         public Product Product { get; set; }
         public List<Size> Size { get; set; }
         public List<Color> Color { get; set; }
+        public List<string> ImageList { get; set; }
     }
 }

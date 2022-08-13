@@ -47,13 +47,14 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CreateProduct(Product product,int[] size, int[] color)
+        public IActionResult CreateProduct(Product product, int[] size, int[] color, List<IFormFile> file)
         {
             var sizes = JsonConvert.DeserializeObject<IEnumerable<Size>>(client.GetStringAsync(urlSize).Result);
             var colors = JsonConvert.DeserializeObject<IEnumerable<Color>>(client.GetStringAsync(urlColor).Result);
 
             List<Size> lSize = new List<Size>();
-            foreach (var i in size) {
+            foreach (var i in size)
+            {
                 string sizename = sizes.Where(s => s.SizeId == i).FirstOrDefault().SizeType;
                 Size _size = new Size()
                 {
@@ -73,20 +74,32 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
                 };
                 lColor.Add(_color);
             }
+            List<string> images = new List<string>();
+            foreach (var image in file)
+            {
+                var fileName = "UIMG" + DateTime.Now.ToString("yyyyMMddss") + image.FileName;
+                var path = Path.Combine("wwwroot/images", fileName);
+                var fs = new FileStream(path, FileMode.Create);
+                image.CopyToAsync(fs);
+                images.Add(fileName);
+            }
+
             ProductVM productVm = new ProductVM
             {
                 Product = product,
                 Size = lSize,
-                Color = lColor
+                Color = lColor,
+                ImageList = images
             };
+
             var model = client.PostAsJsonAsync<ProductVM>(urlProducts, productVm).Result;
             ViewBag.success = "Create product success";
             return RedirectToAction("ViewProduct");
         }
-
         [Route("Admin/Product")]
-        public IActionResult ViewProduct() {
-            var modelProduct = JsonConvert.DeserializeObject<IEnumerable<Product>>(client.GetStringAsync(urlProducts+"GetAll/").Result);
+        public IActionResult ViewProduct()
+        {
+            var modelProduct = JsonConvert.DeserializeObject<IEnumerable<Product>>(client.GetStringAsync(urlProducts + "GetAll/").Result);
             return View(modelProduct);
         }
 

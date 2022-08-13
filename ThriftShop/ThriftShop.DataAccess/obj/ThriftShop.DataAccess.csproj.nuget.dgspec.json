@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {}
   },
   "projects": {
@@ -12,9 +13,27 @@
         "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Trung Le\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
+=======
+    "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
+        "projectName": "ThriftShop.DataAccess",
+        "projectPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\ThriftShop.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\phamk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.DataAccess\\obj\\",
+>>>>>>> origin/Develop
         "projectStyle": "PackageReference",
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Trung Le\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\phamk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> origin/Develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +47,13 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
                 "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
+=======
+              "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
+                "projectPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj"
+>>>>>>> origin/Develop
               }
             }
           }
@@ -94,6 +118,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -102,9 +127,24 @@
         "projectPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
         "packagesPath": "C:\\Users\\Trung Le\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\WAD\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\obj\\",
+=======
+    "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
+        "projectName": "ThriftShop.Models",
+        "projectPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\ThriftShop.Models.csproj",
+        "packagesPath": "C:\\Users\\phamk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phamk\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Models\\obj\\",
+>>>>>>> origin/Develop
         "projectStyle": "PackageReference",
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Trung Le\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\phamk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> origin/Develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
