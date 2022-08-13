@@ -1,0 +1,158 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ThriftShop.Models.PageModel.SpCart_Order_ODetail
+  @*add shoping cart*@
+            <div class="col-lg-6 col-12">
+                <div class="your-order">
+                    <h3>Your order</h3>
+                    <div class="your-order-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="cart-product-total">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                
+                                @foreach(var item in Model.ShoppingCart){
+                                 <tr class="cart_item">
+                                    <td class="cart-product-name" style="padding:10px">
+                                        
+                                     @item.Product.Title  <strong class="product-quantity" style="padding-left:10px">
+                                            × @item.Count
+                                        </strong>
+                                    </td>
+                                    <td class="cart-product-total" >   $<span class="amount itemAmount" >@(item.Product.Price * item.Count )</span></td>
+                                </tr>
+                                }
+                             
+
+                            </tbody>
+                            <tfoot>
+                                <tr class="cart-subtotal">
+                                    <th>Discount</th>
+                                    <td style="color:red">-<span class="amount " id="discountAmount">@ViewBag.discount</span></td>
+                                </tr>
+                                <tr class="order-total">
+                                    <th>Order Total</th>
+                                    <td><strong>$<span class="amount" ></span>@ViewBag.amount</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+
+                   <form  asp-area="Customer" asp-action="NewOrder" asp-controller="OrderDetail" method="post">
+                    <div class="checkbox-form">
+                        <h3>Billing Details</h3>
+                        <div class="row">
+                         
+                                    <input placeholder="" type="text" asp-for="Order.Id" hidden value="@Model.Order.Id">
+                           
+                           
+                               
+                                    <input placeholder="" type="text" asp-for="ShoppingCart"  value="@Model.ShoppingCart" hidden>
+                          
+                            @*//name*@
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Name</label>
+                                    <input placeholder=""value="@Model.Order.Name" asp-for="Order.Name"  type="text" readonly>
+                                </div>
+                            </div>
+                            @*address*@
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Address</label>
+                                    <input placeholder="Street address" asp-for="Order.Address"  value="@Model.Order.Address" type="text" readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>City </label>
+                                    <input type="text" name="City" asp-for="Order.City" value="@Model.Order.City">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>State  <span class="required">*</span></label>
+                                    <input placeholder="" type="text" asp-for="Order.State" readonly value="@Model.Order.State">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Postcode / Zip <span class="required">*</span></label>
+                                    <input placeholder="" type="text" asp-for="Order.PostalCode"  readonly value="@Model.Order.PostalCode">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Phone <span class="required">*</span></label>
+                                    <input type="text" asp-for="Order.PhoneNumber" readonly value="@Model.Order.PhoneNumber">
+                                </div>
+                            </div>
+                             
+                             <div class="order-button-payment">
+                        <input value="Place order" type="submit">
+                                 </div>
+                        </div>
+                    </div>
+                </form>
+
+
+                
+
+                </div>
+            </div>
+            
+
+@section Scripts {
+  <script type="text/javascript">
+$(document).ready(function() {
+
+   
+  
+   var itemAmountList=document.getElementsByClassName("itemAmount");
+    var total = 0;
+    for (var i = 0;i<itemAmountList.length;i++)
+  {
+    total += parseInt(itemAmountList[i].innerHTML);
+     
+  }
+      document.getElementById("totalAmount").innerHTML = String(total);
+
+        var discountAmount = 0;
+        var cpValue ;
+ 
+    if ( @ViewBag.couponV != null) {
+        cpValue = parseInt(@ViewBag.couponV);
+    }
+    else { cpValue = parseInt(0); }
+        var cpType = String( @ViewBag.couponT);
+  
+  
+    if (cpType == "Cash"){
+
+        discountAmount = cpValue;
+    }
+    else { 
+    discountAmount = (total * cpValue)/100;
+    }
+   var total = total - discountAmount;
+
+    document.getElementById("totalAmount").innerHTML = String(total);
+    document.getElementById("discountAmount").innerHTML = String(discountAmount);
+
+});
+
+  
+  </script>
+}

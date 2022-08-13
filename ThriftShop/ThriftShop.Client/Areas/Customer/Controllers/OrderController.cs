@@ -8,10 +8,10 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
 {
     public class OrderController : Controller
     {
-        private string ShopingCartUrl = "https://localhost:44320/api/ShoppingCart/";
-        private string OrderDetailUrl = "https://localhost:44320/api/OrderDetails/";
-        private string OrderUrl = "https://localhost:44320/api/Order/";
-        private string CouponUrl = "https://localhost:44320/api/Coupon/";
+        private string ShopingCartUrl = "https://localhost:7061/api/ShoppingCart/";
+        private string OrderDetailUrl = "https://localhost:7061/api/api/OrderDetails/";
+        private string OrderUrl = "https://localhost:7061/api/Order/";
+        private string CouponUrl = "https://localhost:7061/api/Coupon/";
         HttpClient httpClient = new HttpClient();
         public OrderController()
         {
@@ -34,6 +34,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             //else { sessionId = 1; }
 
             // var model = JsonConvert.DeserializeObject<IEnumerable<ShoppingCart>>(httpClient.GetStringAsync(ShopingCartUrl+"GetAll/"+sessionId).Result);
+          
             var model = getShoppingcart();
             if (model != null)
             { return View(model); }
@@ -48,8 +49,11 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         [HttpGet]
         public IActionResult CheckCoupon(string couponCode)
         {
+           
             Coupon useCoupon = null;
             var model = JsonConvert.DeserializeObject<IEnumerable<Coupon>>(httpClient.GetStringAsync(CouponUrl).Result);
+            double discount = 0;
+            double total = 0;
             foreach (var item in model)
             {
              
@@ -58,19 +62,42 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                     ViewBag.couponI = useCoupon.CouponId;
                     ViewBag.couponV = useCoupon.DiscountValue;
                     ViewBag.couponT = useCoupon.CouponType;
+                    ViewBag.couponC = useCoupon.Code;
                     break;
                 }
                 else {
                     useCoupon = null;                
                 }
-                
+
+               
             }
-         
+          
+
+
             var spCart=getShoppingcart();
             if (spCart != null)
-            { 
-                
-                return View("CheckOut", spCart); }
+            {
+                foreach (var item in spCart)
+                {
+                   total+= (double)item.Product.FinalPrice * item.Count; 
+                }
+
+                if (useCoupon.CouponType == "Cash")
+                {
+                    discount = (double)useCoupon.DiscountValue;
+
+                }
+                else
+                {
+                    discount = (double)(total * useCoupon.DiscountValue / 100);
+                }
+                total = total - discount;
+
+                ViewBag.amount = total;
+                ViewBag.discount = discount;
+
+                return View("CheckOut", spCart);
+            }
             else
             {
                 return RedirectToAction("LoginUser", "Account");
@@ -100,7 +127,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                 }
 
                 model = JsonConvert.DeserializeObject<IEnumerable<ShoppingCart>>(httpClient.GetStringAsync(ShopingCartUrl + "GetAll/" + sessionId).Result);
-
+              
 
                 return model;
             }
@@ -111,10 +138,11 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             }
         }
         [Area("Customer")]
-        public IActionResult Test(string Name,string Address,string City,string State,string PostalCode,string PhoneNumber,string CouponId)
+        public async Task<IActionResult> Test(string Name,string Address,string City,string State,string PostalCode,string PhoneNumber,string CouponId)
         {
             try
             {
+                
                 int sessionId;
                 var claim = (ClaimsIdentity)User.Identity;
                 if (claim.FindFirst(ClaimTypes.NameIdentifier) != null)
@@ -133,14 +161,25 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                     State = State,
                     PostalCode = PostalCode,
                     PhoneNumber = PhoneNumber,
-                    CouponId = int.Parse(CouponId),
-                    UserId= sessionId
-
+                    UserId = sessionId,
+                   
                 };
-                var model = httpClient.PostAsJsonAsync<Order>(OrderUrl, order).Result;
+
+
+
+                if (CouponId != null)
+                {
+                    order.CouponId = int.Parse(CouponId);
+                }
+         
+
+                //get model
+                var model = await  httpClient.PostAsJsonAsync<Order>(OrderUrl,order);
+                var respone =await model.Content.ReadAsStringAsync();
+                var json = JsonConvert.DeserializeObject<Order>(respone);
                 if (model.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Create", "OrderDetail");
+                    return RedirectToAction("CreateOrderDetail", "OrderDetail",json);
                 }
                 else
                 {
