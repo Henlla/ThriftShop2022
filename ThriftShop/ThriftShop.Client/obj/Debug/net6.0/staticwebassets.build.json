@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZaGp73CfM443h3IQBzg5xkNvjLpnDkKWVo1bi4KleAc=",
+  "Hash": "c71bnJHcSEeWbBFz6NB8lrGIudSWwP67eUYxohu46UQ=",
   "Source": "ThriftShop.Client",
   "BasePath": "_content/ThriftShop.Client",
   "Mode": "Default",
@@ -1137,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\brand\\6.png"
+    },
+    {
+      "Identity": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\assets\\images\\brand\\9.jpg",
+      "SourceId": "ThriftShop.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\",
+      "BasePath": "_content/ThriftShop.Client",
+      "RelativePath": "assets/images/brand/9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\brand\\9.jpg"
     },
     {
       "Identity": "C:\\Users\\Trung Le\\OneDrive\\Desktop\\ThriftShop2022\\ThriftShop\\ThriftShop.Client\\wwwroot\\assets\\images\\breadcrumb\\1.jpg",
