@@ -1,107 +1,185 @@
-﻿
+﻿@using ThriftShop.Models
+@using ThriftShop.Models.PageModel
+@model CartVM
 @{
     ViewData["Title"] = "Cart";
     Layout = "~/Areas/Customer/Views/Shared/_Layout.cshtml";
+    string FormatString(double money)
+    {
+        string format = String.Format("{0:C}", money);
+        return format;
+
+    }
 }
 
-        <!-- Begin Kenne's Breadcrumb Area -->
-        <div class="breadcrumb-area">
-            <div class="container">
-                <div class="breadcrumb-content">
-                    <h2>Shop Related</h2>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Cart</li>
-                    </ul>
-                </div>
-            </div>
+<!-- Begin Kenne's Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2>Shop Related</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Cart</li>
+            </ul>
         </div>
-        <!-- Kenne's Breadcrumb Area End Here -->
-        <!-- Begin Uren's Cart Area -->
-        <div class="kenne-cart-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <form action="javascript:void(0)">
-                            <div class="table-content table-responsive">
-                                <table class="table">
-                                    <thead>
+    </div>
+</div>
+<!-- Kenne's Breadcrumb Area End Here -->
+<!-- Begin Uren's Cart Area -->
+@if (Model.shoppingCarts.Count() > 0)
+{
+    <div class="kenne-cart-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    @* <form method="post">*@
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="kenne-product-thumbnail">images</th>
+                                    <th class="cart-product-name">Product</th>
+                                    <th class="kenne-product-price">Price</th>
+                                    <th class="kenne-product-price">Size</th>
+                                    <th class="kenne-product-price">Color</th>
+                                    <th class="kenne-product-quantity">Quantity</th>
+                                    <th class="kenne-product-subtotal">Total</th>
+                                    <th class="kenne-product-remove">remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    double total = 0;
+                                    foreach (var itemCart in Model.shoppingCarts)
+                                    {
+                                        total += itemCart.Product.FinalPrice * itemCart.Count;
+                                        //<input type="checkbox" name="delete" value="@itemCart.Id"/>
+                                        //<input type="hidden" class="cartItemId" id="cartId_@itemCart.Id" asp-for="@itemCart.Id" value="" />
+                                        //<input type="hidden" name="productId[]" value="@itemCart.ProductId" />
                                         <tr>
-                                            <th class="kenne-product-remove">remove</th>
-                                            <th class="kenne-product-thumbnail">images</th>
-                                            <th class="cart-product-name">Product</th>
-                                            <th class="kenne-product-price">Unit Price</th>
-                                            <th class="kenne-product-quantity">Quantity</th>
-                                            <th class="kenne-product-subtotal">Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="kenne-product-remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
                                             <td class="kenne-product-thumbnail"><a href="javascript:void(0)"><img src="~/assets///images/product/small-size/1.jpg" alt="Uren's Cart Thumbnail"></a></td>
-                                            <td class="kenne-product-name"><a href="javascript:void(0)">Juma rema pola</a></td>
-                                            <td class="kenne-product-price"><span class="amount">$46.80</span></td>
+                                            <td class="kenne-product-name"><a href="javascript:void(0)">@itemCart.Product.Title</a></td>
+                                            <td class="kenne-product-price"><span class="amount">@(FormatString(itemCart.Product.FinalPrice))</span></td>
+                                            <td class="kenne-product-price"><span class="amount">@itemCart.Size</span></td>
+                                            <td class="kenne-product-price"><span class="amount">@itemCart.Color</span></td>
                                             <td class="quantity">
-                                                <label>Quantity</label>
                                                 <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                    <button onclick="decPrice(@itemCart.Id)"><i class="fa fa-angle-down"></i></button>
+                                                    <input class="cart-plus-minus-box cartCount_@itemCart.Id" value="@itemCart.Count" name="cartCount" type="text">
+                                                    <button onclick="incPrice(@itemCart.Id)"> <i class="fa fa-angle-up"></i></button>
                                                 </div>
                                             </td>
-                                            <td class="product-subtotal"><span class="amount">$46.80</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="kenne-product-remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
-                                            <td class="kenne-product-thumbnail"><a href="javascript:void(0)"><img src="~/assets///images/product/small-size/2.jpg" alt="Uren's Cart Thumbnail"></a></td>
-                                            <td class="kenne-product-name"><a href="javascript:void(0)">Bag Goodscol model</a>
+                                            <td class="product-subtotal"><span class="amount subtotal_@itemCart.Id">@(FormatString((itemCart.Product.FinalPrice * itemCart.Count)))</span></td>
+                                            <td class="kenne-product-remove">
+                                                <a style="cursor:pointer">
+                                                    <i onclick="deleteCart(@itemCart.Id)" class="fa fa-trash"
+                                               title="Remove"></i>
+                                                </a>
                                             </td>
-                                            <td class="kenne-product-price"><span class="amount">$71.80</span></td>
-                                            <td class="quantity">
-                                                <label>Quantity</label>
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                                </div>
-                                            </td>
-                                            <td class="product-subtotal"><span class="amount">$71.80</span></td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="coupon-all">
-                                        <div class="coupon">
-                                            <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
-                                            <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
-                                        </div>
-                                        <div class="coupon2">
-                                            <input class="button" name="update_cart" value="Update cart" type="submit">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-5 ml-auto">
-                                    <div class="cart-page-total">
-                                        <h2>Cart totals</h2>
-                                        <ul>
-                                            <li>Subtotal <span>$118.60</span></li>
-                                            <li>Total <span>$118.60</span></li>
-                                        </ul>
-                                        <a href="javascript:void(0)">Proceed to checkout</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                                    }
+                                }
+                            </tbody>
+                        </table>
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="coupon-all">
+                                @* <div class="coupon">
+                            <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
+                            <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
+                            </div>*@
+                                @*<div class="coupon2">
+                            <input class="submit" name="update_cart" value="Update cart" type="submit">
+                            </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 ml-auto">
+                            <div class="cart-page-total">
+                                <h2>Cart totals</h2>
+                                <ul>
+                                    <li>Total <span class="total">@(FormatString(total))</span></li>
+                                </ul>
+                                <a href="javascript:void(0)">Proceed to checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                    @* </form>*@
                 </div>
             </div>
         </div>
-        <!-- Uren's Cart Area End Here -->
+    </div>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center fw-300">Empty</div>
+            </div>
+        </div>
+    </div>
+}
+<!-- Uren's Cart Area End Here -->
+@section Scripts{
+    <script>
+        const formatToCurrency = amount => {
+            return "$" + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+        };
+        function incPrice(id) {
+            event.preventDefault();
+            $.ajax({
+                type: "GET",
+                data: { cartId: id },
+                url: "https://localhost:7173/Customer/Cart/Plus/",
+                success: function(success) {
+                    if (success) {
+                        var total = 0;
+                        $('.cartCount_' + id).val(success.data.count);
 
-
+                        $('.subtotal_' + id).html(formatToCurrency(success.data.product.finalPrice * success.data.count))
+                        for (const item of success.shoppingcart) {
+                            total += item.product.finalPrice * item.count;
+                        }
+                        $('.total').html(formatToCurrency(total));
+                    }
+                }
+            })
+        }
+        function decPrice(id) {
+            event.preventDefault();
+            $.ajax({
+                type: "GET",
+                data: { cartId: id },
+                url: "https://localhost:7173/Customer/Cart/Minus/",
+                success: function(success) {
+                    if (success) {
+                        var total = 0;
+                        $('.cartCount_' + id).val(success.data.count);
+                        $('.subtotal_' + id).html(formatToCurrency(success.data.product.finalPrice * success.data.count))
+                        console.log(success.shoppingcart)
+                        for (const item of success.shoppingcart) {
+                            total += item.product.finalPrice * item.count;
+                        }
+                        $('.total').html(formatToCurrency(total));
+                    }
+                }
+            })
+        }
+        function deleteCart(id) {
+            event.preventDefault
+            $.ajax({
+                type: "DELETE",
+                data: { cartId: id },
+                url: "https://localhost:7173/Customer/Cart/Delete/",
+                success: function(success) {
+                    if (success) {
+                        window.location.reload();
+                    }
+                }
+            })
+        }
+    </script>
+}

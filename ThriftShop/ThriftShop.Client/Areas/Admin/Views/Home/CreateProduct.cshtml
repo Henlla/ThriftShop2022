@@ -3,14 +3,16 @@
 @{
     ViewData["Title"] = "CreateProduct";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-    var data = new string[] { "Male", "Female", "Unisex"};
+    var data = new string[] { "Male", "Female", "Unisex" };
+    var error = ViewBag.error == null ? "" : ViewBag.error;
 }
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="d-flex flex-column justify-content-center">
                 <h1 class="text-center">Create new product</h1>
-                <form method="post">
+
+                <form method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="mb-3 col-12">
@@ -29,7 +31,7 @@
                         </div>
                         <div class="mb-3 col-4">
                             <ejs-numerictextbox placeholder="SalePercent" floatLabelType="Always" ejs-for="@Model.SalePercent" id="percent" value="1" min="0" max="100" Type="text"></ejs-numerictextbox>
-                        </div> 
+                        </div>
                         <div class="mb-3 col-12">
                             <ejs-textbox id="brand" placeholder="Brand" floatLabelType="Always"></ejs-textbox>
                         </div>
@@ -55,7 +57,28 @@
                         <div class="mb-3 col-4">
                             <ejs-dropdownlist ejs-for="SexType" id="games" dataSource="@data" placeholder="Sex" floatLabelType="Always"> </ejs-dropdownlist>
                         </div>
-                        <ejs-button id="submit" type="submit" cssClass="e-primary" content="Submit"></ejs-button>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="picture1" type="file" placeholder="Picture"></ejs-textbox>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="picture2" type="file" placeholder="Picture"></ejs-textbox>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="picture3" type="file" placeholder="Picture"></ejs-textbox>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="picture4" type="file" placeholder="Picture"></ejs-textbox>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="picture5" type="file" placeholder="Picture"></ejs-textbox>
+                        </div>
+                        <div class="mb-3 col-12">
+                            <ejs-textbox id="picture6" type="file" placeholder="Picture"></ejs-textbox>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <ejs-button id="submit" type="submit" cssClass="e-primary" content="Submit"></ejs-button>
+                        </div>
+
                     </div>
                 </form>
             </div>
