@@ -5,11 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ThriftShop.DataAccess.Migrations
 {
-<<<<<<<< HEAD:ThriftShop/ThriftShop.DataAccess/Migrations/20220812185537_RefreshDB2.cs
-    public partial class RefreshDB2 : Migration
-========
-    public partial class Added_something : Migration
->>>>>>>> Develop:ThriftShop/ThriftShop.DataAccess/Migrations/20220812164743_Added_something.cs
+    public partial class ThriftShop : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -87,7 +83,6 @@ namespace ThriftShop.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-<<<<<<<< HEAD:ThriftShop/ThriftShop.DataAccess/Migrations/20220812185537_RefreshDB2.cs
                 name: "Sizes",
                 columns: table => new
                 {
@@ -101,8 +96,6 @@ namespace ThriftShop.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-========
->>>>>>>> Develop:ThriftShop/ThriftShop.DataAccess/Migrations/20220812164743_Added_something.cs
                 name: "UserAccounts",
                 columns: table => new
                 {
@@ -237,35 +230,6 @@ namespace ThriftShop.DataAccess.Migrations
 
             migrationBuilder.CreateTable(
                 name: "ShoppingCarts",
-<<<<<<<< HEAD:ThriftShop/ThriftShop.DataAccess/Migrations/20220812185537_RefreshDB2.cs
-========
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    Count = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ShoppingCarts", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ShoppingCarts_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "ProductId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ShoppingCarts_UserInfos_UserId",
-                        column: x => x.UserId,
-                        principalTable: "UserInfos",
-                        principalColumn: "UserId");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Sizes",
->>>>>>>> Develop:ThriftShop/ThriftShop.DataAccess/Migrations/20220812164743_Added_something.cs
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -329,27 +293,6 @@ namespace ThriftShop.DataAccess.Migrations
                         principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-<<<<<<<< HEAD:ThriftShop/ThriftShop.DataAccess/Migrations/20220812185537_RefreshDB2.cs
-========
-                    table.ForeignKey(
-                        name: "FK_OrderDetails_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "ProductId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Color_Products",
-                columns: table => new
-                {
-                    ColorId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Color_Products", x => new { x.ColorId, x.ProductId });
->>>>>>>> Develop:ThriftShop/ThriftShop.DataAccess/Migrations/20220812164743_Added_something.cs
                     table.ForeignKey(
                         name: "FK_OrderDetails_Products_ProductId",
                         column: x => x.ProductId,
@@ -396,19 +339,6 @@ namespace ThriftShop.DataAccess.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_ShoppingCarts_ProductId",
                 table: "ShoppingCarts",
-<<<<<<<< HEAD:ThriftShop/ThriftShop.DataAccess/Migrations/20220812185537_RefreshDB2.cs
-========
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ShoppingCarts_UserId",
-                table: "ShoppingCarts",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Size_Products_ProductId",
-                table: "Size_Products",
->>>>>>>> Develop:ThriftShop/ThriftShop.DataAccess/Migrations/20220812164743_Added_something.cs
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(

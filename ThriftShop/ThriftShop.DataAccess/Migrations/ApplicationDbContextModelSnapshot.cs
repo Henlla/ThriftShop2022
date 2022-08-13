@@ -75,12 +75,7 @@ namespace ThriftShop.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("ColorId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Colors");
                 });
@@ -333,16 +328,11 @@ namespace ThriftShop.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SizeId"), 1L, 1);
 
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SizeType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SizeId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Sizes");
                 });
@@ -354,6 +344,10 @@ namespace ThriftShop.DataAccess.Migrations
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
+
+                    b.Property<string>("SizeType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SizeId", "ProductId");
 
@@ -430,30 +424,13 @@ namespace ThriftShop.DataAccess.Migrations
                     b.ToTable("UserInfos");
                 });
 
-            modelBuilder.Entity("ThriftShop.Models.Color", b =>
-                {
-                    b.HasOne("ThriftShop.Models.Product", null)
-                        .WithMany("Color")
-                        .HasForeignKey("ProductId");
-                });
-
             modelBuilder.Entity("ThriftShop.Models.Color_Product", b =>
                 {
-                    b.HasOne("ThriftShop.Models.Color", "Color")
-                        .WithMany()
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ThriftShop.Models.Product", "Product")
-                        .WithMany()
+                    b.HasOne("ThriftShop.Models.Product", null)
+                        .WithMany("Color_Product")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Color");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.Order", b =>
@@ -525,30 +502,13 @@ namespace ThriftShop.DataAccess.Migrations
                     b.Navigation("UserInfo");
                 });
 
-            modelBuilder.Entity("ThriftShop.Models.Size", b =>
-                {
-                    b.HasOne("ThriftShop.Models.Product", null)
-                        .WithMany("Size")
-                        .HasForeignKey("ProductId");
-                });
-
             modelBuilder.Entity("ThriftShop.Models.Size_Product", b =>
                 {
-                    b.HasOne("ThriftShop.Models.Product", "Product")
-                        .WithMany()
+                    b.HasOne("ThriftShop.Models.Product", null)
+                        .WithMany("Size_Product")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("ThriftShop.Models.Size", "Size")
-                        .WithMany()
-                        .HasForeignKey("SizeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-
-                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("ThriftShop.Models.Order", b =>
@@ -558,11 +518,11 @@ namespace ThriftShop.DataAccess.Migrations
 
             modelBuilder.Entity("ThriftShop.Models.Product", b =>
                 {
-                    b.Navigation("Color");
+                    b.Navigation("Color_Product");
 
                     b.Navigation("ProductImage");
 
-                    b.Navigation("Size");
+                    b.Navigation("Size_Product");
                 });
 #pragma warning restore 612, 618
         }
