@@ -48,11 +48,12 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
         }
         //update
         [HttpGet]
-        public IActionResult Update(int coupon) // giong detail
+        public IActionResult Update(int coupon)
         {
             var model = JsonConvert.DeserializeObject<Coupon>(httpClient.GetStringAsync(urlC + "/"+ coupon).Result);
             return View(model);
         }
+
 
         [HttpPost]
         public IActionResult Update(Coupon obj)
@@ -74,6 +75,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
                 return View();
             }
         }
+
         [HttpGet]
         public IActionResult Delete(int coupon)
         {

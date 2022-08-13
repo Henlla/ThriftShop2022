@@ -9,12 +9,15 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
+
         private string urlCategories = "https://localhost:7061/api/Categories/";
         private string urlProducts = "https://localhost:7061/api/Products/";
         private string urlColor = "https://localhost:7061/api/Colors/";
         private string urlSize = "https://localhost:7061/api/Sizes/";
         private string urlCoupon = "https://localhost:7061/api/Coupon/";
         private HttpClient client = new HttpClient();
+
+        [Route("Admin/Home")]
         public IActionResult Index()
         {
             return View();
@@ -39,28 +42,44 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CreateProduct(Product product,int[] size, int[] color)
         {
-            List<int> lSize = new List<int>();
+            var sizes = JsonConvert.DeserializeObject<IEnumerable<Size>>(client.GetStringAsync(urlSize).Result);
+            var colors = JsonConvert.DeserializeObject<IEnumerable<Color>>(client.GetStringAsync(urlColor).Result);
+
+            List<Size> lSize = new List<Size>();
             foreach (var i in size) {
-                lSize.Add(i);
+                string sizename = sizes.Where(s => s.SizeId == i).FirstOrDefault().SizeType;
+                Size _size = new Size()
+                {
+                    SizeId = i,
+                    SizeType = sizename
+                };
+                lSize.Add(_size);
             }
-            List<int> lColor = new List<int>();
+            List<Color> lColor = new List<Color>();
             foreach (var i in color)
             {
-                lColor.Add(i);
+                string colorname = colors.Where(c => c.ColorId == i).FirstOrDefault().ColorType;
+                Color _color = new Color()
+                {
+                    ColorId = i,
+                    ColorType = colorname
+                };
+                lColor.Add(_color);
             }
             ProductVM productVm = new ProductVM
             {
                 Product = product,
-                //listSize = lSize,
-                //listColor = lColor
+                Size = lSize,
+                Color = lColor
             };
             var model = client.PostAsJsonAsync<ProductVM>(urlProducts, productVm).Result;
-            return View();
+            ViewBag.success = "Create product success";
+            return RedirectToAction("ViewProduct");
         }
 
         [Route("Admin/Product")]
         public IActionResult ViewProduct() {
-            var modelProduct = JsonConvert.DeserializeObject<IEnumerable<Product>>(client.GetStringAsync(urlProducts).Result);
+            var modelProduct = JsonConvert.DeserializeObject<IEnumerable<Product>>(client.GetStringAsync(urlProducts+"GetAll/").Result);
             return View(modelProduct);
         }
 

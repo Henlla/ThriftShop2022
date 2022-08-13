@@ -15,6 +15,8 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
         HttpClient client = new HttpClient();
 
         [HttpGet]
+
+        [Route("Admin/Login")]
         public IActionResult LoginAdmin()
         {
             return View();
@@ -38,6 +40,7 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
                 throw new Exception(e.Message);
             }
         }
+        [Route("Admin/Register")]
         [HttpGet]
         public IActionResult RegisterUser()
         {
