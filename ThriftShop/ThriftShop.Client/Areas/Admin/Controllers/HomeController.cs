@@ -29,11 +29,9 @@ namespace ThriftShop.Client.Areas.Admin.Controllers
             var modelCategories = JsonConvert.DeserializeObject<IEnumerable<Category>>(client.GetStringAsync(urlCategories).Result);
             var modelColors = JsonConvert.DeserializeObject<IEnumerable<Color>>(client.GetStringAsync(urlColor).Result);
             var modelSize = JsonConvert.DeserializeObject<IEnumerable<Size>>(client.GetStringAsync(urlSize).Result);
-            var modelProductType = JsonConvert.DeserializeObject<IEnumerable<ProductType>>(client.GetStringAsync(urlProductType).Result);
             ViewBag.category = modelCategories;
             ViewBag.color = modelColors;
             ViewBag.size = modelSize;
-            ViewBag.productType = modelProductType;
             return View();
         }
         [HttpPost]

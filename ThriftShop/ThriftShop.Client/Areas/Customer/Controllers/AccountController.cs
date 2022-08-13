@@ -47,6 +47,7 @@ namespace ThriftShop.Client.Areas.Customer.Controllers
             }
         }
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult RegisterUser()
         {
             return View();
