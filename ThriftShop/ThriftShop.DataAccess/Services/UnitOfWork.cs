@@ -34,6 +34,7 @@ namespace ThriftShop.DataAccess.Repository.Services
             Size_Product = new Size_ProductService(db);
         }
 
+        
         public IProduct Product { get; private set; }
         public ICategory Category { get; private set; }
         public IAdmin Admin { get; private set; }
@@ -54,5 +55,11 @@ namespace ThriftShop.DataAccess.Repository.Services
             _db.SaveChanges();
         }
 
+       
+        public void ClearChangeTracker()
+        {
+            _db.ChangeTracker.Clear();
+
+        }
     }
 }
