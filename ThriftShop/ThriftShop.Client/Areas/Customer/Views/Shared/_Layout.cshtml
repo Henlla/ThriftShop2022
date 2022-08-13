@@ -323,13 +323,13 @@
                     </div>
                     <div class="minicart-item_total">
                         <span>Subtotal</span>
-                        <span class="ammount">$462.4‬0</span>
+                        <span class="ammount">$462.0</span>
                     </div>
                     <div class="minicart-btn_area">
-                        <a href="cart.html" class="kenne-btn kenne-btn_fullwidth">Minicart</a>
+                        <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="kenne-btn kenne-btn_fullwidth">Minicart</a>
                     </div>
                     <div class="minicart-btn_area">
-                        <a href="checkout.html" class="kenne-btn kenne-btn_fullwidth">Checkout</a>
+                        <a asp-area="Customer" asp-controller="Cart" asp-action="CheckOut" class="kenne-btn kenne-btn_fullwidth">Checkout</a>
                     </div>
                 </div>
             </div>
@@ -542,7 +542,8 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="cart.html">
+                                            
+                                            <a asp-area="Customer" asp-controller="Cart" asp-action="Index">
                                                 <span class="mm-text">Cart</span>
                                             </a>
                                         </li>
