@@ -24,13 +24,24 @@ namespace ThriftShop.DataAccess.Repository.Services.Generic_Imp
             await dbSet.AddAsync(entity);
             return entity;
         }
+
+      
+
+
+        //add range
+        public async Task<List<T>> AddRange(List<T> entities)
+        {
+            await dbSet.AddRangeAsync(entities);
+            return entities;
+        }
+
         //includeProp - "Category,CoverType"
         public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? filter=null,string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
             if(filter != null)
             {
-                query = query.Where(filter);
+                query = query.Where(filter).AsNoTracking();
             }
             if (includeProperties != null)
             {
@@ -45,7 +56,7 @@ namespace ThriftShop.DataAccess.Repository.Services.Generic_Imp
         public async Task<T> GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
-            query = query.Where(filter);
+            query = query.Where(filter).AsNoTracking();
             if (includeProperties != null)
             {
                 foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
@@ -58,6 +69,7 @@ namespace ThriftShop.DataAccess.Repository.Services.Generic_Imp
 
         public void Remove(T entity)
         {
+            
             dbSet.Remove(entity);
         }
 

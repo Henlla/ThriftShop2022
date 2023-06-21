@@ -11,30 +11,55 @@ namespace ThriftShop.Models
 {
     public class Product
     {
-        public int Id { get; set; }
+        public int ProductId { get; set; }
         [Required]
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string? Title { get; set; }
+        public string? Brand { get; set; }
+        public string? SexType { get; set; }
+        public string? Description { get; set; }
         [Required]
         [Range(1, 999999)]
         public double Price { get; set; }
-        public string? ImageUrl { get; set; }
+
+        [Required]
+        [Range(1, 100)]
+        public int SalePercent { get; set; }
+
+        [NotMapped]
+        public double FinalPrice
+        {
+            get
+            {
+                return Price - (((double)SalePercent / 100) * Price);
+            }
+        }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime CreatedDate { get; set; } // ngay tao san pham
+
         [Required]
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         [ValidateNever]
-        public Category Category { get; set; }
-        [Required]
-        [Display(Name = "Cover Type")]
-        public int CouponId { get; set; }
-        [ForeignKey("CouponId")]
+        public Category? Category { get; set; }
+
+        //public int SizeId { get; set; }
+        //[ForeignKey("SizeId")]
         [ValidateNever]
-        public Coupon Coupon { get; set; }
-        public bool Gender { get; set; }
+        public List<Size_Product> Size_Product { get; set; }
 
-        public string? Color { get; set; }
-        public string? Size { get; set; }
+        [ValidateNever]
+        public List<Color_Product> Color_Product { get; set; }
 
+        [ValidateNever]
+        public List<ProductImage> ProductImage { get; set; }
+
+        [ValidateNever]
+        [NotMapped]
+        public List<string> ImageList { get; set; }
+
+       
     }
 }

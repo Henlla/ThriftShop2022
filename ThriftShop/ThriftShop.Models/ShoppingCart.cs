@@ -11,19 +11,31 @@ namespace ThriftShop.Models
 {
     public class ShoppingCart
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         [ValidateNever]
-
         public Product Product { get; set; }
         [Range(1, 1000, ErrorMessage = "Please enter a value between 1 and 1000")]
         public int Count { get; set; }
-        //public string? ApplicationUserId { get; set; }
-        //[ForeignKey("ApplicationUserId")]
-        //[ValidateNever]
-        //public ApplicationUser ApplicationUser { get; set; }
+        public string? Size { get; set; }
+        public string? Color { get; set; }
+        public int? UserId { get; set; }
+        [ForeignKey("UserId")]
+        [ValidateNever]
+        public UserInfo UserInfo { get; set; }
+        //[NotMapped]
+        //public double? Amount
+        //{
+        //    get
+        //    {
+        //        return Product.FinalPrice * Count;
+        //    }
+        //}
         [NotMapped]
-        public double Amount { get; set; }
+        [ValidateNever]
+        public string Action { get; set; }
     }
 }

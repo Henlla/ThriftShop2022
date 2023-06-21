@@ -14,17 +14,22 @@ namespace ThriftShop.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        //public string ApplicationUserId { get; set; }
-        //[ForeignKey("ApplicationUserId")]
-        //[ValidateNever]
-        //public ApplicationUser ApplicationUser { get; set; }
+        public int? UserId { get; set; }
+        [ForeignKey("UserId")]
+        [ValidateNever]
+        public UserInfo UserInfo { get; set; } 
         [Required]
         public DateTime OrderDate { get; set; }
         public double OrderTotal { get; set; }
         public string? OrderStatus { get; set; }
+        [ValidateNever]
+        public int? CouponId { get; set; }
+        [ForeignKey("CouponId")]
+        [ValidateNever]
+        public Coupon? Coupon { get; set; } 
 
         //User
-        [Required]
+        [Required] 
         public string Name { get; set; }
         [Required]
         public string Address { get; set; }
@@ -36,6 +41,8 @@ namespace ThriftShop.Models
         public string PostalCode { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
+        [ValidateNever]
+        public List<OrderDetail>? orderDetails { get; set; } = new List<OrderDetail>();
 
     }
 }

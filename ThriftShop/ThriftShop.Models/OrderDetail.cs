@@ -13,16 +13,18 @@ namespace ThriftShop.Models
     {
         public int Id { get; set; }
         [Required]
-        public int OrderId { get; set; }
         [ForeignKey("OrderId")]
-        [ValidateNever]
-        public Order OrderHeader { get; set; }
+        public int OrderId { get; set; }
+        //khang
+        //[ForeignKey("OrderId")]
+        //[ValidateNever]
+        //public Order OrderHeader { get; set; }
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         [ValidateNever]
-        public Product Product { get; set; }
+        public Product? Product { get; set;  }
         public int Count { get; set; }
-        public double Price { get; set; }
+        public double Price { get; set; } // Gias cua san pham
 
     }
 }

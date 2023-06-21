@@ -5,9 +5,20 @@
         public const string Role_Customer = "Customer";
         public const string Role_Admin = "Admin";
 
+        public const string ProductType_Male = "Male";
+        public const string ProductType_Female = "Female";
+        public const string ProductType_Unisex = "Unisex";
+
         public const string StatusPending = "Pending";
         public const string StatusApproved = "Approved";
         public const string StatusInProcess = "Processing";
         public const string StatusCancelled = "Cancelled";
+
+
+        public const string CouponType_Percent = "Percent";
+        public const string CouponType_Cash = "Cash";
+
+        public const int MaximumImageCanUpload = 6;
+
     }
 }

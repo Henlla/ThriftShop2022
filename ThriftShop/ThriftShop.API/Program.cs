@@ -1,6 +1,7 @@
-using BulkyBook.DataAccess.Repository.IRepository;
-using BulkyBook.DataAccess.Repository.Services;
+using ThriftShop.DataAccess.Repository.IRepository;
+using ThriftShop.DataAccess.Repository.Services;
 using Microsoft.EntityFrameworkCore;
+using ThriftShop.API;
 using ThriftShop.DataAccess.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 var app = builder.Build();
 
@@ -22,7 +24,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(option =>
+{
+    option.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+});
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
